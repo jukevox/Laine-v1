@@ -14,8 +14,9 @@ interface RevenueByHourProps {
 
 export default function RevenueByHour({ data, currentWeek, alerts = [] }: RevenueByHourProps) {
   const [selectedWeekIndex, setSelectedWeekIndex] = useState(() => {
+    // Find current week, default to index 2 (middle of 5 weeks) if not found
     const currentWeekIndex = data.findIndex(week => week.week === currentWeek);
-    return currentWeekIndex !== -1 ? currentWeekIndex : data.length - 3; // Default to current week or 3rd from end
+    return currentWeekIndex !== -1 ? currentWeekIndex : 2;
   });
   const [selectedDay, setSelectedDay] = useState(0);
 
