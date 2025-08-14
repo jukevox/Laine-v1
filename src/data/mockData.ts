@@ -855,26 +855,26 @@ export const implementedRecommendations: ImplementedRecommendation[] = [
     originalRecommendation: recommendations[0],
     weekImplemented: 44,
     implementedDate: "2024-11-01",
-    actionTaken: "Added 6 outdoor tables with heaters for Thursday piano nights, promoted as 'Piano Under the Stars'",
-    expectedImpact: "£680 additional revenue",
-    actualImpact: "£720 additional revenue (+5.9%)",
-    impactPercentage: 106,
+    actionTaken: 'Launched "Winter Warmer" gift card bundle with mulled wine flight experience',
+    expectedImpact: '25% increase in gift card sales',
+    actualImpact: '31% increase in gift card sales (£4,680 additional revenue)',
+    impactPercentage: 124,
     impactAchieved: true,
-    category: "direct-venue",
-    notes: "Exceeded expectations due to perfect weather. 3 tables remained occupied past normal closing time. Customer feedback extremely positive - 'magical atmosphere'. Recommend making permanent fixture for good weather days."
+    category: 'promotional',
+    notes: 'Bundle approach very successful. Customers loved the experiential element. Repeat for Valentine\'s Day.'
   },
   {
     id: "impl-002",
     originalRecommendation: recommendations[1],
     weekImplemented: 43,
     implementedDate: "2024-10-26",
-    actionTaken: "Launched stein personalization service with local engraver during Saturday Pleasure Palace",
-    expectedImpact: "£340-450 additional weekly revenue",
-    actualImpact: "£280 additional revenue",
-    impactPercentage: 82,
+    actionTaken: 'Implemented loyalty points multiplier (3x points) on all gift card purchases',
+    expectedImpact: '20% increase in loyalty member gift card purchases',
+    actualImpact: '14% increase in loyalty member gift card purchases',
+    impactPercentage: 70,
     impactAchieved: false,
-    category: "promotional",
-    notes: "Lower than expected due to 45-minute turnaround time vs promised 30 minutes. Customers didn't want to wait. Need faster engraving equipment or pre-engraved options. Service popular but execution needs improvement."
+    category: 'promotional',
+    notes: 'Good uptake but lower than expected. Need to better communicate the multiplier benefit to customers.'
   },
   {
     id: "impl-003",
@@ -903,25 +903,25 @@ export const implementedRecommendations: ImplementedRecommendation[] = [
     notes: "Moderate success but below target. Costume sizes were limited - need more variety. Popular with families but adults hesitant. Consider offering just accessories (hats, suspenders) as lower-commitment option. Kids loved it though!"
   },
   {
-    id: "impl-005",
-    originalRecommendation: {
-      id: "rec-005",
-      category: "promotional",
+    actionTaken: 'Launched bottomless brunch gift vouchers with Mother\'s Day marketing campaign',
+    expectedImpact: '30% increase in brunch bookings',
+    actualImpact: '18% increase in brunch bookings',
+    impactPercentage: 60,
       priority: "opportunity",
-      title: "Launch 'Industry Monday' discount for hospitality workers",
-      insight: "Monday nights consistently lowest revenue. 34% of local workforce in hospitality industry.",
+    category: 'promotional',
+    notes: 'Good concept but timing was off. Mother\'s Day campaign started too late. Earlier marketing needed.'
       action: "Offer 25% discount to hospitality workers with valid ID on Mondays",
       impact: "£200-300 additional Monday revenue",
       timeframe: "This week"
     },
     weekImplemented: 41,
     implementedDate: "2024-10-14",
-    actionTaken: "Launched 25% hospitality worker discount for Monday nights with valid industry ID",
-    expectedImpact: "£200-300 additional Monday revenue",
-    actualImpact: "£420 additional revenue (+47%)",
-    impactPercentage: 140,
+    actionTaken: 'Streamlined digital gift card purchase flow and added guest checkout option',
+    expectedImpact: '15% reduction in checkout abandonment',
+    actualImpact: '22% reduction in checkout abandonment',
+    impactPercentage: 147,
     impactAchieved: true,
-    category: "promotional",
-    notes: "Incredible success! Word spread quickly through hospitality community. Monday nights now consistently busy. Many hospitality workers bringing friends who pay full price. Created strong community feeling. Expanding to include retail workers."
+    category: 'operational',
+    notes: 'Technical improvements had immediate impact. Guest checkout was key - many customers don\'t want to create accounts.'
   }
 ];
