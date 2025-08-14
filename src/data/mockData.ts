@@ -343,9 +343,9 @@ export const individualPubData: IndividualPubData = {
       weeklyTarget: 515300,
       performanceVsTarget: 6.5,
       weeklyCustomers: 7642,
-      customerChange: 8,
+      customerChange: -3,
       avgCheckSize: 72,
-      checkSizeChange: -2
+      checkSizeChange: 5
     },
     {
       week: 46,
@@ -491,7 +491,7 @@ export const individualPubData: IndividualPubData = {
       weeklyCustomers: 7834,
       customerChange: 12,
       avgCheckSize: 72,
-      checkSizeChange: 3
+      checkSizeChange: -1
     },
     {
       week: 47,
@@ -635,9 +635,9 @@ export const individualPubData: IndividualPubData = {
       weeklyTarget: 515300,
       performanceVsTarget: 12.5,
       weeklyCustomers: 8051,
-      customerChange: 3,
+      customerChange: 8,
       avgCheckSize: 72,
-      checkSizeChange: -1
+      checkSizeChange: 2
     },
     {
       week: 48,
@@ -781,7 +781,7 @@ export const individualPubData: IndividualPubData = {
       weeklyTarget: 595000,
       performanceVsTarget: 0,
       weeklyCustomers: 8264,
-      customerChange: 3,
+      customerChange: 4,
       avgCheckSize: 72,
       checkSizeChange: 0
     }

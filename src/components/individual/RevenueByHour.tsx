@@ -254,12 +254,7 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                 <div>
                   <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">Weekly Customers</p>
                   <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{selectedWeekData.weeklyCustomers}</p>
-                  <div className="flex items-center space-x-2 mt-1">
-                    <span className="text-xs text-blue-700 dark:text-blue-300">vs Last Week:</span>
-                    <span className={`text-xs font-medium ${selectedWeekData.customerChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                      {selectedWeekData.customerChange >= 0 ? '+' : ''}{selectedWeekData.customerChange}%
-                    </span>
-                  </div>
+                  <p className="text-xs text-indigo-700 dark:text-indigo-300">Target: {selectedWeekData.weeklyTarget}</p>
                 </div>
               </div>
             </div>
@@ -409,12 +404,12 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                       {selectedWeekData.weekType === 'forecast' ? (
                         <>
                           <span className="text-blue-600">{hour.customers} customers (est.)</span>
-                          <span className="text-blue-600">£{hour.avgTransaction} (est.)</span>
+                          <span className="text-blue-600">{hour.transactions} transactions (est.)</span>
                         </>
                       ) : (
                         <>
-                          <span>{hour.customers} customers</span>
-                          <span>£{hour.avgTransaction}</span>
+                          <span>{hour.transactions} transactions</span>
+                          <span>£{hour.avgTransaction} avg</span>
                         </>
                       )}
                     </div>
