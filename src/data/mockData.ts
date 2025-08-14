@@ -569,7 +569,7 @@ export const individualPubData: IndividualPubData = {
         events: ["Christmas parties begin"]
       }
     ]
-  }
+  },
   {
     week: 48,
     weekType: "forecast",
@@ -692,6 +692,7 @@ export const individualPubData: IndividualPubData = {
       }
     ]
   }
+  ]
 };
 
 export const recommendations: Recommendation[] = [
