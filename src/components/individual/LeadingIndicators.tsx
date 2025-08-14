@@ -292,6 +292,7 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 }
