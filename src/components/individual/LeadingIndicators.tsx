@@ -89,16 +89,28 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
       const weekData = categories.map((category, dayIndex) => {
         const bands = bandDatabase[category as keyof typeof bandDatabase];
         const randomBand = bands[Math.floor(Math.random() * bands.length)];
-        const revenueMultiplier = weekType === 'forecast' ? 0.9 + Math.random() * 0.2 : 0.8 + Math.random() * 0.4;
-        const baseRevenue = randomBand.cost * (2.5 + Math.random() * 1.5);
-        const targetRevenue = randomBand.cost * 2.8; // Target is 2.8x the cost
+        
+        // Generate start times: 7-9pm Mon-Sat, 11am Sunday
+        const startTime = dayIndex === 6 ? '11:00' : // Sunday at 11am
+          ['19:00', '19:30', '20:00', '20:30', '21:00'][Math.floor(Math.random() * 5)]; // Mon-Sat between 7-9pm
+        
+        // Calculate percentage lift over baseline (non-performance) revenue
+        const baselineRevenue = 800; // Normal revenue without entertainment
+        const performanceMultiplier = weekType === 'forecast' ? 
+          (1.15 + Math.random() * 0.25) : // Forecast: 15-40% lift
+          (1.05 + Math.random() * 0.45); // Historical: 5-50% lift
+        
+        const totalRevenue = baselineRevenue * performanceMultiplier;
+        const revenueLiftPercentage = Math.round((performanceMultiplier - 1) * 100);
+        const targetLiftPercentage = 25; // Target 25% lift over baseline
         
         return {
           day: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][dayIndex],
           category,
           band: randomBand,
-          revenueImpact: Math.round(baseRevenue * revenueMultiplier),
-          targetRevenue: Math.round(targetRevenue),
+          startTime,
+          revenueLiftPercentage,
+          targetLiftPercentage,
           weekType
         };
       });
@@ -359,18 +371,22 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
                     {dayData.band.type} • £{dayData.band.cost}
                   </div>
                   
+                  <div className="text-gray-600 dark:text-gray-400">
+                    Starts: {dayData.startTime}
+                  </div>
+                  
                   <div className={`font-medium ${
                     selectedWeek.weekType === 'forecast' 
                       ? 'text-blue-600 dark:text-blue-400' 
                       : 'text-green-600 dark:text-green-400'
                   }`}>
                     {selectedWeek.weekType === 'forecast' ? (
-                      <span className="text-blue-600 dark:text-blue-400 opacity-50">
-                        Est. +£{dayData.revenueImpact}
+                      <span className="text-blue-600 dark:text-blue-400" style={{ opacity: 0.5 }}>
+                        Est. +{dayData.revenueLiftPercentage}%
                       </span>
                     ) : (
-                      <span className={dayData.revenueImpact >= dayData.band.cost * 2.8 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}>
-                        +£{dayData.revenueImpact}
+                      <span className={dayData.revenueLiftPercentage >= dayData.targetLiftPercentage ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}>
+                        +{dayData.revenueLiftPercentage}%
                       </span>
                     )}
                   </div>
@@ -398,7 +414,7 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
               </div>
               <div className="text-xs text-gray-500 dark:text-gray-400 text-right">
                 <div>Use ← → to navigate weeks</div>
-                <div>Format: Band • Type • Cost • Revenue Impact</div>
+                <div>Format: Band • Type • Cost • Start Time • Revenue Lift %</div>
               </div>
             </div>
           </div>
