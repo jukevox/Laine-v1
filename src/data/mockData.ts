@@ -219,7 +219,6 @@ export const individualPubData: IndividualPubData = {
             { hour: '20:00', actual: 8800, target: 8500, customers: 125, avgTransaction: 70 },
             { hour: '21:00', actual: 7200, target: 7000, transactions: 102, avgTransaction: 71 },
             { hour: '21:00', actual: 7200, target: 7000, customers: 102, avgTransaction: 71 },
-            { hour: '22:00', actual: 5800, target: 5500, transactions: 82, avgTransaction: 71 }
             { hour: '22:00', actual: 5800, target: 5500, customers: 82, avgTransaction: 71 }
           ],
           dailyTotal: 59800,
