@@ -184,6 +184,7 @@ export const regionalData: RegionalData = {
       weeklyCustomers: 1320,
       avgCheckSize: 84,
       checkSizeChange: 2.4,
+      checkSizeChange: 2.4,
       performanceVsTarget: -1,
       weekData: [
         {
@@ -244,6 +245,7 @@ export const regionalData: RegionalData = {
       weeklyTarget: 51000,
       weeklyCustomers: 1380,
       avgCheckSize: 86,
+      checkSizeChange: 2.4,
       checkSizeChange: 2.4,
       performanceVsTarget: -2,
       weekData: [
@@ -459,6 +461,7 @@ export const individualPubData: IndividualPubData = {
       weeklyTarget: 47000,
       weeklyCustomers: 1247,
       avgCheckSize: 82,
+      checkSizeChange: 5.2,
       performanceVsTarget: -2,
       weekData: [
         {
