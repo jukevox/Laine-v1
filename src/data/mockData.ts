@@ -846,96 +846,6 @@ export const recommendations: Recommendation[] = [
     impact: "£180-240 additional Sunday revenue + 15% booking increase",
     timeframe: "Next Sunday",
     loyaltyData: "Sunday Service attendees are 45% more likely to book private events when engaged with authentic experiences"
-  },
-  {
-    id: 'gift-card-promo',
-    category: 'promotional',
-    priority: 'opportunity',
-    title: 'Launch "Stein & Dine" gift card bundle promotion',
-    insight: 'Gift card sales typically increase 45% in January as people use Christmas money. Current gift card revenue down 23% vs last January.',
-    action: 'Create limited-time "Stein & Dine" bundle: £75 dining credit + commemorative stein + 10% bonus credit. Market through social media and email.',
-    impact: 'Projected £2,400 additional gift card revenue over 2 weeks',
-    timeframe: '2-week campaign',
-    loyaltyData: 'Gift card recipients spend average 127% of card value on first visit',
-    complianceRisk: 'Ensure gift card terms comply with Consumer Rights Act 2015'
-  },
-  {
-    id: 'experience-package',
-    category: 'promotional', 
-    priority: 'important',
-    title: 'Promote "Bavarian Feast Experience" for Valentine\'s bookings',
-    insight: 'Valentine\'s Day bookings down 18% vs last year. Experience packages show 67% higher profit margins than standard dining.',
-    action: 'Push "Bavarian Feast Experience" (£65pp) including 3-course meal, welcome stein, and entertainment. Create romantic marketing angle.',
-    impact: 'Target 40 experience bookings = £2,600 additional revenue',
-    timeframe: '3-week Valentine\'s campaign',
-    loyaltyData: 'Experience package customers have 89% rebooking rate within 6 months'
-  },
-  {
-    id: 'corporate-gift-cards',
-    category: 'promotional',
-    priority: 'opportunity', 
-    title: 'Target local businesses for corporate gift card sales',
-    insight: 'Q4 corporate entertainment budgets often unspent. Local businesses within 2-mile radius show high potential for bulk gift card purchases.',
-    action: 'Create corporate gift card packages with 15% bulk discount for orders over £500. Direct sales outreach to nearby offices.',
-    impact: 'Potential £3,500 in corporate gift card sales',
-    timeframe: '4-week B2B campaign',
-    loyaltyData: 'Corporate gift card recipients become regular customers 43% of the time'
-  },
-  {
-    id: 'bottomless-brunch-gift',
-    category: 'promotional',
-    priority: 'opportunity',
-    title: 'Launch "Bottomless Brunch" gift vouchers for Mother\'s Day',
-    insight: 'Mother\'s Day brunch bookings peak 6 weeks before the date. Bottomless brunch shows highest customer satisfaction scores (4.8/5).',
-    action: 'Create Mother\'s Day themed bottomless brunch gift vouchers (£35pp). Include personalized message cards and premium packaging.',
-    impact: 'Target 60 voucher sales = £2,100 pre-paid revenue',
-    timeframe: '6-week Mother\'s Day lead-up',
-    loyaltyData: 'Bottomless brunch customers spend additional £18 average on food upgrades'
-  },
-  {
-    id: 'loyalty-gift-incentive',
-    category: 'promotional',
-    priority: 'important',
-    title: 'Incentivize gift card purchases with loyalty points multiplier',
-    insight: 'Loyalty members purchase gift cards 34% more frequently. Current loyalty engagement down 12% this quarter.',
-    action: 'Offer 3x loyalty points on gift card purchases over £50. Promote through app notifications and email to active members.',
-    impact: 'Boost gift card sales by estimated 28% among loyalty members',
-    timeframe: '3-week loyalty campaign',
-    loyaltyData: 'Loyalty members who buy gift cards increase visit frequency by 41%'
-  },
-  {
-    id: 'experience-upsell',
-    category: 'direct-venue',
-    priority: 'opportunity',
-    title: 'Train staff to upsell experience packages during peak dining',
-    insight: 'Only 12% of diners are currently offered experience upgrades. Staff upselling training shows 23% conversion rate improvement.',
-    action: 'Implement "Experience Upgrade" training for all servers. Create incentive structure: £5 bonus per successful experience package upsell.',
-    impact: 'Projected 15 additional experience packages per week = £975 weekly revenue boost',
-    timeframe: '2-week training rollout',
-    loyaltyData: 'Customers who upgrade to experiences leave 34% higher tips'
-  },
-  {
-    id: 'digital-gift-cards',
-    category: 'operational',
-    priority: 'important',
-    title: 'Optimize digital gift card purchase flow on website',
-    insight: 'Website analytics show 67% cart abandonment rate on gift card purchases. Mobile checkout completion only 34%.',
-    action: 'Streamline digital gift card purchase to 2-step process. Add Apple Pay/Google Pay options. A/B test personalization features.',
-    impact: 'Reduce abandonment rate to 45%, increase digital gift card sales by 31%',
-    timeframe: '2-week website optimization',
-    complianceRisk: 'Ensure PCI DSS compliance for payment processing updates'
-  },
-  {
-    id: 'seasonal-experience-bundle',
-    category: 'promotional',
-    priority: 'opportunity',
-    title: 'Create "Winter Warmer" experience bundle with mulled wine',
-    insight: 'Winter beverage sales up 43% during cold snaps. Experience packages with seasonal drinks show 56% higher satisfaction.',
-    action: 'Bundle traditional meal + mulled wine flight + entertainment for £45pp. Market as limited winter offering with cozy atmosphere focus.',
-    impact: 'Target 25 bundles per week = £1,125 additional weekly revenue',
-    timeframe: '8-week winter season',
-    weatherFactor: 'Cold weather forecast increases demand for warming experiences',
-    loyaltyData: 'Seasonal experience customers show 67% likelihood to book similar future offerings'
   }
 ];
 
@@ -945,26 +855,26 @@ export const implementedRecommendations: ImplementedRecommendation[] = [
     originalRecommendation: recommendations[0],
     weekImplemented: 44,
     implementedDate: "2024-11-01",
-    actionTaken: "Added 6 outdoor tables with heaters for Thursday piano nights, promoted as 'Piano Under the Stars'",
-    expectedImpact: "£680 additional revenue",
-    actualImpact: "£720 additional revenue (+5.9%)",
-    impactPercentage: 106,
+    actionTaken: 'Launched "Winter Warmer" gift card bundle with mulled wine flight experience',
+    expectedImpact: '25% increase in gift card sales',
+    actualImpact: '31% increase in gift card sales (£4,680 additional revenue)',
+    impactPercentage: 124,
     impactAchieved: true,
-    category: "direct-venue",
-    notes: "Exceeded expectations due to perfect weather. 3 tables remained occupied past normal closing time. Customer feedback extremely positive - 'magical atmosphere'. Recommend making permanent fixture for good weather days."
+    category: 'promotional',
+    notes: 'Bundle approach very successful. Customers loved the experiential element. Repeat for Valentine\'s Day.'
   },
   {
     id: "impl-002",
     originalRecommendation: recommendations[1],
     weekImplemented: 43,
     implementedDate: "2024-10-26",
-    actionTaken: "Launched stein personalization service with local engraver during Saturday Pleasure Palace",
-    expectedImpact: "£340-450 additional weekly revenue",
-    actualImpact: "£280 additional revenue",
-    impactPercentage: 82,
+    actionTaken: 'Implemented loyalty points multiplier (3x points) on all gift card purchases',
+    expectedImpact: '20% increase in loyalty member gift card purchases',
+    actualImpact: '14% increase in loyalty member gift card purchases',
+    impactPercentage: 70,
     impactAchieved: false,
-    category: "promotional",
-    notes: "Lower than expected due to 45-minute turnaround time vs promised 30 minutes. Customers didn't want to wait. Need faster engraving equipment or pre-engraved options. Service popular but execution needs improvement."
+    category: 'promotional',
+    notes: 'Good uptake but lower than expected. Need to better communicate the multiplier benefit to customers.'
   },
   {
     id: "impl-003",
@@ -998,20 +908,42 @@ export const implementedRecommendations: ImplementedRecommendation[] = [
       id: "rec-005",
       category: "promotional",
       priority: "opportunity",
-      title: "Launch 'Industry Monday' discount for hospitality workers",
-      insight: "Monday nights consistently lowest revenue. 34% of local workforce in hospitality industry.",
+      title: "Launch bottomless brunch gift vouchers with Mother's Day marketing",
+      insight: "Mother's Day approaching with high gift card demand",
+      action: "Create special Mother's Day brunch packages",
+      impact: "30% increase in brunch bookings",
+      timeframe: "This week"
+    },
+    weekImplemented: 41,
+    implementedDate: "2024-10-14",
+    actionTaken: 'Launched bottomless brunch gift vouchers with Mother\'s Day marketing campaign',
+    expectedImpact: '30% increase in brunch bookings',
+    actualImpact: '18% increase in brunch bookings',
+    impactPercentage: 60,
+    impactAchieved: false,
+    category: 'promotional',
+    notes: 'Good concept but timing was off. Mother\'s Day campaign started too late. Earlier marketing needed.'
+  },
+  {
+    id: "impl-006",
+    originalRecommendation: {
+      id: "rec-006",
+      category: "operational",
+      priority: "important",
+      title: "Streamline digital gift card purchase flow",
+      insight: "High checkout abandonment rate on gift card purchases",
       action: "Offer 25% discount to hospitality workers with valid ID on Mondays",
       impact: "£200-300 additional Monday revenue",
       timeframe: "This week"
     },
     weekImplemented: 41,
     implementedDate: "2024-10-14",
-    actionTaken: "Launched 25% hospitality worker discount for Monday nights with valid industry ID",
-    expectedImpact: "£200-300 additional Monday revenue",
-    actualImpact: "£420 additional revenue (+47%)",
-    impactPercentage: 140,
+    actionTaken: 'Streamlined digital gift card purchase flow and added guest checkout option',
+    expectedImpact: '15% reduction in checkout abandonment',
+    actualImpact: '22% reduction in checkout abandonment',
+    impactPercentage: 147,
     impactAchieved: true,
-    category: "promotional",
-    notes: "Incredible success! Word spread quickly through hospitality community. Monday nights now consistently busy. Many hospitality workers bringing friends who pay full price. Created strong community feeling. Expanding to include retail workers."
+    category: 'operational',
+    notes: 'Technical improvements had immediate impact. Guest checkout was key - many customers don\'t want to create accounts.'
   }
 ];
