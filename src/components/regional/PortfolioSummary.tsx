@@ -18,13 +18,13 @@ export default function PortfolioSummary({ data }: PortfolioSummaryProps) {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-green-600 dark:text-green-400 font-medium">Weekly Revenue</p>
-              <p className="text-2xl font-bold text-green-900 dark:text-green-100">£{data.revenueMetrics.weeklyTotal.toLocaleString()}</p>
+              <p className="text-2xl font-bold text-green-900 dark:text-green-100">£{data.revenueMetrics.totalWeeklyRevenue.toLocaleString()}</p>
             </div>
             <TrendingUp className="w-8 h-8 text-green-500 dark:text-green-400" />
           </div>
           <div className="mt-2 flex justify-between text-xs">
             <span className="text-green-600 dark:text-green-400">vs Last Week</span>
-            <span className="text-green-500 dark:text-green-400">+{data.revenueMetrics.weekOnWeekGrowth}%</span>
+            <span className="text-green-500 dark:text-green-400">+{data.revenueMetrics.revenueGrowth}%</span>
           </div>
         </div>
 
@@ -140,7 +140,7 @@ export default function PortfolioSummary({ data }: PortfolioSummaryProps) {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-amber-600 dark:text-amber-400 font-medium">Revenue Growth</p>
-              <p className="text-2xl font-bold text-amber-900 dark:text-amber-100">+{data.revenueMetrics.weekOnWeekGrowth}%</p>
+              <p className="text-2xl font-bold text-amber-900 dark:text-amber-100">+{data.revenueMetrics.revenueGrowth}%</p>
             </div>
             <TrendingUp className="w-8 h-8 text-amber-500 dark:text-amber-400" />
           </div>
@@ -156,17 +156,17 @@ export default function PortfolioSummary({ data }: PortfolioSummaryProps) {
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Regional Performance</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {data.regionBreakdown.map((region) => (
-            <div key={region.location} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+            <div key={region.region} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
-                <h4 className="font-semibold text-gray-900 dark:text-white">{region.location}</h4>
+                <h4 className="font-semibold text-gray-900 dark:text-white">{region.region}</h4>
                 <span className={`text-sm font-medium ${
                   region.growth >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
                 }`}>
                   {region.growth >= 0 ? '+' : ''}{region.growth}%
                 </span>
               </div>
-              <p className="text-lg font-bold text-gray-900 dark:text-white">£{region.weeklyRevenue.toLocaleString()}</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">{region.bookings} bookings</p>
+              <p className="text-lg font-bold text-gray-900 dark:text-white">£{region.totalRevenue.toLocaleString()}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Regional performance</p>
             </div>
           ))}
         </div>
