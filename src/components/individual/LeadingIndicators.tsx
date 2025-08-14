@@ -138,156 +138,385 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
             ♪
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-purple-900 dark:text-purple-100">Music & Entertainment Schedule</h3>
-            <p className="text-sm text-purple-700 dark:text-purple-300">This week's programming and revenue impact</p>
+            <h3 className="text-lg font-semibold text-purple-900 dark:text-purple-100">Music & Entertainment Calendar</h3>
+            <p className="text-sm text-purple-700 dark:text-purple-300">6-week view: 4 weeks historic + current + 2 weeks forecast</p>
           </div>
         </div>
         
-        {/* Daily Entertainment Cards */}
-        <div className="space-y-3 mb-4">
-          {/* Monday */}
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <h4 className="font-semibold text-gray-900 dark:text-white text-lg">Monday</h4>
-                  <span className="text-xs bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full">Industry</span>
-                </div>
-                <div className="hidden sm:block h-6 w-px bg-gray-300 dark:bg-gray-600"></div>
-                <div>
-                  <p className="font-medium text-gray-800 dark:text-gray-200">Industry Night</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">DJ takeover + hospitality worker specials</p>
-                </div>
+        {/* Entertainment Calendar */}
+        <div className="bg-white dark:bg-gray-700 rounded-lg p-4 border border-purple-200 dark:border-purple-600">
+          {/* Calendar Header */}
+          <div className="grid grid-cols-8 gap-2 mb-4">
+            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">Week</div>
+            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">Mon</div>
+            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">Tue</div>
+            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">Wed</div>
+            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">Thu</div>
+            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">Fri</div>
+            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">Sat</div>
+            <div className="text-xs font-medium text-gray-500 dark:text-gray-400 text-center">Sun</div>
+          </div>
+          
+          {/* Calendar Weeks */}
+          <div className="space-y-2">
+            {/* Week -4 (Historic) */}
+            <div className="grid grid-cols-8 gap-2">
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-medium bg-gray-100 dark:bg-gray-600 rounded p-2 text-center">
+                W-4<br/><span className="text-xs opacity-75">Historic</span>
               </div>
-              <div className="text-right">
-                <p className="text-sm text-gray-500 dark:text-gray-400">Revenue uplift</p>
-                <p className="text-xl font-bold text-gray-700 dark:text-gray-300">+£320</p>
+              <div className="bg-gray-50 dark:bg-gray-600 rounded p-2 text-xs border border-gray-200 dark:border-gray-500">
+                <div className="font-medium text-gray-700 dark:text-gray-300">Industry Night</div>
+                <div className="text-gray-600 dark:text-gray-400">DJ Marcus</div>
+                <div className="text-gray-500 dark:text-gray-400">Solo • £180</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£295</div>
+              </div>
+              <div className="bg-red-50 dark:bg-red-900/30 rounded p-2 text-xs border border-red-200 dark:border-red-700">
+                <div className="font-medium text-red-800 dark:text-red-200">Kunst Kabaret</div>
+                <div className="text-red-700 dark:text-red-300">The Velvet Collective</div>
+                <div className="text-red-600 dark:text-red-400">Duo • £420</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£545</div>
+              </div>
+              <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-700">
+                <div className="font-medium text-blue-800 dark:text-blue-200">Bertie's Band</div>
+                <div className="text-blue-700 dark:text-blue-300">The Harmonics</div>
+                <div className="text-blue-600 dark:text-blue-400">Band • £650</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£425</div>
+              </div>
+              <div className="bg-amber-50 dark:bg-amber-900/30 rounded p-2 text-xs border border-amber-200 dark:border-amber-700">
+                <div className="font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</div>
+                <div className="text-amber-700 dark:text-amber-300">Piano Pete & Sally</div>
+                <div className="text-amber-600 dark:text-amber-400">Duo • £380</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£680</div>
+              </div>
+              <div className="bg-green-50 dark:bg-green-900/30 rounded p-2 text-xs border border-green-200 dark:border-green-700">
+                <div className="font-medium text-green-800 dark:text-green-200">Friday Fröhlich</div>
+                <div className="text-green-700 dark:text-green-300">Bavarian Beats</div>
+                <div className="text-green-600 dark:text-green-400">Band • £850</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,180</div>
+              </div>
+              <div className="bg-purple-50 dark:bg-purple-900/30 rounded p-2 text-xs border border-purple-200 dark:border-purple-700">
+                <div className="font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</div>
+                <div className="text-purple-700 dark:text-purple-300">House Band + DJ Max</div>
+                <div className="text-purple-600 dark:text-purple-400">Band • £950</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,520</div>
+              </div>
+              <div className="bg-teal-50 dark:bg-teal-900/30 rounded p-2 text-xs border border-teal-200 dark:border-teal-700">
+                <div className="font-medium text-teal-800 dark:text-teal-200">Sunday Service</div>
+                <div className="text-teal-700 dark:text-teal-300">Gospel Collective</div>
+                <div className="text-teal-600 dark:text-teal-400">Band • £720</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£850</div>
+              </div>
+            </div>
+
+            {/* Week -3 (Historic) */}
+            <div className="grid grid-cols-8 gap-2">
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-medium bg-gray-100 dark:bg-gray-600 rounded p-2 text-center">
+                W-3<br/><span className="text-xs opacity-75">Historic</span>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-600 rounded p-2 text-xs border border-gray-200 dark:border-gray-500">
+                <div className="font-medium text-gray-700 dark:text-gray-300">Industry Night</div>
+                <div className="text-gray-600 dark:text-gray-400">DJ Sarah</div>
+                <div className="text-gray-500 dark:text-gray-400">Solo • £200</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£310</div>
+              </div>
+              <div className="bg-red-50 dark:bg-red-900/30 rounded p-2 text-xs border border-red-200 dark:border-red-700">
+                <div className="font-medium text-red-800 dark:text-red-200">Kunst Kabaret</div>
+                <div className="text-red-700 dark:text-red-300">Midnight Cabaret</div>
+                <div className="text-red-600 dark:text-red-400">Duo • £450</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£590</div>
+              </div>
+              <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-700">
+                <div className="font-medium text-blue-800 dark:text-blue-200">Bertie's Band</div>
+                <div className="text-blue-700 dark:text-blue-300">Jazz Collective</div>
+                <div className="text-blue-600 dark:text-blue-400">Band • £680</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£465</div>
+              </div>
+              <div className="bg-amber-50 dark:bg-amber-900/30 rounded p-2 text-xs border border-amber-200 dark:border-amber-700">
+                <div className="font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</div>
+                <div className="text-amber-700 dark:text-amber-300">The Piano Twins</div>
+                <div className="text-amber-600 dark:text-amber-400">Duo • £400</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£720</div>
+              </div>
+              <div className="bg-green-50 dark:bg-green-900/30 rounded p-2 text-xs border border-green-200 dark:border-green-700">
+                <div className="font-medium text-green-800 dark:text-green-200">Friday Fröhlich</div>
+                <div className="text-green-700 dark:text-green-300">Alpine Express</div>
+                <div className="text-green-600 dark:text-green-400">Band • £900</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,240</div>
+              </div>
+              <div className="bg-purple-50 dark:bg-purple-900/30 rounded p-2 text-xs border border-purple-200 dark:border-purple-700">
+                <div className="font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</div>
+                <div className="text-purple-700 dark:text-purple-300">House Band + DJ Luna</div>
+                <div className="text-purple-600 dark:text-purple-400">Band • £980</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,580</div>
+              </div>
+              <div className="bg-teal-50 dark:bg-teal-900/30 rounded p-2 text-xs border border-teal-200 dark:border-teal-700">
+                <div className="font-medium text-teal-800 dark:text-teal-200">Sunday Service</div>
+                <div className="text-teal-700 dark:text-teal-300">Sunday Singers</div>
+            {/* Week -2 (Historic) */}
+            <div className="grid grid-cols-8 gap-2">
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-medium bg-gray-100 dark:bg-gray-600 rounded p-2 text-center">
+                W-2<br/><span className="text-xs opacity-75">Historic</span>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-600 rounded p-2 text-xs border border-gray-200 dark:border-gray-500">
+                <div className="font-medium text-gray-700 dark:text-gray-300">Industry Night</div>
+                <div className="text-gray-600 dark:text-gray-400">DJ Alex</div>
+                <div className="text-gray-500 dark:text-gray-400">Solo • £190</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£320</div>
+              </div>
+              <div className="bg-red-50 dark:bg-red-900/30 rounded p-2 text-xs border border-red-200 dark:border-red-700">
+                <div className="font-medium text-red-800 dark:text-red-200">Kunst Kabaret</div>
+                <div className="text-red-700 dark:text-red-300">Artisan Performers</div>
+                <div className="text-red-600 dark:text-red-400">Duo • £480</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£580</div>
+              </div>
+              <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-700">
+                <div className="font-medium text-blue-800 dark:text-blue-200">Bertie's Band</div>
+                <div className="text-blue-700 dark:text-blue-300">Acoustic Trio</div>
+                <div className="text-blue-600 dark:text-blue-400">Band • £620</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£450</div>
+              </div>
+              <div className="bg-amber-50 dark:bg-amber-900/30 rounded p-2 text-xs border border-amber-200 dark:border-amber-700">
+                <div className="font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</div>
+                <div className="text-amber-700 dark:text-amber-300">Piano Masters</div>
+                <div className="text-amber-600 dark:text-amber-400">Duo • £420</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£720</div>
+              </div>
+              <div className="bg-green-50 dark:bg-green-900/30 rounded p-2 text-xs border border-green-200 dark:border-green-700">
+                <div className="font-medium text-green-800 dark:text-green-200">Friday Fröhlich</div>
+                <div className="text-green-700 dark:text-green-300">Oktoberfest Band</div>
+                <div className="text-green-600 dark:text-green-400">Band • £880</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,240</div>
+              </div>
+              <div className="bg-purple-50 dark:bg-purple-900/30 rounded p-2 text-xs border border-purple-200 dark:border-purple-700">
+                <div className="font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</div>
+                <div className="text-purple-700 dark:text-purple-300">House Band + DJ Storm</div>
+                <div className="text-purple-600 dark:text-purple-400">Band • £1,020</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,580</div>
+              </div>
+              <div className="bg-teal-50 dark:bg-teal-900/30 rounded p-2 text-xs border border-teal-200 dark:border-teal-700">
+                <div className="font-medium text-teal-800 dark:text-teal-200">Sunday Service</div>
+                <div className="text-teal-700 dark:text-teal-300">Choir Harmony</div>
+                <div className="text-teal-600 dark:text-teal-400">Band • £780</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£890</div>
+              </div>
+            </div>
+                <div className="text-teal-600 dark:text-teal-400">Band • £750</div>
+            {/* Week -1 (Historic) */}
+            <div className="grid grid-cols-8 gap-2">
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-medium bg-gray-100 dark:bg-gray-600 rounded p-2 text-center">
+                W-1<br/><span className="text-xs opacity-75">Historic</span>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-600 rounded p-2 text-xs border border-gray-200 dark:border-gray-500">
+                <div className="font-medium text-gray-700 dark:text-gray-300">Industry Night</div>
+                <div className="text-gray-600 dark:text-gray-400">DJ Chris</div>
+                <div className="text-gray-500 dark:text-gray-400">Solo • £210</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£320</div>
+              </div>
+              <div className="bg-red-50 dark:bg-red-900/30 rounded p-2 text-xs border border-red-200 dark:border-red-700">
+                <div className="font-medium text-red-800 dark:text-red-200">Kunst Kabaret</div>
+                <div className="text-red-700 dark:text-red-300">Berlin Cabaret</div>
+                <div className="text-red-600 dark:text-red-400">Duo • £460</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£580</div>
+              </div>
+              <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-700">
+                <div className="font-medium text-blue-800 dark:text-blue-200">Bertie's Band</div>
+                <div className="text-blue-700 dark:text-blue-300">Easy Listening Trio</div>
+                <div className="text-blue-600 dark:text-blue-400">Band • £640</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£450</div>
+              </div>
+              <div className="bg-amber-50 dark:bg-amber-900/30 rounded p-2 text-xs border border-amber-200 dark:border-amber-700">
+                <div className="font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</div>
+                <div className="text-amber-700 dark:text-amber-300">Piano Pete & Sally</div>
+                <div className="text-amber-600 dark:text-amber-400">Duo • £380</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£720</div>
+              </div>
+              <div className="bg-green-50 dark:bg-green-900/30 rounded p-2 text-xs border border-green-200 dark:border-green-700">
+                <div className="font-medium text-green-800 dark:text-green-200">Friday Fröhlich</div>
+                <div className="text-green-700 dark:text-green-300">Bavarian Beats</div>
+                <div className="text-green-600 dark:text-green-400">Band • £850</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,240</div>
+              </div>
+              <div className="bg-purple-50 dark:bg-purple-900/30 rounded p-2 text-xs border border-purple-200 dark:border-purple-700">
+                <div className="font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</div>
+                <div className="text-purple-700 dark:text-purple-300">House Band + DJ Max</div>
+                <div className="text-purple-600 dark:text-purple-400">Band • £950</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,580</div>
+              </div>
+              <div className="bg-teal-50 dark:bg-teal-900/30 rounded p-2 text-xs border border-teal-200 dark:border-teal-700">
+                <div className="font-medium text-teal-800 dark:text-teal-200">Sunday Service</div>
+                <div className="text-teal-700 dark:text-teal-300">Gospel Collective</div>
+                <div className="text-teal-600 dark:text-teal-400">Band • £720</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£890</div>
+              </div>
+            </div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£890</div>
+            {/* Current Week */}
+            <div className="grid grid-cols-8 gap-2 ring-2 ring-indigo-500 rounded-lg p-1">
+              <div className="text-xs text-indigo-600 dark:text-indigo-400 font-bold bg-indigo-100 dark:bg-indigo-900/50 rounded p-2 text-center">
+                Current<br/><span className="text-xs opacity-75">Week</span>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-600 rounded p-2 text-xs border-2 border-indigo-300 dark:border-indigo-600">
+                <div className="font-medium text-gray-700 dark:text-gray-300">Industry Night</div>
+                <div className="text-gray-600 dark:text-gray-400">DJ Marcus</div>
+                <div className="text-gray-500 dark:text-gray-400">Solo • £180</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£320</div>
+              </div>
+              <div className="bg-red-50 dark:bg-red-900/30 rounded p-2 text-xs border-2 border-indigo-300 dark:border-indigo-600">
+                <div className="font-medium text-red-800 dark:text-red-200">Kunst Kabaret</div>
+                <div className="text-red-700 dark:text-red-300">The Velvet Collective</div>
+                <div className="text-red-600 dark:text-red-400">Duo • £420</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£580</div>
+              </div>
+              <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2 text-xs border-2 border-indigo-300 dark:border-indigo-600">
+                <div className="font-medium text-blue-800 dark:text-blue-200">Bertie's Band</div>
+                <div className="text-blue-700 dark:text-blue-300">The Harmonics</div>
+                <div className="text-blue-600 dark:text-blue-400">Band • £650</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£450</div>
+              </div>
+              <div className="bg-amber-50 dark:bg-amber-900/30 rounded p-2 text-xs border-2 border-indigo-300 dark:border-indigo-600">
+                <div className="font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</div>
+                <div className="text-amber-700 dark:text-amber-300">Piano Pete & Sally</div>
+                <div className="text-amber-600 dark:text-amber-400">Duo • £380</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£720</div>
+              </div>
+              <div className="bg-green-50 dark:bg-green-900/30 rounded p-2 text-xs border-2 border-indigo-300 dark:border-indigo-600">
+                <div className="font-medium text-green-800 dark:text-green-200">Friday Fröhlich</div>
+                <div className="text-green-700 dark:text-green-300">Bavarian Beats</div>
+                <div className="text-green-600 dark:text-green-400">Band • £850</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,240</div>
+              </div>
+              <div className="bg-purple-50 dark:bg-purple-900/30 rounded p-2 text-xs border-2 border-indigo-300 dark:border-indigo-600">
+                <div className="font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</div>
+                <div className="text-purple-700 dark:text-purple-300">House Band + DJ Max</div>
+                <div className="text-purple-600 dark:text-purple-400">Band • £950</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£1,580</div>
+              </div>
+              <div className="bg-teal-50 dark:bg-teal-900/30 rounded p-2 text-xs border-2 border-indigo-300 dark:border-indigo-600">
+                <div className="font-medium text-teal-800 dark:text-teal-200">Sunday Service</div>
+                <div className="text-teal-700 dark:text-teal-300">Gospel Collective</div>
+                <div className="text-teal-600 dark:text-teal-400">Band • £720</div>
+                <div className="text-green-600 dark:text-green-400 font-medium">+£890</div>
+              </div>
+            </div>
+              </div>
+            {/* Week +1 (Forecast) */}
+            <div className="grid grid-cols-8 gap-2">
+              <div className="text-xs text-blue-600 dark:text-blue-400 font-medium bg-blue-100 dark:bg-blue-900/50 rounded p-2 text-center">
+                W+1<br/><span className="text-xs opacity-75">Forecast</span>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-600 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-gray-700 dark:text-gray-300">Industry Night</div>
+                <div className="text-gray-600 dark:text-gray-400">DJ Sarah</div>
+                <div className="text-gray-500 dark:text-gray-400">Solo • £200</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£320</div>
+              </div>
+              <div className="bg-red-50 dark:bg-red-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-red-800 dark:text-red-200">Kunst Kabaret</div>
+                <div className="text-red-700 dark:text-red-300">Midnight Cabaret</div>
+                <div className="text-red-600 dark:text-red-400">Duo • £450</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£580</div>
+              </div>
+              <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-blue-800 dark:text-blue-200">Bertie's Band</div>
+                <div className="text-blue-700 dark:text-blue-300">Jazz Collective</div>
+                <div className="text-blue-600 dark:text-blue-400">Band • £680</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£450</div>
+              </div>
+              <div className="bg-amber-50 dark:bg-amber-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</div>
+                <div className="text-amber-700 dark:text-amber-300">The Piano Twins</div>
+                <div className="text-amber-600 dark:text-amber-400">Duo • £400</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£720</div>
+              </div>
+              <div className="bg-green-50 dark:bg-green-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-green-800 dark:text-green-200">Friday Fröhlich</div>
+                <div className="text-green-700 dark:text-green-300">Alpine Express</div>
+                <div className="text-green-600 dark:text-green-400">Band • £900</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£1,240</div>
+              </div>
+              <div className="bg-purple-50 dark:bg-purple-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</div>
+                <div className="text-purple-700 dark:text-purple-300">House Band + DJ Luna</div>
+                <div className="text-purple-600 dark:text-purple-400">Band • £980</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£1,580</div>
+              </div>
+              <div className="bg-teal-50 dark:bg-teal-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-teal-800 dark:text-teal-200">Sunday Service</div>
+                <div className="text-teal-700 dark:text-teal-300">Sunday Singers</div>
+                <div className="text-teal-600 dark:text-teal-400">Band • £750</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£890</div>
+              </div>
+            </div>
+            </div>
+            {/* Week +2 (Forecast) */}
+            <div className="grid grid-cols-8 gap-2">
+              <div className="text-xs text-blue-600 dark:text-blue-400 font-medium bg-blue-100 dark:bg-blue-900/50 rounded p-2 text-center">
+                W+2<br/><span className="text-xs opacity-75">Forecast</span>
+              </div>
+              <div className="bg-gray-50 dark:bg-gray-600 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-gray-700 dark:text-gray-300">Industry Night</div>
+                <div className="text-gray-600 dark:text-gray-400">TBD</div>
+                <div className="text-gray-500 dark:text-gray-400">Solo • £180-220</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£320</div>
+              </div>
+              <div className="bg-red-50 dark:bg-red-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-red-800 dark:text-red-200">Kunst Kabaret</div>
+                <div className="text-red-700 dark:text-red-300">TBD</div>
+                <div className="text-red-600 dark:text-red-400">Duo • £420-480</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£580</div>
+              </div>
+              <div className="bg-blue-50 dark:bg-blue-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-blue-800 dark:text-blue-200">Bertie's Band</div>
+                <div className="text-blue-700 dark:text-blue-300">TBD</div>
+                <div className="text-blue-600 dark:text-blue-400">Band • £620-680</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£450</div>
+              </div>
+              <div className="bg-amber-50 dark:bg-amber-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</div>
+                <div className="text-amber-700 dark:text-amber-300">TBD</div>
+                <div className="text-amber-600 dark:text-amber-400">Duo • £380-420</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£720</div>
+              </div>
+              <div className="bg-green-50 dark:bg-green-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-green-800 dark:text-green-200">Friday Fröhlich</div>
+                <div className="text-green-700 dark:text-green-300">TBD</div>
+                <div className="text-green-600 dark:text-green-400">Band • £850-950</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£1,240</div>
+              </div>
+              <div className="bg-purple-50 dark:bg-purple-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</div>
+                <div className="text-purple-700 dark:text-purple-300">TBD</div>
+                <div className="text-purple-600 dark:text-purple-400">Band • £950-1020</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£1,580</div>
+              </div>
+              <div className="bg-teal-50 dark:bg-teal-900/30 rounded p-2 text-xs border border-blue-200 dark:border-blue-600 opacity-80">
+                <div className="font-medium text-teal-800 dark:text-teal-200">Sunday Service</div>
+                <div className="text-teal-700 dark:text-teal-300">TBD</div>
+                <div className="text-teal-600 dark:text-teal-400">Band • £720-780</div>
+                <div className="text-blue-600 dark:text-blue-400 font-medium">Est. +£890</div>
               </div>
             </div>
           </div>
-
-          {/* Tuesday */}
-          <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 rounded-lg p-4 border border-red-200 dark:border-red-700">
-            <div className="flex items-center justify-between">
+          
+          {/* Legend */}
+          <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
+            <div className="flex flex-wrap items-center justify-between text-xs text-gray-600 dark:text-gray-400 space-y-2">
               <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <h4 className="font-semibold text-red-900 dark:text-red-100 text-lg">Tuesday</h4>
-                  <span className="text-xs bg-red-200 dark:bg-red-800 text-red-700 dark:text-red-200 px-3 py-1 rounded-full">Cabaret</span>
+                <div className="flex items-center space-x-1">
+                  <div className="w-3 h-3 bg-gray-100 dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded"></div>
+                  <span>Historic Data</span>
                 </div>
-                <div className="hidden sm:block h-6 w-px bg-red-300 dark:bg-red-600"></div>
-                <div>
-                  <p className="font-medium text-red-800 dark:text-red-200">Kunst Kabaret</p>
-                  <p className="text-sm text-red-600 dark:text-red-300">Performance art & cabaret acts on-stage</p>
+                <div className="flex items-center space-x-1">
+                  <div className="w-3 h-3 bg-indigo-100 dark:bg-indigo-900/50 border-2 border-indigo-500 rounded"></div>
+                  <span>Current Week</span>
                 </div>
-              </div>
-              <div className="text-right">
-                <p className="text-sm text-red-500 dark:text-red-400">Revenue uplift</p>
-                <p className="text-xl font-bold text-red-700 dark:text-red-200">+£580</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Wednesday */}
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-lg p-4 border border-blue-200 dark:border-blue-700">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <h4 className="font-semibold text-blue-900 dark:text-blue-100 text-lg">Wednesday</h4>
-                  <span className="text-xs bg-blue-200 dark:bg-blue-800 text-blue-700 dark:text-blue-200 px-3 py-1 rounded-full">Live</span>
-                </div>
-                <div className="hidden sm:block h-6 w-px bg-blue-300 dark:bg-blue-600"></div>
-                <div>
-                  <p className="font-medium text-blue-800 dark:text-blue-200">Bertie's Band</p>
-                  <p className="text-sm text-blue-600 dark:text-blue-300">Local & national easy listening music</p>
+                <div className="flex items-center space-x-1">
+                  <div className="w-3 h-3 bg-blue-100 dark:bg-blue-900/50 border border-blue-300 dark:border-blue-600 rounded opacity-80"></div>
+                  <span>Forecast</span>
                 </div>
               </div>
-              <div className="text-right">
-                <p className="text-sm text-blue-500 dark:text-blue-400">Revenue uplift</p>
-                <p className="text-xl font-bold text-blue-700 dark:text-blue-200">+£450</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Thursday */}
-          <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/30 dark:to-orange-900/30 rounded-lg p-4 border border-amber-200 dark:border-amber-700">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <h4 className="font-semibold text-amber-900 dark:text-amber-100 text-lg">Thursday</h4>
-                  <span className="text-xs bg-amber-200 dark:bg-amber-800 text-amber-700 dark:text-amber-200 px-3 py-1 rounded-full">Piano</span>
-                </div>
-                <div className="hidden sm:block h-6 w-px bg-amber-300 dark:bg-amber-600"></div>
-                <div>
-                  <p className="font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</p>
-                  <p className="text-sm text-amber-600 dark:text-amber-300">Piano duo + sing-alongs, request songs</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <p className="text-sm text-amber-500 dark:text-amber-400">Revenue uplift</p>
-                <p className="text-xl font-bold text-amber-700 dark:text-amber-200">+£720</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Friday */}
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 rounded-lg p-4 border border-green-200 dark:border-green-700">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <h4 className="font-semibold text-green-900 dark:text-green-100 text-lg">Friday</h4>
-                  <span className="text-xs bg-green-200 dark:bg-green-800 text-green-700 dark:text-green-200 px-3 py-1 rounded-full">Festive</span>
-                </div>
-                <div className="hidden sm:block h-6 w-px bg-green-300 dark:bg-green-600"></div>
-                <div>
-                  <p className="font-medium text-green-800 dark:text-green-200">Friday Fröhlich</p>
-                  <p className="text-sm text-green-600 dark:text-green-300">House band + interactive artists + participation</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <p className="text-sm text-green-500 dark:text-green-400">Revenue uplift</p>
-                <p className="text-xl font-bold text-green-700 dark:text-green-200">+£1,240</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Saturday */}
-          <div className="bg-gradient-to-r from-purple-50 to-violet-50 dark:from-purple-900/30 dark:to-violet-900/30 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <h4 className="font-semibold text-purple-900 dark:text-purple-100 text-lg">Saturday</h4>
-                  <span className="text-xs bg-purple-200 dark:bg-purple-800 text-purple-700 dark:text-purple-200 px-3 py-1 rounded-full">Party</span>
-                </div>
-                <div className="hidden sm:block h-6 w-px bg-purple-300 dark:bg-purple-600"></div>
-                <div>
-                  <p className="font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</p>
-                  <p className="text-sm text-purple-600 dark:text-purple-300">House bands + DJs + promenaders spectacular</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <p className="text-sm text-purple-500 dark:text-purple-400">Revenue uplift</p>
-                <p className="text-xl font-bold text-purple-700 dark:text-purple-200">+£1,580</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Sunday */}
-          <div className="bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-900/30 dark:to-cyan-900/30 rounded-lg p-4 border border-teal-200 dark:border-teal-700">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <h4 className="font-semibold text-teal-900 dark:text-teal-100 text-lg">Sunday</h4>
-                  <span className="text-xs bg-teal-200 dark:bg-teal-800 text-teal-700 dark:text-teal-200 px-3 py-1 rounded-full">Service</span>
-                </div>
-                <div className="hidden sm:block h-6 w-px bg-teal-300 dark:bg-teal-600"></div>
-                <div>
-                  <p className="font-medium text-teal-800 dark:text-teal-200">Sunday Service</p>
-                  <p className="text-sm text-teal-600 dark:text-teal-300">Choirs + DJs + roasts, relaxed atmosphere</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <p className="text-sm text-teal-500 dark:text-teal-400">Revenue uplift</p>
-                <p className="text-xl font-bold text-teal-700 dark:text-teal-200">+£890</p>
+              <div className="text-xs text-gray-500 dark:text-gray-400">
+                Format: Band Name • Type • Cost • Revenue Impact
               </div>
             </div>
           </div>
