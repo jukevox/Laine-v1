@@ -720,12 +720,12 @@ export const recommendations: Recommendation[] = [
     id: "rec-003",
     category: "operational", 
     priority: "urgent",
-    title: "Add second piano duo for Thursday nights",
-    insight: "Thursday piano nights consistently underperform vs Friday/Saturday by 18%. Customer feedback mentions 'thin sound' compared to weekend shows.",
-    action: "Book additional piano player to create fuller duo sound. Test for 3 weeks to measure impact on dwell time and spend.",
-    impact: "£200-300 additional Thursday revenue",
-    timeframe: "Next Thursday",
-    complianceRisk: "Ensure additional musician has proper licensing and insurance"
+    title: "Optimize staff scheduling for peak Friday hours",
+    insight: "Friday 8-10pm shows 15% longer wait times vs other peak periods. Customer satisfaction drops 12% during these hours based on review sentiment analysis.",
+    action: "Add 2 additional servers and 1 bartender for Friday 7-11pm shift. Cross-train existing staff for flexibility during rush periods.",
+    impact: "£450-600 additional Friday revenue + improved satisfaction scores",
+    timeframe: "This Friday",
+    complianceRisk: "Ensure additional staff have proper certifications and training"
   },
   {
     id: "rec-004",
@@ -737,6 +737,39 @@ export const recommendations: Recommendation[] = [
     impact: "£180-240 additional Sunday revenue + 15% booking increase",
     timeframe: "Next Sunday",
     loyaltyData: "Sunday Service attendees are 45% more likely to book private events when engaged with authentic experiences"
+  },
+  {
+    id: "rec-005",
+    category: "promotional",
+    priority: "important",
+    title: "Launch 'Bavarian Breakfast Club' loyalty program",
+    insight: "Weekend brunch customers have 67% higher lifetime value but only 23% return within 30 days. Competitor analysis shows loyalty programs increase repeat visits by 45%.",
+    action: "Create punch card system: 5 brunches = 6th free. Include exclusive early booking access for special events and 10% merchandise discount.",
+    impact: "£280-350 additional monthly revenue + 35% repeat visit increase",
+    timeframe: "Next week",
+    loyaltyData: "Brunch customers spend average £34 per visit vs £28 for dinner-only guests"
+  },
+  {
+    id: "rec-006",
+    category: "operational",
+    priority: "opportunity",
+    title: "Implement dynamic pricing for peak entertainment nights",
+    insight: "Friday/Saturday entertainment nights sell out 3 weeks in advance while Tuesday/Wednesday have 40% capacity. Revenue optimization opportunity identified.",
+    action: "Introduce tiered pricing: Premium (Fri/Sat +£5 cover), Standard (Thu/Sun), Value (Tue/Wed -£3 cover). Test for 6 weeks.",
+    impact: "£200-300 additional weekly revenue + improved capacity utilization",
+    timeframe: "Next month",
+    complianceRisk: "Ensure pricing transparency and clear communication to avoid customer complaints"
+  },
+  {
+    id: "rec-007",
+    category: "direct-venue",
+    priority: "urgent",
+    title: "Add interactive beer tasting experience to Monday Industry Nights",
+    insight: "Monday nights underperform by 35% vs Tuesday. Industry workers (target audience) show high engagement with educational experiences based on social media analysis.",
+    action: "Partner with local breweries for guided tastings. Offer 'Beer Sommelier' experience with food pairings. Price at £25 per person.",
+    impact: "£320-450 additional Monday revenue + 25% attendance increase",
+    timeframe: "This Monday",
+    loyaltyData: "Industry night attendees are 3x more likely to book private events when engaged with premium experiences"
   }
 ];
 
@@ -769,7 +802,16 @@ export const implementedRecommendations: ImplementedRecommendation[] = [
   },
   {
     id: "impl-003",
-    originalRecommendation: recommendations[2],
+    originalRecommendation: {
+      id: "rec-003-old",
+      category: "operational",
+      priority: "urgent",
+      title: "Add second piano duo for Thursday nights",
+      insight: "Thursday piano nights consistently underperform vs Friday/Saturday by 18%",
+      action: "Book additional piano player to create fuller duo sound",
+      impact: "£200-300 additional Thursday revenue",
+      timeframe: "Next Thursday"
+    },
     weekImplemented: 45,
     implementedDate: "2024-11-07",
     actionTaken: "Added second piano player to create fuller duo sound for Thursday Baby Grand Slam",
@@ -782,7 +824,16 @@ export const implementedRecommendations: ImplementedRecommendation[] = [
   },
   {
     id: "impl-004",
-    originalRecommendation: recommendations[3],
+    originalRecommendation: {
+      id: "rec-004-old",
+      category: "direct-venue",
+      priority: "opportunity",
+      title: "Introduce costume rental service for Sunday Service",
+      insight: "Sunday attendance down 12% vs last month",
+      action: "Source authentic German costumes for rental",
+      impact: "£180-240 additional Sunday revenue",
+      timeframe: "Next Sunday"
+    },
     weekImplemented: 42,
     implementedDate: "2024-10-20",
     actionTaken: "Introduced costume rental service with 15 authentic German outfits for Sunday Service",
@@ -836,5 +887,71 @@ export const implementedRecommendations: ImplementedRecommendation[] = [
     impactAchieved: true,
     category: 'operational',
     notes: 'Technical improvements had immediate impact. Guest checkout was key - many customers don\'t want to create accounts.'
+  },
+  {
+    id: "impl-007",
+    originalRecommendation: {
+      id: "rec-007-old",
+      category: "promotional",
+      priority: "important",
+      title: "Launch 'Oktoberfest Memories' photo package",
+      insight: "Social media engagement peaks during themed events",
+      action: "Offer professional photo sessions with authentic props",
+      impact: "£150-200 additional revenue per event",
+      timeframe: "Next themed event"
+    },
+    weekImplemented: 40,
+    implementedDate: "2024-10-07",
+    actionTaken: "Launched professional photo package with authentic Bavarian props and instant printing service",
+    expectedImpact: "£150-200 additional revenue per themed event",
+    actualImpact: "£285 additional revenue (+78% vs target)",
+    impactPercentage: 143,
+    impactAchieved: true,
+    category: "promotional",
+    notes: "Huge hit! Customers loved the instant prints as keepsakes. Generated significant social media buzz with branded photo frames. Booking for Christmas events already coming in. Expanding to all major themed nights."
+  },
+  {
+    id: "impl-008",
+    originalRecommendation: {
+      id: "rec-008-old",
+      category: "operational",
+      priority: "opportunity",
+      title: "Implement table-side schnapps service for premium tables",
+      insight: "Premium table bookings have 45% higher spend potential",
+      action: "Offer curated schnapps flights with sommelier presentation",
+      impact: "£120-180 additional revenue per premium booking",
+      timeframe: "This weekend"
+    },
+    weekImplemented: 39,
+    implementedDate: "2024-09-30",
+    actionTaken: "Introduced premium schnapps service with traditional German presentation and tasting notes",
+    expectedImpact: "£120-180 additional revenue per premium booking",
+    actualImpact: "£95 additional revenue per booking",
+    impactPercentage: 79,
+    impactAchieved: false,
+    category: "operational",
+    notes: "Good concept but execution needs work. Customers enjoyed the experience but price point was too high. Reducing price by £5 and adding more education about the spirits. Staff need more training on presentation."
+  },
+  {
+    id: "impl-009",
+    originalRecommendation: {
+      id: "rec-009-old",
+      category: "direct-venue",
+      priority: "urgent",
+      title: "Add acoustic treatment to reduce noise levels during dinner service",
+      insight: "Customer complaints about noise levels up 23% during peak dinner hours",
+      action: "Install sound dampening panels and adjust music levels",
+      impact: "Improved customer satisfaction + 10% longer dwell time",
+      timeframe: "This week"
+    },
+    weekImplemented: 38,
+    implementedDate: "2024-09-23",
+    actionTaken: "Installed decorative acoustic panels and implemented dynamic sound level management system",
+    expectedImpact: "Improved customer satisfaction + 10% longer dwell time",
+    actualImpact: "Customer satisfaction up 18% + 15% longer dwell time",
+    impactPercentage: 150,
+    impactAchieved: true,
+    category: "direct-venue",
+    notes: "Excellent results! Noise complaints dropped by 67%. Customers staying longer and ordering more. The acoustic panels actually enhanced the authentic German beer hall aesthetic. Several customers specifically complimented the 'perfect atmosphere'."
   }
 ];
