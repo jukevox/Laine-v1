@@ -80,7 +80,7 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
       case 'current':
         return 'Current Week';
       case 'forecast':
-        return 'Projections';
+        return 'Forecast';
       default:
         return '';
     }
@@ -89,13 +89,13 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
   const getWeekTypeColor = (weekType: string) => {
     switch (weekType) {
       case 'historical':
-        return 'text-gray-600 bg-gray-100';
+        return 'text-gray-600 bg-gray-100 dark:text-gray-300 dark:bg-gray-700';
       case 'current':
-        return 'text-indigo-600 bg-indigo-100';
+        return 'text-indigo-600 bg-indigo-100 dark:text-indigo-300 dark:bg-indigo-800';
       case 'forecast':
-        return 'text-blue-600 bg-blue-100';
+        return 'text-blue-600 bg-blue-100 dark:text-blue-300 dark:bg-blue-800';
       default:
-        return 'text-gray-600 bg-gray-100';
+        return 'text-gray-600 bg-gray-100 dark:text-gray-300 dark:bg-gray-700';
     }
   };
 
@@ -135,7 +135,7 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
             
             <div className="text-center min-w-[120px]">
               <div className="text-sm font-medium text-gray-900 dark:text-white">Week {selectedWeekData.week}</div>
-              <div className={`text-xs px-2 py-1 rounded-full ${getWeekTypeColor(selectedWeekData.weekType)}`}>
+              <div className={`text-xs px-2 py-1 rounded-full font-medium ${getWeekTypeColor(selectedWeekData.weekType)}`}>
                 {getWeekTypeLabel(selectedWeekData.weekType)}
               </div>
             </div>
@@ -156,8 +156,13 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
         
         <div className="flex items-center space-x-2">
           <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-            selectedWeekData.performanceVsTarget >= 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+            selectedWeekData.performanceVsTarget >= 0 
+              ? 'bg-green-100 text-green-800 dark:bg-green-800/50 dark:text-green-200' 
+              : selectedWeekData.weekType === 'forecast'
+                ? 'bg-blue-100 text-blue-800 dark:bg-blue-800/50 dark:text-blue-200'
+                : 'bg-red-100 text-red-800 dark:bg-red-800/50 dark:text-red-200'
           }`}>
+            {selectedWeekData.weekType === 'forecast' ? 'Forecast: ' : ''}
             {selectedWeekData.performanceVsTarget >= 0 ? '+' : ''}{selectedWeekData.performanceVsTarget}% vs Target
           </span>
         </div>
@@ -193,17 +198,112 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
 
       {/* Weekly Summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        {selectedWeekData.weekType === 'forecast' ? (
-          // Forecast week summary - show projections
-          <>
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
-              <div className="flex items-center space-x-3">
-                <PoundSterling className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                <div>
-                  <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">Weekly Projection</p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{formatCurrency(selectedWeekData.weeklyTotal)}</p>
-                  <p className="text-xs text-blue-700 dark:text-blue-300">Based on historical data</p>
+        <div className={`rounded-lg p-4 ${
+          selectedWeekData.weekType === 'forecast' 
+            ? 'bg-blue-50 dark:bg-blue-900/30' 
+            : 'bg-indigo-50 dark:bg-indigo-900/30'
+        }`}>
+          <div className="flex items-center space-x-3">
+            <PoundSterling className={`w-8 h-8 ${
+              selectedWeekData.weekType === 'forecast' 
+                ? 'text-blue-600 dark:text-blue-400' 
+                : 'text-indigo-600 dark:text-indigo-400'
+            }`} />
+            <div>
+              <p className={`text-sm font-medium ${
+                selectedWeekData.weekType === 'forecast' 
+                  ? 'text-blue-600 dark:text-blue-400' 
+                  : 'text-indigo-600 dark:text-indigo-400'
+              }`}>
+                {selectedWeekData.weekType === 'forecast' ? 'Weekly Projection' : 
+                 selectedWeekData.weekType === 'current' ? 'Weekly Total' : 'Weekly Actual'}
+              </p>
+              <p className={`text-2xl font-bold ${
+                selectedWeekData.weekType === 'forecast' 
+                  ? 'text-blue-900 dark:text-blue-100' 
+                  : 'text-indigo-900 dark:text-indigo-100'
+              }`}>
+                {formatCurrency(selectedWeekData.weeklyTotal)}
+              </p>
+              <p className={`text-xs ${
+                selectedWeekData.weekType === 'forecast' 
+                  ? 'text-blue-700 dark:text-blue-300' 
+                  : 'text-indigo-700 dark:text-indigo-300'
+              }`}>
+                {selectedWeekData.weekType === 'forecast' 
+                  ? 'Based on historical data' 
+                  : `Target: ${formatCurrency(selectedWeekData.weeklyTarget)}`}
+              </p>
+              {selectedWeekData.weekType !== 'forecast' && (
+                <p className="text-xs text-indigo-500 dark:text-indigo-400 mt-1">Source: Collins/Access</p>
+              )}
+            </div>
+          </div>
+        </div>
+        
+        <div className={`rounded-lg p-4 ${
+          selectedWeekData.weekType === 'forecast' 
+            ? 'bg-blue-50 dark:bg-blue-900/30' 
+            : 'bg-blue-50 dark:bg-blue-900/30'
+        }`}>
+          <div className="flex items-center space-x-3">
+            <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <div>
+              <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                {selectedWeekData.weekType === 'forecast' ? 'Projected Customers' : 'Weekly Customers'}
+              </p>
+              <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">
+                {selectedWeekData.weeklyCustomers}
+              </p>
+              {selectedWeekData.weekType === 'forecast' ? (
+                <p className="text-xs text-blue-700 dark:text-blue-300">Weekly estimate</p>
+              ) : (
+                <p className="text-xs text-indigo-700 dark:text-indigo-300">Target: {selectedWeekData.weeklyCustomers + 50}</p>
+              )}
+            </div>
+          </div>
+        </div>
+        
+        <div className={`rounded-lg p-4 ${
+          selectedWeekData.weekType === 'forecast' 
+            ? 'bg-purple-50 dark:bg-purple-900/30' 
+            : 'bg-green-50 dark:bg-green-900/30'
+        }`}>
+          <div className="flex items-center space-x-3">
+            <Receipt className={`w-8 h-8 ${
+              selectedWeekData.weekType === 'forecast' 
+                ? 'text-purple-600 dark:text-purple-400' 
+                : 'text-green-600 dark:text-green-400'
+            }`} />
+            <div>
+              <p className={`text-sm font-medium ${
+                selectedWeekData.weekType === 'forecast' 
+                  ? 'text-purple-600 dark:text-purple-400' 
+                  : 'text-green-600 dark:text-green-400'
+              }`}>
+                Avg Check Size
+              </p>
+              <p className={`text-2xl font-bold ${
+                selectedWeekData.weekType === 'forecast' 
+                  ? 'text-purple-900 dark:text-purple-100' 
+                  : 'text-green-900 dark:text-green-100'
+              }`}>
+                £{selectedWeekData.avgCheckSize}
+              </p>
+              {selectedWeekData.weekType === 'forecast' ? (
+                <p className="text-xs text-purple-700 dark:text-purple-300">Projected average</p>
+              ) : (
+                <div className="flex items-center space-x-2 mt-1">
+                  <span className="text-xs text-green-700 dark:text-green-300">vs Last Week:</span>
+                  <span className={`text-xs font-medium ${selectedWeekData.checkSizeChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    {selectedWeekData.checkSizeChange >= 0 ? '+' : ''}{selectedWeekData.checkSizeChange}%
+                  </span>
                 </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
               </div>
             </div>
             
