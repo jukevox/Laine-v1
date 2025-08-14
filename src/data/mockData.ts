@@ -200,16 +200,27 @@ export const individualPubData: IndividualPubData = {
           date: 'Nov 4',
           hours: [
             { hour: '12:00', actual: 2800, target: 2500, transactions: 45, avgTransaction: 62 },
+            { hour: '12:00', actual: 2800, target: 2500, customers: 45, avgTransaction: 62 },
             { hour: '13:00', actual: 4200, target: 4000, transactions: 68, avgTransaction: 62 },
+            { hour: '13:00', actual: 4200, target: 4000, customers: 68, avgTransaction: 62 },
             { hour: '14:00', actual: 3800, target: 3500, transactions: 58, avgTransaction: 66 },
+            { hour: '14:00', actual: 3800, target: 3500, customers: 58, avgTransaction: 66 },
             { hour: '15:00', actual: 2200, target: 2000, transactions: 35, avgTransaction: 63 },
+            { hour: '15:00', actual: 2200, target: 2000, customers: 35, avgTransaction: 63 },
             { hour: '16:00', actual: 2800, target: 2500, transactions: 42, avgTransaction: 67 },
+            { hour: '16:00', actual: 2800, target: 2500, customers: 42, avgTransaction: 67 },
             { hour: '17:00', actual: 5200, target: 5000, transactions: 78, avgTransaction: 67 },
+            { hour: '17:00', actual: 5200, target: 5000, customers: 78, avgTransaction: 67 },
             { hour: '18:00', actual: 7800, target: 7500, transactions: 115, avgTransaction: 68 },
+            { hour: '18:00', actual: 7800, target: 7500, customers: 115, avgTransaction: 68 },
             { hour: '19:00', actual: 9200, target: 9000, transactions: 132, avgTransaction: 70 },
+            { hour: '19:00', actual: 9200, target: 9000, customers: 132, avgTransaction: 70 },
             { hour: '20:00', actual: 8800, target: 8500, transactions: 125, avgTransaction: 70 },
+            { hour: '20:00', actual: 8800, target: 8500, customers: 125, avgTransaction: 70 },
             { hour: '21:00', actual: 7200, target: 7000, transactions: 102, avgTransaction: 71 },
+            { hour: '21:00', actual: 7200, target: 7000, customers: 102, avgTransaction: 71 },
             { hour: '22:00', actual: 5800, target: 5500, transactions: 82, avgTransaction: 71 }
+            { hour: '22:00', actual: 5800, target: 5500, customers: 82, avgTransaction: 71 }
           ],
           dailyTotal: 59800,
           dailyTarget: 57000
@@ -331,7 +342,11 @@ export const individualPubData: IndividualPubData = {
       ],
       weeklyTotal: 549000,
       weeklyTarget: 515300,
-      performanceVsTarget: 6.5
+      performanceVsTarget: 6.5,
+      weeklyCustomers: 7642,
+      customerChange: 8,
+      avgCheckSize: 72,
+      checkSizeChange: -2
     },
     {
       week: 46,
@@ -473,7 +488,11 @@ export const individualPubData: IndividualPubData = {
       ],
       weeklyTotal: 564400,
       weeklyTarget: 515300,
-      performanceVsTarget: 9.5
+      performanceVsTarget: 9.5,
+      weeklyCustomers: 7834,
+      customerChange: 12,
+      avgCheckSize: 72,
+      checkSizeChange: 3
     },
     {
       week: 47,
@@ -615,7 +634,11 @@ export const individualPubData: IndividualPubData = {
       ],
       weeklyTotal: 579600,
       weeklyTarget: 515300,
-      performanceVsTarget: 12.5
+      performanceVsTarget: 12.5,
+      weeklyCustomers: 8051,
+      customerChange: 3,
+      avgCheckSize: 72,
+      checkSizeChange: -1
     },
     {
       week: 48,
@@ -757,7 +780,11 @@ export const individualPubData: IndividualPubData = {
       ],
       weeklyTotal: 0,
       weeklyTarget: 595000,
-      performanceVsTarget: 0
+      performanceVsTarget: 0,
+      weeklyCustomers: 8264,
+      customerChange: 3,
+      avgCheckSize: 72,
+      checkSizeChange: 0
     }
   ],
   leadingIndicators: {
