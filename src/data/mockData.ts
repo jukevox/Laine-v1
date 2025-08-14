@@ -9,12 +9,34 @@ export const regionalData: RegionalData = {
       avgRevenuePerPub: 153750, // Average across 4 venues
       topPerformingPubs: 3, // London, Manchester, Birmingham performing well
       underperformingPubs: 1, // Liverpool needs attention
+      totalBookings: 2847,
+      conversionRate: 78,
+      totalGuests: 7980,
+      avgPartySize: 2.8
     },
     weeklyMomentum: {
       checkinsGrowth: 28, // Strong social media presence
       bookingVelocity: 35, // High demand, especially London
       socialEngagement: 42, // Strong brand engagement
       reputationTrend: 18, // Consistent quality across venues
+      bookingDetails: {
+        weekOnWeekChange: 18,
+        onlineBookings: 2278,
+        walkIns: 569,
+        onlineChange: 22,
+        walkInChange: 8,
+        sources: {
+          designMyNight: 1367,
+          openTable: 683,
+          albertsWebsite: 228
+        }
+      },
+      socialEngagement: 24,
+      averageCheck: {
+        totalGBP: 67,
+        partySize: 2.8,
+        weekOnWeekChange: 8
+      }
     },
     quarterlyOKRs: [
       {
