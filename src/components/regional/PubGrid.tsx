@@ -54,7 +54,7 @@ export default function PubGrid({ pubs }: PubGridProps) {
   };
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-colors duration-200">
-      <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Pub Performance Grid</h2>
+      <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Performance by Location</h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {pubs.map((pub, index) => (
