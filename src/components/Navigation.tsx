@@ -27,8 +27,8 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
               <BarChart3 className="w-8 h-8 text-indigo-600" />
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white hidden sm:block">Laine Pub Intelligence</h1>
-              <h1 className="text-lg font-bold text-gray-900 dark:text-white sm:hidden">Laine</h1>
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white hidden sm:block">Albert's Schloss demo</h1>
+              <h1 className="text-lg font-bold text-gray-900 dark:text-white sm:hidden">Albert's Schloss</h1>
             </div>
             
             {/* Desktop Navigation */}
