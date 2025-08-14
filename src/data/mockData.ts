@@ -1,5 +1,6 @@
 // Mock data for Albert's Schloss demo application
 import { RegionalData, IndividualPubData, Recommendation, ImplementedRecommendation } from '../types';
+
 // Helper function to generate realistic revenue performance
 const generateRevenuePerformance = (target: number, performanceType: 'low' | 'normal' | 'high') => {
   let performanceRange: [number, number];
@@ -174,129 +175,130 @@ export const regionalData: RegionalData = {
       nextWeekGoal: "Add second piano duo for fuller sound experience"
     }
   ],
-  {
-    week: 48,
-    weekType: "forecast",
-    weeklyTotal: 48500,
-    weeklyTarget: 49000,
-    weeklyCustomers: 1320,
-    avgCheckSize: 84,
-    checkSizeChange: 2.4,
-    performanceVsTarget: -1,
-    weekData: [
-      {
-        day: "Monday",
-        date: "Dec 2",
-        dailyTotal: 5200,
-        dailyTarget: 5400,
-        hours: generateHourlyData(450, 'weekday')
-      },
-      {
-        day: "Tuesday",
-        date: "Dec 3",
-        dailyTotal: 6500,
-        dailyTarget: 6700,
-        hours: generateHourlyData(570, 'weekday')
-      },
-      {
-        day: "Wednesday",
-        date: "Dec 4",
-        dailyTotal: 7800,
-        dailyTarget: 8000,
-        hours: generateHourlyData(680, 'weekday')
-      },
-      {
-        day: "Thursday",
-        date: "Dec 5",
-        dailyTotal: 9000,
-        dailyTarget: 9200,
-        hours: generateHourlyData(780, 'weekday')
-      },
-      {
-        day: "Friday",
-        date: "Dec 6",
-        dailyTotal: 9600,
-        dailyTarget: 9800,
-        hours: generateHourlyData(830, 'weekday')
-      },
-      {
-        day: "Saturday",
-        date: "Dec 7",
-        dailyTotal: 9200,
-        dailyTarget: 9500,
-        hours: generateHourlyData(800, 'weekend')
-      },
-      {
-        day: "Sunday",
-        date: "Dec 8",
-        dailyTotal: 1200,
-        dailyTarget: 400,
-        hours: generateHourlyData(620, 'weekend')
-      }
-    ]
-  },
-  {
-    week: 49,
-    weekType: "forecast",
-    weeklyTotal: 50200,
-    weeklyTarget: 51000,
-    weeklyCustomers: 1380,
-    avgCheckSize: 86,
-    checkSizeChange: 2.4,
-    performanceVsTarget: -2,
-    weekData: [
-      {
-        day: "Monday",
-        date: "Dec 9",
-        dailyTotal: 5400,
-        dailyTarget: 5600,
-        hours: generateHourlyData(470, 'weekday')
-      },
-      {
-        day: "Tuesday",
-        date: "Dec 10",
-        dailyTotal: 6700,
-        dailyTarget: 6900,
-        hours: generateHourlyData(590, 'weekday')
-      },
-      {
-        day: "Wednesday",
-        date: "Dec 11",
-        dailyTotal: 8000,
-        dailyTarget: 8200,
-        hours: generateHourlyData(700, 'weekday')
-      },
-      {
-        day: "Thursday",
-        date: "Dec 12",
-        dailyTotal: 9200,
-        dailyTarget: 9400,
-        hours: generateHourlyData(800, 'weekday')
-      },
-      {
-        day: "Friday",
-        date: "Dec 13",
-        dailyTotal: 9800,
-        dailyTarget: 10000,
-        hours: generateHourlyData(850, 'weekday')
-      },
-      {
-        day: "Saturday",
-        date: "Dec 14",
-        dailyTotal: 9500,
-        dailyTarget: 9700,
-        hours: generateHourlyData(820, 'weekend')
-      },
-      {
-        day: "Sunday",
-        date: "Dec 15",
-        dailyTotal: 1600,
-        dailyTarget: 1200,
-        hours: generateHourlyData(640, 'weekend')
-      }
-    ]
-  }
-],
+  weeklyForecast: [
+    {
+      week: 48,
+      weekType: "forecast",
+      weeklyTotal: 48500,
+      weeklyTarget: 49000,
+      weeklyCustomers: 1320,
+      avgCheckSize: 84,
+      checkSizeChange: 2.4,
+      performanceVsTarget: -1,
+      weekData: [
+        {
+          day: "Monday",
+          date: "Dec 2",
+          dailyTotal: 5200,
+          dailyTarget: 5400,
+          hours: generateHourlyData(450, 'weekday')
+        },
+        {
+          day: "Tuesday",
+          date: "Dec 3",
+          dailyTotal: 6500,
+          dailyTarget: 6700,
+          hours: generateHourlyData(570, 'weekday')
+        },
+        {
+          day: "Wednesday",
+          date: "Dec 4",
+          dailyTotal: 7800,
+          dailyTarget: 8000,
+          hours: generateHourlyData(680, 'weekday')
+        },
+        {
+          day: "Thursday",
+          date: "Dec 5",
+          dailyTotal: 9000,
+          dailyTarget: 9200,
+          hours: generateHourlyData(780, 'weekday')
+        },
+        {
+          day: "Friday",
+          date: "Dec 6",
+          dailyTotal: 9600,
+          dailyTarget: 9800,
+          hours: generateHourlyData(830, 'weekday')
+        },
+        {
+          day: "Saturday",
+          date: "Dec 7",
+          dailyTotal: 9200,
+          dailyTarget: 9500,
+          hours: generateHourlyData(800, 'weekend')
+        },
+        {
+          day: "Sunday",
+          date: "Dec 8",
+          dailyTotal: 1200,
+          dailyTarget: 400,
+          hours: generateHourlyData(620, 'weekend')
+        }
+      ]
+    },
+    {
+      week: 49,
+      weekType: "forecast",
+      weeklyTotal: 50200,
+      weeklyTarget: 51000,
+      weeklyCustomers: 1380,
+      avgCheckSize: 86,
+      checkSizeChange: 2.4,
+      performanceVsTarget: -2,
+      weekData: [
+        {
+          day: "Monday",
+          date: "Dec 9",
+          dailyTotal: 5400,
+          dailyTarget: 5600,
+          hours: generateHourlyData(470, 'weekday')
+        },
+        {
+          day: "Tuesday",
+          date: "Dec 10",
+          dailyTotal: 6700,
+          dailyTarget: 6900,
+          hours: generateHourlyData(590, 'weekday')
+        },
+        {
+          day: "Wednesday",
+          date: "Dec 11",
+          dailyTotal: 8000,
+          dailyTarget: 8200,
+          hours: generateHourlyData(700, 'weekday')
+        },
+        {
+          day: "Thursday",
+          date: "Dec 12",
+          dailyTotal: 9200,
+          dailyTarget: 9400,
+          hours: generateHourlyData(800, 'weekday')
+        },
+        {
+          day: "Friday",
+          date: "Dec 13",
+          dailyTotal: 9800,
+          dailyTarget: 10000,
+          hours: generateHourlyData(850, 'weekday')
+        },
+        {
+          day: "Saturday",
+          date: "Dec 14",
+          dailyTotal: 9500,
+          dailyTarget: 9700,
+          hours: generateHourlyData(820, 'weekend')
+        },
+        {
+          day: "Sunday",
+          date: "Dec 15",
+          dailyTotal: 1600,
+          dailyTarget: 1200,
+          hours: generateHourlyData(640, 'weekend')
+        }
+      ]
+    }
+  ]
 };
 
 export const individualPubData: IndividualPubData = {
