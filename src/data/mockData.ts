@@ -210,117 +210,179 @@ export const individualPubData: IndividualPubData = {
     {
       week: 45,
       weekType: "historical",
-      weeklyTotal: 44820,
       weeklyTotal: 42750,
       weeklyTarget: 45000,
+      weeklyCustomers: 1089,
+      avgCheckSize: 78,
+      performanceVsTarget: -5,
+      weekData: [
+        {
+          day: "Monday",
+          date: "Nov 4",
           dailyTotal: 4140,
-      checkSizeChange: 5.2,
+          dailyTarget: 4500,
           hours: generateHourlyData(360, 'weekday')
-            { hour: "18:00", actual: 890, target: 920, transactions: 11, avgTransaction: 81, customers: 15 },
-            { hour: "19:00", actual: 1240, target: 1280, transactions: 15, avgTransaction: 83, customers: 20 },
-            { hour: "20:00", actual: 1450, target: 1500, transactions: 17, avgTransaction: 85, customers: 23 },
-            { hour: "21:00", actual: 1320, target: 1380, transactions: 16, avgTransaction: 83, customers: 21 },
+        },
+        {
+          day: "Tuesday", 
+          date: "Nov 5",
           dailyTotal: 4680,
-          ]
+          dailyTarget: 5000,
           hours: generateHourlyData(410, 'weekday')
-            { hour: "19:00", actual: 1580, target: 1520, transactions: 17, avgTransaction: 93, customers: 24 },
-            { hour: "20:00", actual: 1890, target: 1850, transactions: 20, avgTransaction: 95, customers: 28 },
-            { hour: "21:00", actual: 1720, target: 1680, transactions: 18, avgTransaction: 96, customers: 26 },
-            { hour: "22:00", actual: 1390, target: 1350, transactions: 14, avgTransaction: 99, customers: 21 }
+        },
+        {
+          day: "Wednesday",
+          date: "Nov 6", 
           dailyTotal: 5040,
-        },
+          dailyTarget: 5200,
           hours: generateHourlyData(440, 'weekday')
-            { hour: "20:00", actual: 1620, target: 1580, transactions: 19, avgTransaction: 85, customers: 26 },
-            { hour: "21:00", actual: 1480, target: 1440, transactions: 17, avgTransaction: 87, customers: 24 },
-            { hour: "22:00", actual: 1290, target: 1250, transactions: 15, avgTransaction: 86, customers: 20 }
-          ]
+        },
+        {
+          day: "Thursday",
+          date: "Nov 7",
           dailyTotal: 6480,
-        {
+          dailyTarget: 7000,
           hours: generateHourlyData(560, 'weekday')
-            { hour: "21:00", actual: 1280, target: 1520, transactions: 14, avgTransaction: 91, customers: 21 },
-            { hour: "22:00", actual: 1100, target: 1285, transactions: 12, avgTransaction: 92, customers: 18 }
-          ]
-        },
-          dailyTotal: 7740,
-          day: "Friday",
-          hours: generateHourlyData(670, 'weekday')
-            { hour: "22:00", actual: 2230, target: 2170, transactions: 28, avgTransaction: 80, customers: 38 }
-          ]
         },
         {
-          dailyTotal: 8910,
+          day: "Friday",
+          date: "Nov 8",
+          dailyTotal: 7740,
+          dailyTarget: 8200,
+          hours: generateHourlyData(670, 'weekday')
+        },
+        {
+          day: "Saturday",
           date: "Nov 9",
+          dailyTotal: 8910,
+          dailyTarget: 9500,
           hours: generateHourlyData(770, 'weekend')
-          ]
         },
         {
           day: "Sunday",
+          date: "Nov 10",
           dailyTotal: 6930,
-          dailyTotal: 14200,
+          dailyTarget: 7600,
           hours: generateHourlyData(600, 'weekend')
         }
       ]
     },
     {
+      week: 46,
       performanceVsTarget: -4,
       weekType: "historical",
-      weeklyTotal: 44280,
+      weeklyTotal: 43280,
       weeklyTarget: 78000,
       weeklyCustomers: 1142,
+      avgCheckSize: 76,
+      weekData: [
+        {
+          day: "Monday",
+          date: "Nov 11",
           dailyTotal: 3870,
-      checkSizeChange: 2.8,
+          dailyTarget: 4200,
           hours: generateHourlyData(330, 'weekday')
-            { hour: "18:00", actual: 920, target: 920, transactions: 11, avgTransaction: 84, customers: 16 },
-            { hour: "19:00", actual: 1280, target: 1280, transactions: 15, avgTransaction: 85, customers: 22 },
-            { hour: "20:00", actual: 1500, target: 1500, transactions: 18, avgTransaction: 83, customers: 25 },
-            { hour: "21:00", actual: 1380, target: 1380, transactions: 16, avgTransaction: 86, customers: 23 },
-          dailyTotal: 4410,
-          ]
-          hours: generateHourlyData(380, 'weekday')
-            { hour: "19:00", actual: 1680, target: 1520, transactions: 17, avgTransaction: 99, customers: 24 },
-            { hour: "20:00", actual: 1980, target: 1850, transactions: 20, avgTransaction: 99, customers: 28 },
-          hours: generateHourlyData(350, 'weekday')
         },
-          dailyTotal: 7470,
-          day: "Friday",
-          hours: generateHourlyData(640, 'weekday')
+        {
+          day: "Tuesday",
+          date: "Nov 12", 
+          dailyTotal: 4410,
+          dailyTarget: 4800,
+          hours: generateHourlyData(380, 'weekday')
+        },
+        {
+          day: "Wednesday",
+          date: "Nov 13",
           dailyTotal: 4590,
-          ]
+          dailyTarget: 5000,
           hours: generateHourlyData(400, 'weekday')
+        },
+        {
+          day: "Thursday", 
+          date: "Nov 14",
+          dailyTotal: 6200,
+          dailyTarget: 6800,
+          hours: generateHourlyData(540, 'weekday')
+        },
+        {
+          day: "Friday",
+          date: "Nov 15",
+          dailyTotal: 7470,
+          dailyTarget: 8000,
+          hours: generateHourlyData(640, 'weekday')
+        },
+        {
+          day: "Saturday",
+          date: "Nov 16", 
+          dailyTotal: 8640,
+          dailyTarget: 9200,
+          hours: generateHourlyData(750, 'weekend')
+        },
+        {
+          day: "Sunday",
+          date: "Nov 17",
+          dailyTotal: 8100,
+          dailyTarget: 8500,
+          hours: generateHourlyData(700, 'weekend')
+        }
+      ]
+    },
     {
       week: 47,
       weekType: "current",
       weeklyTotal: 46080,
-          dailyTotal: 4950,
+      weeklyTarget: 47000,
       weeklyCustomers: 1247,
+      avgCheckSize: 82,
+      performanceVsTarget: -2,
+      weekData: [
+        {
+          day: "Monday",
+          date: "Nov 18",
+          dailyTotal: 4950,
+          dailyTarget: 5200,
           hours: generateHourlyData(430, 'weekday')
-            { hour: "16:00", actual: 450, target: 420, transactions: 5, avgTransaction: 90, customers: 8 },
-            { hour: "17:00", actual: 720, target: 680, transactions: 8, avgTransaction: 90, customers: 12 },
-            { hour: "18:00", actual: 980, target: 920, transactions: 11, avgTransaction: 89, customers: 16 },
-            { hour: "19:00", actual: 1360, target: 1280, transactions: 15, avgTransaction: 91, customers: 22 },
+        },
+        {
+          day: "Tuesday",
+          date: "Nov 19",
           dailyTotal: 6390,
-            { hour: "21:00", actual: 1460, target: 1380, transactions: 16, avgTransaction: 91, customers: 23 },
+          dailyTarget: 6500,
           hours: generateHourlyData(550, 'weekday')
-            { hour: "17:00", actual: 800, target: 700, transactions: 8, avgTransaction: 100, customers: 12 },
-            { hour: "18:00", actual: 1150, target: 980, transactions: 11, avgTransaction: 105, customers: 16 },
-            { hour: "19:00", actual: 1790, target: 1520, transactions: 17, avgTransaction: 105, customers: 24 },
-            { hour: "20:00", actual: 2110, target: 1850, transactions: 20, avgTransaction: 106, customers: 28 },
+        },
+        {
+          day: "Wednesday", 
+          date: "Nov 20",
           dailyTotal: 7650,
-            { hour: "22:00", actual: 1580, target: 1350, transactions: 14, avgTransaction: 113, customers: 21 }
+          dailyTarget: 7800,
           hours: generateHourlyData(660, 'weekday')
-            { hour: "14:00", actual: 1480, target: 1280, transactions: 17, avgTransaction: 87, customers: 24 },
-            { hour: "15:00", actual: 1060, target: 920, transactions: 12, avgTransaction: 88, customers: 17 },
-            { hour: "16:00", actual: 880, target: 780, transactions: 10, avgTransaction: 88, customers: 14 },
-            { hour: "17:00", actual: 1380, target: 1200, transactions: 16, avgTransaction: 86, customers: 22 },
+        },
+        {
+          day: "Thursday",
+          date: "Nov 21",
           dailyTotal: 8820,
-            { hour: "19:00", actual: 2880, target: 2580, transactions: 34, avgTransaction: 85, customers: 46 },
+          dailyTarget: 9000,
+          hours: generateHourlyData(760, 'weekday')
+        },
+        {
+          day: "Friday",
+          date: "Nov 22",
+          dailyTotal: 9430,
+          dailyTarget: 9600,
+          hours: generateHourlyData(810, 'weekday')
+        },
+        {
+          day: "Saturday",
+          date: "Nov 23",
+          dailyTotal: 8840,
+          dailyTarget: 9000,
           hours: generateHourlyData(760, 'weekend')
-            { hour: "13:00", actual: 0, target: 1000, transactions: 0, avgTransaction: 0, customers: 11 },
-            { hour: "14:00", actual: 0, target: 820, transactions: 0, avgTransaction: 0, customers: 9 },
-            { hour: "15:00", actual: 0, target: 520, transactions: 0, avgTransaction: 0, customers: 6 },
-            { hour: "16:00", actual: 0, target: 460, transactions: 0, avgTransaction: 0, customers: 5 },
-          dailyTotal: 6840,
-            { hour: "18:00", actual: 0, target: 1040, transactions: 0, avgTransaction: 0, customers: 11 },
+        },
+        {
+          day: "Sunday",
+          date: "Nov 24",
+          dailyTotal: 0,
+          dailyTarget: 6900,
           hours: generateHourlyData(590, 'weekend')
         }
       ]
