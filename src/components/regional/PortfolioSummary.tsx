@@ -131,6 +131,94 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
         </div>
       </div>
       
+      {/* Weekly Momentum Indicators */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        {/* Detailed Booking Velocity Card */}
+        <div className="bg-green-50 dark:bg-green-900/30 rounded-lg p-4 md:col-span-2">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-green-600 dark:text-green-400 font-medium">Booking Velocity</p>
+              <p className="text-2xl font-bold text-green-900 dark:text-green-100">+{data.weeklyMomentum.bookingDetails.weekOnWeekChange}%</p>
+            </div>
+            <TrendingUp className="w-8 h-8 text-green-500 dark:text-green-400" />
+          </div>
+          
+          <div className="mt-4 grid grid-cols-2 gap-4">
+            <div className="bg-white dark:bg-gray-700 rounded p-3">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-xs text-green-600 dark:text-green-400">Online Bookings</span>
+                <span className="text-xs text-green-500 dark:text-green-400">+{data.weeklyMomentum.bookingDetails.onlineChange}%</span>
+              </div>
+              <p className="text-lg font-bold text-green-900 dark:text-green-100">{data.weeklyMomentum.bookingDetails.onlineBookings}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">80% of total</p>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-700 rounded p-3">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-xs text-green-600 dark:text-green-400">Walk-ins</span>
+                <span className="text-xs text-green-500 dark:text-green-400">+{data.weeklyMomentum.bookingDetails.walkInChange}%</span>
+              </div>
+              <p className="text-lg font-bold text-green-900 dark:text-green-100">{data.weeklyMomentum.bookingDetails.walkIns}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">20% of total</p>
+            </div>
+          </div>
+          
+          <div className="mt-3 text-xs text-green-500 dark:text-green-400">
+            <div className="flex justify-between">
+              <span>Design my Night: {data.weeklyMomentum.bookingDetails.sources.designMyNight}</span>
+              <span>48%</span>
+            </div>
+            <div className="flex justify-between">
+              <span>OpenTable: {data.weeklyMomentum.bookingDetails.sources.openTable}</span>
+              <span>24%</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Albert's Website: {data.weeklyMomentum.bookingDetails.sources.albertsWebsite}</span>
+              <span>8%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-purple-50 dark:bg-purple-900/30 rounded-lg p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">Social Engagement</p>
+              <p className="text-2xl font-bold text-purple-900 dark:text-purple-100">{data.weeklyMomentum.socialEngagement}%</p>
+              <p className="text-xs text-purple-500 dark:text-purple-400 mt-1">Source: Reputation</p>
+            </div>
+            <MessageSquare className="w-8 h-8 text-purple-500 dark:text-purple-400" />
+          </div>
+        </div>
+        
+        <div className="bg-amber-50 dark:bg-amber-900/30 rounded-lg p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-amber-600 dark:text-amber-400 font-medium">Revenue Trend</p>
+              <p className="text-2xl font-bold text-amber-900 dark:text-amber-100">{data.weeklyMomentum.revenueTrend}%</p>
+              <p className="text-xs text-amber-500 dark:text-amber-400 mt-1">Source: Pubble</p>
+            </div>
+            <TrendingUp className="w-8 h-8 text-amber-500 dark:text-amber-400" />
+          </div>
+        </div>
+        
+        {/* Average Check Card */}
+        <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">Average Check</p>
+              <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">£{data.weeklyMomentum.averageCheck.totalGBP}</p>
+            </div>
+            <div className="w-8 h-8 bg-blue-500 dark:bg-blue-400 rounded-full flex items-center justify-center text-white font-bold">
+              £
+            </div>
+          </div>
+          <div className="mt-2 flex justify-between text-xs">
+            <span className="text-blue-600 dark:text-blue-400">Party Size: {data.weeklyMomentum.averageCheck.partySize}</span>
+            <span className="text-blue-500 dark:text-blue-400">+{data.weeklyMomentum.averageCheck.weekOnWeekChange}%</span>
+          </div>
+        </div>
+      </div>
+      
       {/* Music/Entertainment Weekly Overview */}
       <div className="mt-6">
         <div className="flex items-center space-x-3 mb-4">
@@ -144,6 +232,17 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
         </div>
         
         {/* Daily Entertainment Cards */}
+        <div className="space-y-3 mb-4">
+          {/* Monday */}
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                  <h4 className="font-semibold text-gray-900 dark:text-white text-lg">Monday</h4>
+                  <span className="text-xs bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full">Industry</span>
+                </div>
+                <div className="hidden sm:block h-6 w-px bg-gray-300 dark:bg-gray-600"></div>
+                <div>
                   <p className="font-medium text-gray-800 dark:text-gray-200">Industry Night</p>
                   <p className="text-sm text-gray-600 dark:text-gray-400">DJ takeover + hospitality worker specials</p>
                 </div>
@@ -281,6 +380,7 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
             </div>
           </div>
         </div>
+      </div>
     </div>
   );
 }
