@@ -131,30 +131,166 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
         </div>
       </div>
       
-      {/* Music/Entertainment Indicator */}
-      <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 rounded-lg p-4 mt-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-purple-500 dark:bg-purple-400 rounded-full flex items-center justify-center text-white text-lg font-bold">
-              ♪
+      {/* Music/Entertainment Weekly Overview */}
+      <div className="mt-6">
+        <div className="flex items-center space-x-3 mb-4">
+          <div className="w-8 h-8 bg-purple-500 dark:bg-purple-400 rounded-full flex items-center justify-center text-white text-lg font-bold">
+            ♪
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-purple-900 dark:text-purple-100">Music & Entertainment Schedule</h3>
+            <p className="text-sm text-purple-700 dark:text-purple-300">This week's programming and revenue impact</p>
+          </div>
+        </div>
+        
+        {/* Daily Entertainment Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+          {/* Monday */}
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-lg p-3 border border-gray-200 dark:border-gray-600">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Monday</h4>
+              <span className="text-xs bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full">Quiet</span>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-gray-800 dark:text-gray-200">Industry Night</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">DJ takeover + hospitality specials</p>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-xs text-gray-500 dark:text-gray-400">Revenue uplift</span>
+                <span className="text-sm font-bold text-gray-700 dark:text-gray-300">+£320</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Tuesday */}
+          <div className="bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 rounded-lg p-3 border border-red-200 dark:border-red-700">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-red-900 dark:text-red-100 text-sm">Tuesday</h4>
+              <span className="text-xs bg-red-200 dark:bg-red-800 text-red-700 dark:text-red-200 px-2 py-1 rounded-full">Cabaret</span>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-red-800 dark:text-red-200">Kunst Kabaret</p>
+              <p className="text-xs text-red-600 dark:text-red-300">Performance art & cabaret acts</p>
+              <div className="flex justify-between items-center mt-2">
+          {/* Wednesday */}
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-lg p-3 border border-blue-200 dark:border-blue-700">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-blue-900 dark:text-blue-100 text-sm">Wednesday</h4>
+              <span className="text-xs bg-blue-200 dark:bg-blue-800 text-blue-700 dark:text-blue-200 px-2 py-1 rounded-full">Live</span>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-blue-800 dark:text-blue-200">Bertie's Band</p>
+              <p className="text-xs text-blue-600 dark:text-blue-300">Local & national easy listening</p>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-xs text-blue-500 dark:text-blue-400">Revenue uplift</span>
+                <span className="text-sm font-bold text-blue-700 dark:text-blue-200">+£450</span>
+              </div>
+            </div>
+          </div>
+                <span className="text-xs text-red-500 dark:text-red-400">Revenue uplift</span>
+          {/* Thursday */}
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/30 dark:to-orange-900/30 rounded-lg p-3 border border-amber-200 dark:border-amber-700">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-amber-900 dark:text-amber-100 text-sm">Thursday</h4>
+              <span className="text-xs bg-amber-200 dark:bg-amber-800 text-amber-700 dark:text-amber-200 px-2 py-1 rounded-full">Piano</span>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-amber-800 dark:text-amber-200">Baby Grand Slam</p>
+              <p className="text-xs text-amber-600 dark:text-amber-300">Piano duo + sing-alongs</p>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-xs text-amber-500 dark:text-amber-400">Revenue uplift</span>
+                <span className="text-sm font-bold text-amber-700 dark:text-amber-200">+£720</span>
+              </div>
+            </div>
+          </div>
+                <span className="text-sm font-bold text-red-700 dark:text-red-200">+£580</span>
+          {/* Friday */}
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 rounded-lg p-3 border border-green-200 dark:border-green-700">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-green-900 dark:text-green-100 text-sm">Friday</h4>
+              <span className="text-xs bg-green-200 dark:bg-green-800 text-green-700 dark:text-green-200 px-2 py-1 rounded-full">Festive</span>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-green-800 dark:text-green-200">Friday Fröhlich</p>
+              <p className="text-xs text-green-600 dark:text-green-300">House band + participation</p>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-xs text-green-500 dark:text-green-400">Revenue uplift</span>
+                <span className="text-sm font-bold text-green-700 dark:text-green-200">+£1,240</span>
+              </div>
+            </div>
+          </div>
+              </div>
+          {/* Saturday */}
+          <div className="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/30 dark:to-violet-900/30 rounded-lg p-3 border border-purple-200 dark:border-purple-700">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-purple-900 dark:text-purple-100 text-sm">Saturday</h4>
+              <span className="text-xs bg-purple-200 dark:bg-purple-800 text-purple-700 dark:text-purple-200 px-2 py-1 rounded-full">Party</span>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-purple-800 dark:text-purple-200">Pleasure Palace</p>
+              <p className="text-xs text-purple-600 dark:text-purple-300">House bands + DJs + promenaders</p>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-xs text-purple-500 dark:text-purple-400">Revenue uplift</span>
+                <span className="text-sm font-bold text-purple-700 dark:text-purple-200">+£1,580</span>
+              </div>
+            </div>
+          </div>
+            </div>
+          {/* Sunday */}
+          <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/30 dark:to-cyan-900/30 rounded-lg p-3 border border-teal-200 dark:border-teal-700">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-teal-900 dark:text-teal-100 text-sm">Sunday</h4>
+              <span className="text-xs bg-teal-200 dark:bg-teal-800 text-teal-700 dark:text-teal-200 px-2 py-1 rounded-full">Service</span>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-teal-800 dark:text-teal-200">Sunday Service</p>
+              <p className="text-xs text-teal-600 dark:text-teal-300">Choirs + DJs + roasts</p>
+              <div className="flex justify-between items-center mt-2">
+                <span className="text-xs text-teal-500 dark:text-teal-400">Revenue uplift</span>
+                <span className="text-sm font-bold text-teal-700 dark:text-teal-200">+£890</span>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        {/* Weekly Summary */}
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
+          <div className="flex items-center justify-between mb-3">
+            <div>
+              <h4 className="font-semibold text-purple-900 dark:text-purple-100">Weekly Entertainment Impact</h4>
+              <p className="text-sm text-purple-700 dark:text-purple-300">Total programming across all nights</p>
+            </div>
+            <div className="text-right">
+              <p className="text-2xl font-bold text-purple-900 dark:text-purple-100">+£5,780</p>
+              <p className="text-xs text-purple-600 dark:text-purple-300">Weekly revenue uplift</p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <p className="text-xs text-purple-600 dark:text-purple-300">Peak Night</p>
+              <p className="font-bold text-purple-900 dark:text-purple-100">Saturday</p>
+              <p className="text-xs text-purple-500 dark:text-purple-400">£1,580 uplift</p>
             </div>
             <div>
-              <h3 className="font-semibold text-purple-900 dark:text-purple-100">Music/Entertainment</h3>
-              <p className="text-sm text-purple-700 dark:text-purple-300">This week's bookings</p>
+              <p className="text-xs text-purple-600 dark:text-purple-300">Events This Week</p>
+              <p className="font-bold text-purple-900 dark:text-purple-100">7</p>
+              <p className="text-xs text-purple-500 dark:text-purple-400">All nights covered</p>
+            </div>
+            <div>
+              <p className="text-xs text-purple-600 dark:text-purple-300">Avg Uplift/Night</p>
+              <p className="font-bold text-purple-900 dark:text-purple-100">£826</p>
+              <p className="text-xs text-purple-500 dark:text-purple-400">Per event</p>
+            </div>
+            <div>
+              <p className="text-xs text-purple-600 dark:text-purple-300">Capacity Impact</p>
+              <p className="font-bold text-purple-900 dark:text-purple-100">+18%</p>
+              <p className="text-xs text-purple-500 dark:text-purple-400">Avg increase</p>
             </div>
           </div>
-          <div className="text-right">
-            <p className="text-2xl font-bold text-purple-900 dark:text-purple-100">2</p>
-            <p className="text-xs text-purple-600 dark:text-purple-300">Thu: Acoustic duo</p>
-            <p className="text-xs text-purple-600 dark:text-purple-300">Sat: DJ set</p>
+          
+          <div className="mt-3 text-xs text-purple-500 dark:text-purple-400 text-center">
+            Source: GigPig • London venue programming
           </div>
-        </div>
-        <div className="mt-3 flex items-center justify-between">
-          <span className="text-sm text-purple-700 dark:text-purple-300">Expected revenue uplift</span>
-          <span className="text-lg font-bold text-purple-900 dark:text-purple-100">+£750</span>
-        </div>
-        <div className="mt-2 text-xs text-purple-500 dark:text-purple-400">
-          Source: GigPig
         </div>
       </div>
     </div>
