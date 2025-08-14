@@ -842,36 +842,34 @@ export const individualPubData: IndividualPubData = {
 
 export const recommendations: Recommendation[] = [
   {
-    category: 'direct-venue',
+    category: 'operational',
     priority: 'important',
-    title: 'Optimize Thursday Evening Entertainment',
-    insight: 'London venue shows 15% lower Thursday evening revenue vs Friday/Saturday despite similar capacity. Historical data shows live music increases Thursday revenue by 22%.',
-    action: 'Book acoustic duo or jazz ensemble for Thursday evenings (7-10pm) to drive footfall and extend dwell time',
-    impact: '+£2,800 weekly revenue increase',
+    title: 'Introduce Albert\'s Schloss Merchandise Corner',
+    insight: 'Birmingham location saw 31% merchandise revenue increase after creating dedicated corner display. Beer steins (£18 avg) and Lederhosen accessories (£45 avg) were top performers.',
+    action: 'Create prominent merchandise display near bar featuring beer steins, traditional hats, and Lederhosen accessories with Albert\'s Schloss branding',
+    impact: '+£1,850 weekly merchandise revenue',
     timeframe: '2-week trial period',
-    weatherFactor: 'Indoor entertainment ideal for winter months',
-    loyaltyData: 'Regular customers show 35% higher spend during live music events'
+    loyaltyData: 'Merchandise buyers show 28% higher return visit rate and 15% higher average spend per visit'
   },
   {
     category: 'promotional',
     priority: 'opportunity',
-    title: 'Leverage Sunny Weather Forecast',
-    insight: 'Weather data shows sunny conditions Thursday-Saturday. Historical analysis shows 28% increase in outdoor seating bookings during sunny periods.',
-    action: 'Promote outdoor seating and garden menu via social media and email marketing. Create "Sunshine Special" cocktail menu.',
-    impact: '+£1,200 incremental revenue',
+    title: 'Launch "Kunst Kabaret Costume Contest" on Tuesdays',
+    insight: 'Tuesday Kunst Kabaret nights show lowest attendance. Manchester location increased Tuesday revenue by 34% with interactive costume competitions.',
+    action: 'Introduce weekly costume contest during Kunst Kabaret with prizes for best traditional German outfit and most creative performance art costume',
+    impact: '+£1,680 weekly Tuesday revenue increase',
     timeframe: 'This week implementation',
-    weatherFactor: 'Sunny conditions forecast for 3 consecutive days',
-    loyaltyData: 'Outdoor diners have 18% higher average transaction value'
+    loyaltyData: 'Contest participants spend 42% more on drinks and stay 65 minutes longer on average'
   },
   {
-    category: 'operational',
+    category: 'direct-venue',
     priority: 'urgent',
-    title: 'Staff Upselling Training Focus',
-    insight: 'Average transaction value £45 vs £52 target. Mystery shopper data shows only 23% of staff proactively suggest wine pairings or desserts.',
-    action: 'Implement focused upselling training for 3 key staff members on wine pairings and dessert recommendations',
-    impact: '+£156 daily average transaction increase',
+    title: 'Enhance Friday Fröhlich with Interactive Sing-Along Technology',
+    insight: 'Friday nights at capacity but average spend per guest 8% below Saturday. Liverpool location added digital song request system and saw 19% spend increase.',
+    action: 'Install tablet-based song request system for Friday Fröhlich allowing guests to request traditional German songs and dedications',
+    impact: '+£2,340 weekly Friday revenue increase',
     timeframe: 'Complete by end of week',
-    complianceRisk: 'Ensure responsible service of alcohol guidelines maintained'
+    loyaltyData: 'Interactive entertainment increases group size by average 1.3 people and extends stay by 45 minutes'
   }
 ];
 

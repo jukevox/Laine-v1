@@ -28,36 +28,47 @@ interface NewActionForm {
 const mockActions: Action[] = [
   { 
     id: '1', 
-    title: 'Train 3 staff members on upselling', 
-    description: 'Focus on wine pairings and dessert recommendations to increase average transaction value',
+    title: 'Expand Lederhosen merchandise display near entrance', 
+    description: 'Manchester location saw 23% revenue lift from prominent Lederhosen display. Test similar placement strategy here.',
     priority: 'urgent', 
     timeframe: 'today',
-    source: 'ai-recommendation',
-    dataSource: 'ai-insight',
+    source: 'manager-initiated',
+    dataSource: 'historical',
     createdDate: '2024-01-15',
     targetDate: '2024-01-15'
   },
   { 
     id: '2', 
-    title: 'Post sunny weather special on social media', 
-    description: 'Promote outdoor seating and garden menu for Thursday\'s forecast sunny weather',
-    priority: 'important', 
-    timeframe: 'today',
-    source: 'manager-initiated',
-    dataSource: 'weather',
-    createdDate: '2024-01-15',
-    targetDate: '2024-01-15'
-  },
-  { 
-    id: '3', 
-    title: 'Book acoustic evening for next Friday', 
-    description: 'Historical data shows Friday acoustic nights increase revenue by 15%',
+    title: 'Book additional piano duo for Thursday Baby Grand Slam', 
+    description: 'Thursday piano nights underperforming vs Friday/Saturday. Add second piano duo to create fuller sound experience.',
     priority: 'important', 
     timeframe: 'this-week',
     source: 'manager-initiated',
+    dataSource: 'entertainment',
+    createdDate: '2024-01-15',
+    targetDate: '2024-01-22'
+  },
+  { 
+    id: '3', 
+    title: 'Launch beer stein personalization service during Pleasure Palace', 
+    description: 'Birmingham location generated £340 additional revenue per Saturday with custom stein engraving. Test during peak Saturday nights.',
+    priority: 'opportunity', 
+    timeframe: 'this-week',
+    source: 'ai-recommendation',
     dataSource: 'historical',
     createdDate: '2024-01-14',
     targetDate: '2024-01-22'
+  },
+  { 
+    id: '4', 
+    title: 'Add promenader costume rental for Sunday Service', 
+    description: 'Sunday attendance down 12%. Offer authentic German costume rentals to enhance immersive Sunday Service experience.',
+    priority: 'opportunity', 
+    timeframe: 'next-week',
+    source: 'manager-initiated',
+    dataSource: 'entertainment',
+    createdDate: '2024-01-16',
+    targetDate: '2024-01-29'
   }
 ];
 
