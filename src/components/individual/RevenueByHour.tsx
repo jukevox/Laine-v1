@@ -33,16 +33,14 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
 
   const getPerformanceColor = (actual: number, target: number) => {
     const percentage = (actual / target) * 100;
-    if (percentage >= 95) return 'text-green-600 bg-green-50';
-    if (percentage >= 85) return 'text-yellow-600 bg-yellow-50';
-    return 'text-red-600 bg-red-50';
+    if (percentage >= 90) return 'text-green-600 bg-green-50 dark:text-green-400 dark:bg-green-900/30';
+    return 'text-amber-600 bg-amber-50 dark:text-amber-400 dark:bg-amber-900/30';
   };
 
   const getBarColor = (actual: number, target: number) => {
     const percentage = (actual / target) * 100;
-    if (percentage >= 95) return 'bg-green-500';
-    if (percentage >= 85) return 'bg-yellow-500';
-    return 'bg-red-500';
+    if (percentage >= 90) return 'bg-green-500';
+    return 'bg-amber-500';
   };
 
   const getEntertainmentInfo = (day: string, hour: string) => {
