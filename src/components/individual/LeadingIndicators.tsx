@@ -144,17 +144,6 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
         </div>
         
         {/* Daily Entertainment Cards */}
-                <span className="text-xs text-gray-500 dark:text-gray-400">Revenue uplift</span>
-                <span className="text-sm font-bold text-gray-700 dark:text-gray-300">+£320</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Tuesday */}
-          <div className="bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30 rounded-lg p-3 border border-red-200 dark:border-red-700">
-            <div className="flex items-center justify-between mb-2">
-              <h4 className="font-semibold text-red-900 dark:text-red-100 text-sm">Tuesday</h4>
-              <span className="text-xs bg-red-200 dark:bg-red-800 text-red-700 dark:text-red-200 px-2 py-1 rounded-full">Cabaret</span>
         <div className="space-y-3 mb-4">
           {/* Monday */}
           <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600">
@@ -303,48 +292,6 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
             </div>
           </div>
         </div>
-          </div>
-        {/* Weekly Summary */}
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
-          <div className="flex items-center justify-between mb-3">
-            <div>
-              <h4 className="font-semibold text-purple-900 dark:text-purple-100">Weekly Entertainment Impact</h4>
-              <p className="text-sm text-purple-700 dark:text-purple-300">Total programming across all nights</p>
-            </div>
-            <div className="text-right">
-              <p className="text-2xl font-bold text-purple-900 dark:text-purple-100">+£5,780</p>
-              <p className="text-xs text-purple-600 dark:text-purple-300">Weekly revenue uplift</p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div>
-              <p className="text-xs text-purple-600 dark:text-purple-300">Peak Night</p>
-              <p className="font-bold text-purple-900 dark:text-purple-100">Saturday</p>
-              <p className="text-xs text-purple-500 dark:text-purple-400">£1,580 uplift</p>
-            </div>
-            <div>
-              <p className="text-xs text-purple-600 dark:text-purple-300">Events This Week</p>
-              <p className="font-bold text-purple-900 dark:text-purple-100">7</p>
-              <p className="text-xs text-purple-500 dark:text-purple-400">All nights covered</p>
-            </div>
-            <div>
-              <p className="text-xs text-purple-600 dark:text-purple-300">Avg Uplift/Night</p>
-              <p className="font-bold text-purple-900 dark:text-purple-100">£826</p>
-              <p className="text-xs text-purple-500 dark:text-purple-400">Per event</p>
-            </div>
-            <div>
-              <p className="text-xs text-purple-600 dark:text-purple-300">Capacity Impact</p>
-              <p className="font-bold text-purple-900 dark:text-purple-100">+18%</p>
-              <p className="text-xs text-purple-500 dark:text-purple-400">Avg increase</p>
-            </div>
-          </div>
-          
-          <div className="mt-3 text-xs text-purple-500 dark:text-purple-400 text-center">
-            Source: GigPig • London venue programming
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
