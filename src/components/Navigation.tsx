@@ -49,7 +49,7 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
                 }`}
               >
                 <MapPin className="w-4 h-4" />
-                <span>Regional View</span>
+                <span>Mgmt Overview</span>
               </button>
               
               <button
@@ -61,7 +61,7 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
                 }`}
               >
                 <User className="w-4 h-4" />
-                <span>Pub Manager View</span>
+                <span>Location Mgr View</span>
               </button>
               
               <button
@@ -122,7 +122,7 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
                 }`}
               >
                 <MapPin className="w-5 h-5" />
-                <span>Regional View</span>
+                <span>Mgmt Overview</span>
               </button>
               
               <button
@@ -134,7 +134,7 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
                 }`}
               >
                 <User className="w-5 h-5" />
-                <span>Pub Manager View</span>
+                <span>Location Mgr View</span>
               </button>
               
               <button

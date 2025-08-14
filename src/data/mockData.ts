@@ -78,7 +78,7 @@ export const regionalData: RegionalData = {
   },
   pubGrid: [
     {
-      name: "Albert's Schloss London",
+      name: "London",
       region: "London - Shaftesbury Avenue",
       manager: "Sophie Chen",
       status: "strong",
@@ -98,7 +98,7 @@ export const regionalData: RegionalData = {
       }
     },
     {
-      name: "Albert's Schloss Manchester",
+      name: "Manchester",
       region: "Manchester - Peter Street", 
       manager: "James Mitchell",
       status: "strong",
@@ -118,7 +118,7 @@ export const regionalData: RegionalData = {
       }
     },
     {
-      name: "Albert's Schloss Birmingham",
+      name: "Birmingham",
       region: "Birmingham - Colmore Row",
       manager: "Emma Thompson",
       status: "moderate",
@@ -138,7 +138,7 @@ export const regionalData: RegionalData = {
       }
     },
     {
-      name: "Albert's Schloss Liverpool",
+      name: "Liverpool",
       region: "Liverpool - Albert Dock",
       manager: "David Roberts",
       status: "attention",
@@ -162,7 +162,7 @@ export const regionalData: RegionalData = {
 
 export const individualPubData: IndividualPubData = {
   pubInfo: {
-    name: "Albert's Schloss London",
+    name: "London",
     region: "London - Shaftesbury Avenue",
     manager: "Sophie Chen",
     currentWeek: 47,
