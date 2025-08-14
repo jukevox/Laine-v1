@@ -201,7 +201,7 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                 <PoundSterling className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                 <div>
                   <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">Weekly Projection</p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{formatCurrency(selectedWeekData.weeklyTarget)}</p>
+                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{formatCurrency(selectedWeekData.weeklyTotal)}</p>
                   <p className="text-xs text-blue-700 dark:text-blue-300">Based on historical data</p>
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                 <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                 <div>
                   <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">Projected Customers</p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{Math.round(selectedWeekData.weeklyTarget / 72)}</p>
+                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{Math.round(selectedWeekData.weeklyTotal / 72)}</p>
                   <p className="text-xs text-blue-700 dark:text-blue-300">Weekly estimate</p>
                 </div>
               </div>
@@ -252,7 +252,7 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                 <div>
                   <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">Weekly Customers</p>
                   <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{selectedWeekData.weeklyCustomers}</p>
-                  <p className="text-xs text-indigo-700 dark:text-indigo-300">Target: {selectedWeekData.weeklyTarget}</p>
+                  <p className="text-xs text-indigo-700 dark:text-indigo-300">Target: {selectedWeekData.weeklyCustomers + 50}</p>
                 </div>
               </div>
             </div>
@@ -311,11 +311,19 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
               <>
                 <div className="text-right">
                   <p className="text-sm text-blue-600 dark:text-blue-400">Daily Projection</p>
-                  <p className="text-xl font-bold text-blue-900 dark:text-blue-100">{formatCurrency(selectedDayData.dailyTarget)}</p>
+                  <p className="text-xl font-bold text-blue-900 dark:text-blue-100">{formatCurrency(selectedDayData.dailyTotal)}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-sm text-gray-600 dark:text-gray-400">Based On</p>
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Historical trends</p>
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Target: {formatCurrency(selectedDayData.dailyTarget)}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Performance</p>
+                  <p className={`text-xl font-bold ${
+                    selectedDayData.dailyTotal >= selectedDayData.dailyTarget ? 'text-green-600' : 'text-amber-600'
+                  }`}>
+                    {((selectedDayData.dailyTotal / selectedDayData.dailyTarget) * 100).toFixed(1)}%
+                  </p>
                 </div>
               </>
             ) : (
@@ -385,7 +393,7 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                     <div className="flex items-center space-x-2">
                       {selectedWeekData.weekType === 'forecast' ? (
                         <span className="text-sm font-medium text-blue-700">
-                          {formatCurrency(hour.target)} <span className="text-xs text-blue-600">(projected)</span>
+                          {formatCurrency(hour.actual)} <span className="text-xs text-blue-600">(projected)</span>
                         </span>
                       ) : (
                         <>
@@ -401,8 +409,8 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                     <div className="flex items-center space-x-2 text-xs text-gray-600 dark:text-gray-400">
                       {selectedWeekData.weekType === 'forecast' ? (
                         <>
-                          <span className="text-blue-600">{hour.customers} customers (est.)</span>
                           <span className="text-blue-600">{hour.transactions} transactions (est.)</span>
+                          <span className="text-blue-600">£{hour.avgTransaction} avg (est.)</span>
                         </>
                       ) : (
                         <>
@@ -417,8 +425,10 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                     <div className="w-full bg-gray-200 dark:bg-gray-500 rounded-full h-2">
                       {selectedWeekData.weekType === 'forecast' ? (
                         <div
-                          className="h-2 rounded-full transition-all duration-300 bg-blue-500"
-                          style={{ width: `${Math.min((hour.target / maxHourlyRevenue) * 100, 100)}%` }}
+                          className={`h-2 rounded-full transition-all duration-300 ${
+                            hour.actual >= hour.target * 0.9 ? 'bg-green-500' : 'bg-amber-500'
+                          }`}
+                          style={{ width: `${Math.min((hour.actual / maxHourlyRevenue) * 100, 100)}%` }}
                         ></div>
                       ) : (
                         <div
@@ -434,12 +444,23 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
                         title="Target"
                       ></div>
                     )}
+                    {selectedWeekData.weekType === 'forecast' && (
+                      <div
+                        className="absolute top-0 h-2 border-r-2 border-gray-400"
+                        style={{ left: `${(hour.target / maxHourlyRevenue) * 100}%` }}
+                        title="Target"
+                      ></div>
+                    )}
                   </div>
                 </div>
                 
                 {selectedWeekData.weekType === 'forecast' ? (
-                  <div className="px-2 py-1 rounded text-xs font-medium bg-blue-50 dark:bg-blue-800/50 text-blue-700 dark:text-blue-200 border border-blue-200 dark:border-blue-600">
-                    Proj.
+                  <div className={`px-2 py-1 rounded text-xs font-medium ${
+                    hour.actual >= hour.target * 0.9 
+                      ? 'bg-green-50 dark:bg-green-800/50 text-green-700 dark:text-green-200 border border-green-200 dark:border-green-600'
+                      : 'bg-amber-50 dark:bg-amber-800/50 text-amber-700 dark:text-amber-200 border border-amber-200 dark:border-amber-600'
+                  }`}>
+                    {((hour.actual / hour.target) * 100).toFixed(0)}%
                   </div>
                 ) : (
                   <div className={`px-2 py-1 rounded text-xs font-medium ${getPerformanceColor(hour.actual, hour.target)}`}>
@@ -461,12 +482,12 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
               <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Projected Peak Hours</h4>
               <div className="space-y-1 text-sm">
                 {selectedDayData.hours
-                  .sort((a, b) => b.target - a.target)
+                  .sort((a, b) => b.actual - a.actual)
                   .slice(0, 3)
                   .map((hour, index) => (
                     <div key={index} className="flex justify-between">
                       <span className="text-blue-700 dark:text-blue-300">{hour.hour}</span>
-                      <span className="font-medium text-blue-900 dark:text-blue-100">{formatCurrency(hour.target)}</span>
+                      <span className="font-medium text-blue-900 dark:text-blue-100">{formatCurrency(hour.actual)}</span>
                     </div>
                   ))}
               </div>
@@ -477,11 +498,15 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-purple-700 dark:text-purple-300">Model Accuracy</span>
-                  <span className="font-medium text-purple-900 dark:text-purple-100">87%</span>
+                  <span className="font-medium text-purple-900 dark:text-purple-100">
+                    {selectedWeekData.week === 48 ? '89%' : '85%'}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-purple-700 dark:text-purple-300">Data Points</span>
-                  <span className="font-medium text-purple-900 dark:text-purple-100">12 weeks</span>
+                  <span className="font-medium text-purple-900 dark:text-purple-100">
+                    {selectedWeekData.week === 48 ? '8 weeks' : '10 weeks'}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-purple-700 dark:text-purple-300">Seasonal Adj.</span>
