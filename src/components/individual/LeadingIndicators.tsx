@@ -97,8 +97,8 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
         // Calculate percentage lift over baseline (non-performance) revenue
         const baselineRevenue = 800; // Normal revenue without entertainment
         const performanceMultiplier = weekType === 'forecast' ? 
-          (1.15 + Math.random() * 0.25) : // Forecast: 15-40% lift
-          (1.05 + Math.random() * 0.45); // Historical: 5-50% lift
+          (1.04 + Math.random() * 0.27) : // Forecast: 4-31% lift
+          (1.04 + Math.random() * 0.27); // Historical: 4-31% lift
         
         const totalRevenue = baselineRevenue * performanceMultiplier;
         const revenueLiftPercentage = Math.round((performanceMultiplier - 1) * 100);
