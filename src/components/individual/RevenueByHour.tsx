@@ -304,77 +304,6 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
           </div>
         </div>
       </div>
-              </div>
-            </div>
-            
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
-              <div className="flex items-center space-x-3">
-                <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                <div>
-                  <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">Projected Customers</p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{Math.round(selectedWeekData.weeklyTotal / 72)}</p>
-                  <p className="text-xs text-blue-700 dark:text-blue-300">Weekly estimate</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-purple-50 dark:bg-purple-900/30 rounded-lg p-4">
-              <div className="flex items-center space-x-3">
-                <Receipt className="w-8 h-8 text-purple-600 dark:text-purple-400" />
-                <div>
-                  <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">Avg Check Size</p>
-                  <p className="text-2xl font-bold text-purple-900 dark:text-purple-100">£72</p>
-                  <p className="text-xs text-purple-700 dark:text-purple-300">Projected average</p>
-                </div>
-              </div>
-            </div>
-          </>
-        ) : (
-          // Historical and current week summary - show actuals
-          <>
-            <div className="bg-indigo-50 dark:bg-indigo-900/30 rounded-lg p-4">
-              <div className="flex items-center space-x-3">
-                <PoundSterling className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
-                <div>
-                  <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">
-                    {selectedWeekData.weekType === 'current' ? 'Weekly Total' : 'Weekly Actual'}
-                  </p>
-                  <p className="text-2xl font-bold text-indigo-900 dark:text-indigo-100">{formatCurrency(selectedWeekData.weeklyTotal)}</p>
-                  <p className="text-xs text-indigo-700 dark:text-indigo-300">Target: {formatCurrency(selectedWeekData.weeklyTarget)}</p>
-                  <p className="text-xs text-indigo-500 dark:text-indigo-400 mt-1">Source: Collins/Access</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-4">
-              <div className="flex items-center space-x-3">
-                <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                <div>
-                  <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">Weekly Customers</p>
-                  <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{selectedWeekData.weeklyCustomers}</p>
-                  <p className="text-xs text-indigo-700 dark:text-indigo-300">Target: {selectedWeekData.weeklyCustomers + 50}</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-green-50 dark:bg-green-900/30 rounded-lg p-4">
-              <div className="flex items-center space-x-3">
-                <Receipt className="w-8 h-8 text-green-600 dark:text-green-400" />
-                <div>
-                  <p className="text-sm text-green-600 dark:text-green-400 font-medium">Avg Check Size</p>
-                  <p className="text-2xl font-bold text-green-900 dark:text-green-100">£{selectedWeekData.avgCheckSize}</p>
-                  <div className="flex items-center space-x-2 mt-1">
-                    <span className="text-xs text-green-700 dark:text-green-300">vs Last Week:</span>
-                    <span className={`text-xs font-medium ${selectedWeekData.checkSizeChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                      {selectedWeekData.checkSizeChange >= 0 ? '+' : ''}{selectedWeekData.checkSizeChange}%
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-      </div>
 
       {/* Day Selector */}
       <div className="flex flex-wrap gap-2 mb-6">
@@ -402,53 +331,43 @@ export default function RevenueByHour({ data, currentWeek, alerts = [] }: Revenu
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
             {selectedDayData.day}, {selectedDayData.date}
             {selectedWeekData.weekType === 'forecast' && (
-              <span className="ml-2 text-sm text-blue-600 font-normal">(Projected)</span>
+              <span className="ml-2 text-sm text-blue-600 dark:text-blue-400 font-normal">(Projected)</span>
             )}
           </h3>
           <div className="flex items-center space-x-4">
-            {selectedWeekData.weekType === 'forecast' ? (
-              // Forecast week - show only targets/projections
-              <>
-                <div className="text-right">
-                  <p className="text-sm text-blue-600 dark:text-blue-400">Daily Projection</p>
-                  <p className="text-xl font-bold text-blue-900 dark:text-blue-100">{formatCurrency(selectedDayData.dailyTotal)}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Based On</p>
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Target: {formatCurrency(selectedDayData.dailyTarget)}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Performance</p>
-                  <p className={`text-xl font-bold ${
-                    selectedDayData.dailyTotal >= selectedDayData.dailyTarget ? 'text-green-600' : 'text-amber-600'
-                  }`}>
-                    {((selectedDayData.dailyTotal / selectedDayData.dailyTarget) * 100).toFixed(1)}%
-                  </p>
-                </div>
-              </>
-            ) : (
-              // Historical and current weeks - show actuals vs targets
-              <>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {selectedWeekData.weekType === 'current' ? 'Daily Total' : 'Daily Actual'}
-                  </p>
-                  <p className="text-xl font-bold text-gray-900 dark:text-white">{formatCurrency(selectedDayData.dailyTotal)}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Target</p>
-                  <p className="text-xl font-bold text-gray-700 dark:text-gray-300">{formatCurrency(selectedDayData.dailyTarget)}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Performance</p>
-                  <p className={`text-xl font-bold ${
-                    selectedDayData.dailyTotal >= selectedDayData.dailyTarget ? 'text-green-600' : 'text-red-600'
-                  }`}>
-                    {((selectedDayData.dailyTotal / selectedDayData.dailyTarget) * 100).toFixed(1)}%
-                  </p>
-                </div>
-              </>
-            )}
+            <div className="text-right">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {selectedWeekData.weekType === 'forecast' ? 'Daily Projection' :
+                 selectedWeekData.weekType === 'current' ? 'Daily Total' : 'Daily Actual'}
+              </p>
+              <p className={`text-xl font-bold ${
+                selectedWeekData.weekType === 'forecast' 
+                  ? 'text-blue-900 dark:text-blue-100' 
+                  : 'text-gray-900 dark:text-white'
+              }`}>
+                {formatCurrency(selectedDayData.dailyTotal)}
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {selectedWeekData.weekType === 'forecast' ? 'Based On' : 'Target'}
+              </p>
+              <p className="text-xl font-bold text-gray-700 dark:text-gray-300">
+                {selectedWeekData.weekType === 'forecast' ? 'Target: ' : ''}{formatCurrency(selectedDayData.dailyTarget)}
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-sm text-gray-600 dark:text-gray-400">Performance</p>
+              <p className={`text-xl font-bold ${
+                selectedDayData.dailyTotal >= selectedDayData.dailyTarget 
+                  ? 'text-green-600 dark:text-green-400' 
+                  : selectedWeekData.weekType === 'forecast'
+                    ? 'text-amber-600 dark:text-amber-400'
+                    : 'text-red-600 dark:text-red-400'
+              }`}>
+                {((selectedDayData.dailyTotal / selectedDayData.dailyTarget) * 100).toFixed(1)}%
+              </p>
+            </div>
           </div>
         </div>
 
