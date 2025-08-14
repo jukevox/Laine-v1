@@ -102,7 +102,7 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
         
         const totalRevenue = baselineRevenue * performanceMultiplier;
         const revenueLiftPercentage = Math.round((performanceMultiplier - 1) * 100);
-        const targetLiftPercentage = 25; // Target 25% lift over baseline
+        const targetLiftPercentage = 12; // Target 12% lift over baseline
         
         return {
           day: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][dayIndex],
