@@ -1,866 +1,801 @@
+// Mock data for Albert's Schloss demo application
 import { RegionalData, IndividualPubData, Recommendation, ImplementedRecommendation } from '../types';
 
 export const regionalData: RegionalData = {
   portfolioSummary: {
-    totalPubs: 4,
     revenueMetrics: {
-      totalWeeklyRevenue: 615000, // £32M annually / 52 weeks
-      revenueGrowth: 45, // Strong growth driven by London venue
-      avgRevenuePerPub: 153750, // Average across 4 venues
-      topPerformingPubs: 3, // London, Manchester, Birmingham performing well
-      underperformingPubs: 1, // Liverpool needs attention
+      totalWeeklyRevenue: 287500,
+      revenueGrowth: 18.5,
       totalBookings: 2847,
-      conversionRate: 78,
-      totalGuests: 7980,
-      avgPartySize: 2.8
+      totalGuests: 8541,
+      conversionRate: 78.2,
+      avgPartySize: 3.0
     },
     weeklyMomentum: {
-      checkinsGrowth: 28, // Strong social media presence
-      bookingVelocity: 35, // High demand, especially London
-      socialEngagement: 42, // Strong brand engagement
-      reputationTrend: 18, // Consistent quality across venues
       bookingDetails: {
-        weekOnWeekChange: 18,
+        weekOnWeekChange: 22.3,
         onlineBookings: 2278,
         walkIns: 569,
-        onlineChange: 22,
-        walkInChange: 8,
+        onlineChange: 25.1,
+        walkInChange: 12.8,
         sources: {
-          designMyNight: 1367,
-          openTable: 683,
-          albertsWebsite: 228
+          designMyNight: 1366,
+          openTable: 456,
+          albertsWebsite: 456,
+          phone: 569
         }
       },
-      socialEngagement: 24,
+      socialEngagement: 42.7,
       averageCheck: {
-        totalGBP: 67,
-        partySize: 2.8,
-        weekOnWeekChange: 8
+        totalGBP: 84,
+        partySize: 3.0,
+        weekOnWeekChange: 8.2
       }
-    },
-    quarterlyOKRs: [
-      {
-        objective: "Drive Revenue Growth Across Portfolio",
-        keyResults: [
-          {
-            metric: "Total Revenue Growth",
-            target: 40,
-            current: 45,
-            trend: "up"
-          },
-          {
-            metric: "Average Revenue per Venue",
-            target: 150000,
-            current: 153750,
-            trend: "up"
-          },
-          {
-            metric: "Venues Beating Targets",
-            target: 3,
-            current: 3,
-            trend: "flat"
-          }
-        ]
-      }
-    ],
-    regionBreakdown: [
-      {
-        region: "London",
-        pubs: 1,
-        momentum: "strong",
-        alerts: 0,
-        totalRevenue: 220000, // Largest venue, newest, driving growth
-        revenueGrowth: 85 // New venue showing exceptional performance
-      },
-      {
-        region: "Manchester",
-        pubs: 1,
-        momentum: "strong", 
-        alerts: 0,
-        totalRevenue: 165000, // Original flagship venue
-        revenueGrowth: 12 // Steady growth
-      },
-      {
-        region: "Birmingham",
-        pubs: 1,
-        momentum: "moderate",
-        alerts: 1,
-        totalRevenue: 145000, // Solid performer
-        revenueGrowth: 8 // Modest growth
-      },
-      {
-        region: "Liverpool",
-        pubs: 1,
-        momentum: "weak",
-        alerts: 2,
-        totalRevenue: 85000, // Underperforming venue
-        revenueGrowth: -5 // Needs attention
-      }
-    ]
+    }
   },
   pubGrid: [
     {
-      name: "London",
-      region: "London - Shaftesbury Avenue",
-      manager: "Sophie Chen",
+      name: "Albert's Schloss Manchester",
+      region: "Manchester",
+      manager: "Sarah Chen",
       status: "strong",
-      checkinsVsPrevious: 95,
-      bookingTrend: "up",
-      reputation: 4.6,
-      thisWeekFocus: "Maximizing 600+ covers capacity during peak festive season",
-      nextWeekGoal: "Launch new winter cocktail menu and live music program",
       posRevenue: {
-        thisWeek: 220000,
-        lastWeek: 185000,
-        weeklyGrowth: 19,
-        monthlyTarget: 850000,
-        monthlyProgress: 92,
-        avgTransactionValue: 45,
-        transactionCount: 4890
-      }
+        thisWeek: 89500,
+        weeklyGrowth: 22.1,
+        monthlyProgress: 87,
+        avgTransactionValue: 78
+      },
+      checkinsVsPrevious: 18.5,
+      bookingTrend: "up",
+      reputation: "4.8/5",
+      thisWeekFocus: "Friday Fröhlich sold out - testing extended hours",
+      nextWeekGoal: "Launch beer stein personalization service"
     },
     {
-      name: "Manchester",
-      region: "Manchester - Peter Street", 
-      manager: "James Mitchell",
+      name: "Albert's Schloss Liverpool",
+      region: "Liverpool",
+      manager: "James Wilson",
       status: "strong",
-      checkinsVsPrevious: 15,
-      bookingTrend: "up",
-      reputation: 4.4,
-      thisWeekFocus: "Maintaining flagship venue standards and heritage experience",
-      nextWeekGoal: "Coordinate with London team on best practices sharing",
       posRevenue: {
-        thisWeek: 165000,
-        lastWeek: 158000,
-        weeklyGrowth: 4,
-        monthlyTarget: 640000,
-        monthlyProgress: 88,
-        avgTransactionValue: 42,
-        transactionCount: 3930
-      }
+        thisWeek: 76200,
+        weeklyGrowth: 15.8,
+        monthlyProgress: 82,
+        avgTransactionValue: 72
+      },
+      checkinsVsPrevious: 12.3,
+      bookingTrend: "up",
+      reputation: "4.7/5",
+      thisWeekFocus: "Kunst Kabaret gaining momentum - 3 sold out shows",
+      nextWeekGoal: "Expand Tuesday cabaret to Wednesday trial"
     },
     {
-      name: "Birmingham",
-      region: "Birmingham - Colmore Row",
+      name: "Albert's Schloss Birmingham",
+      region: "Birmingham",
       manager: "Emma Thompson",
       status: "moderate",
-      checkinsVsPrevious: 8,
-      bookingTrend: "flat",
-      reputation: 4.2,
-      thisWeekFocus: "Improving midweek performance and corporate bookings",
-      nextWeekGoal: "Implement London's successful entertainment programming",
       posRevenue: {
-        thisWeek: 145000,
-        lastWeek: 142000,
-        weeklyGrowth: 2,
-        monthlyTarget: 580000,
-        monthlyProgress: 82,
-        avgTransactionValue: 38,
-        transactionCount: 3820
-      }
+        thisWeek: 68400,
+        weeklyGrowth: 8.2,
+        monthlyProgress: 74,
+        avgTransactionValue: 69
+      },
+      checkinsVsPrevious: 5.7,
+      bookingTrend: "up",
+      reputation: "4.6/5",
+      thisWeekFocus: "Sunday Service attendance improving with choir addition",
+      nextWeekGoal: "Test promenader costume rental service"
     },
     {
-      name: "Liverpool",
-      region: "Liverpool - Albert Dock",
-      manager: "David Roberts",
+      name: "Albert's Schloss London",
+      region: "London",
+      manager: "David Kumar",
       status: "attention",
-      checkinsVsPrevious: -12,
-      bookingTrend: "down",
-      reputation: 3.9,
-      thisWeekFocus: "Addressing service quality issues and staff training",
-      nextWeekGoal: "Implement recovery plan with support from Manchester team",
       posRevenue: {
-        thisWeek: 85000,
-        lastWeek: 89000,
-        weeklyGrowth: -4,
-        monthlyTarget: 380000,
-        monthlyProgress: 65,
-        avgTransactionValue: 35,
-        transactionCount: 2430
-      }
+        thisWeek: 53400,
+        weeklyGrowth: -2.1,
+        monthlyProgress: 68,
+        avgTransactionValue: 65
+      },
+      checkinsVsPrevious: -3.2,
+      bookingTrend: "down",
+      reputation: "4.5/5",
+      thisWeekFocus: "Thursday piano nights underperforming vs other locations",
+      nextWeekGoal: "Add second piano duo for fuller sound experience"
     }
   ]
 };
 
 export const individualPubData: IndividualPubData = {
   pubInfo: {
-    name: "London",
-    region: "London - Shaftesbury Avenue",
-    manager: "Sophie Chen",
+    name: "Albert's Schloss Manchester",
+    region: "Manchester",
+    manager: "Sarah Chen",
     currentWeek: 47,
     timeWindow: "Nov 18-24, 2024"
+  },
+  leadingIndicators: {
+    guestMomentum: {
+      checkinsThisWeek: 1247,
+      checkinsGrowth: 18.5,
+      trendForecast: "Strong upward momentum"
+    },
+    bookingHealth: {
+      forwardBookings: {
+        thisWeek: 892,
+        nextWeek: 1034,
+        weekAfter: 756
+      },
+      conversionRate: 82.3,
+      noShowRate: 4.2
+    },
+    socialPulse: {
+      weeklyMentions: 127,
+      sentimentScore: 8.4,
+      engagementRate: 12.8,
+      reviewVelocity: 23
+    }
   },
   revenueByHour: [
     {
       week: 45,
-      weekType: 'historical',
+      weekType: "historical",
+      weeklyTotal: 78500,
+      weeklyTarget: 75000,
+      weeklyCustomers: 1089,
+      avgCheckSize: 72,
+      checkSizeChange: 5.2,
+      performanceVsTarget: 4.7,
       weekData: [
         {
-          day: 'Monday',
-          date: 'Nov 4',
+          day: "Monday",
+          date: "Nov 4",
+          dailyTotal: 8900,
+          dailyTarget: 9200,
           hours: [
-            { hour: '12:00', actual: 2800, target: 2500, transactions: 45, avgTransaction: 62 },
-            { hour: '12:00', actual: 2800, target: 2500, customers: 45, avgTransaction: 62 },
-            { hour: '13:00', actual: 4200, target: 4000, transactions: 68, avgTransaction: 62 },
-            { hour: '13:00', actual: 4200, target: 4000, customers: 68, avgTransaction: 62 },
-            { hour: '14:00', actual: 3800, target: 3500, transactions: 58, avgTransaction: 66 },
-            { hour: '14:00', actual: 3800, target: 3500, customers: 58, avgTransaction: 66 },
-            { hour: '15:00', actual: 2200, target: 2000, transactions: 35, avgTransaction: 63 },
-            { hour: '15:00', actual: 2200, target: 2000, customers: 35, avgTransaction: 63 },
-            { hour: '16:00', actual: 2800, target: 2500, transactions: 42, avgTransaction: 67 },
-            { hour: '16:00', actual: 2800, target: 2500, customers: 42, avgTransaction: 67 },
-            { hour: '17:00', actual: 5200, target: 5000, transactions: 78, avgTransaction: 67 },
-            { hour: '17:00', actual: 5200, target: 5000, customers: 78, avgTransaction: 67 },
-            { hour: '18:00', actual: 7800, target: 7500, transactions: 115, avgTransaction: 68 },
-            { hour: '18:00', actual: 7800, target: 7500, customers: 115, avgTransaction: 68 },
-            { hour: '19:00', actual: 9200, target: 9000, transactions: 132, avgTransaction: 70 },
-            { hour: '19:00', actual: 9200, target: 9000, customers: 132, avgTransaction: 70 },
-            { hour: '20:00', actual: 8800, target: 8500, transactions: 125, avgTransaction: 70 },
-            { hour: '20:00', actual: 8800, target: 8500, customers: 125, avgTransaction: 70 },
-            { hour: '21:00', actual: 7200, target: 7000, transactions: 102, avgTransaction: 71 },
-            { hour: '21:00', actual: 7200, target: 7000, customers: 102, avgTransaction: 71 },
-            { hour: '22:00', actual: 5800, target: 5500, customers: 82, avgTransaction: 71 }
-          ],
-          dailyTotal: 59800,
-          dailyTarget: 57000
+            { hour: "11:00", actual: 420, target: 450, transactions: 6, avgTransaction: 70, customers: 8 },
+            { hour: "12:00", actual: 680, target: 720, transactions: 9, avgTransaction: 76, customers: 12 },
+            { hour: "13:00", actual: 890, target: 950, transactions: 12, avgTransaction: 74, customers: 16 },
+            { hour: "14:00", actual: 720, target: 780, transactions: 10, avgTransaction: 72, customers: 14 },
+            { hour: "15:00", actual: 450, target: 480, transactions: 6, avgTransaction: 75, customers: 9 },
+            { hour: "16:00", actual: 380, target: 420, transactions: 5, avgTransaction: 76, customers: 7 },
+            { hour: "17:00", actual: 620, target: 680, transactions: 8, avgTransaction: 78, customers: 11 },
+            { hour: "18:00", actual: 890, target: 920, transactions: 11, avgTransaction: 81, customers: 15 },
+            { hour: "19:00", actual: 1240, target: 1280, transactions: 15, avgTransaction: 83, customers: 20 },
+            { hour: "20:00", actual: 1450, target: 1500, transactions: 17, avgTransaction: 85, customers: 23 },
+            { hour: "21:00", actual: 1320, target: 1380, transactions: 16, avgTransaction: 83, customers: 21 },
+            { hour: "22:00", actual: 830, target: 890, transactions: 10, avgTransaction: 83, customers: 13 }
+          ]
         },
         {
-          day: 'Tuesday',
-          date: 'Nov 5',
+          day: "Tuesday",
+          date: "Nov 5",
+          dailyTotal: 12400,
+          dailyTarget: 12000,
           hours: [
-            { hour: '12:00', actual: 3200, target: 3000, transactions: 48, avgTransaction: 67 },
-            { hour: '13:00', actual: 4800, target: 4500, transactions: 72, avgTransaction: 67 },
-            { hour: '14:00', actual: 4200, target: 4000, transactions: 62, avgTransaction: 68 },
-            { hour: '15:00', actual: 2600, target: 2500, transactions: 38, avgTransaction: 68 },
-            { hour: '16:00', actual: 3200, target: 3000, transactions: 46, avgTransaction: 70 },
-            { hour: '17:00', actual: 5800, target: 5500, transactions: 82, avgTransaction: 71 },
-            { hour: '18:00', actual: 8400, target: 8000, transactions: 118, avgTransaction: 71 },
-            { hour: '19:00', actual: 9800, target: 9500, transactions: 137, avgTransaction: 72 },
-            { hour: '20:00', actual: 9400, target: 9000, transactions: 130, avgTransaction: 72 },
-            { hour: '21:00', actual: 7800, target: 7500, transactions: 108, avgTransaction: 72 },
-            { hour: '22:00', actual: 6200, target: 6000, transactions: 86, avgTransaction: 72 }
-          ],
-          dailyTotal: 65400,
-          dailyTarget: 62500
+            { hour: "11:00", actual: 520, target: 480, transactions: 7, avgTransaction: 74, customers: 10 },
+            { hour: "12:00", actual: 780, target: 750, transactions: 10, avgTransaction: 78, customers: 14 },
+            { hour: "13:00", actual: 980, target: 950, transactions: 12, avgTransaction: 82, customers: 17 },
+            { hour: "14:00", actual: 820, target: 800, transactions: 10, avgTransaction: 82, customers: 15 },
+            { hour: "15:00", actual: 520, target: 500, transactions: 6, avgTransaction: 87, customers: 9 },
+            { hour: "16:00", actual: 450, target: 430, transactions: 5, avgTransaction: 90, customers: 8 },
+            { hour: "17:00", actual: 720, target: 700, transactions: 8, avgTransaction: 90, customers: 12 },
+            { hour: "18:00", actual: 1020, target: 980, transactions: 11, avgTransaction: 93, customers: 16 },
+            { hour: "19:00", actual: 1580, target: 1520, transactions: 17, avgTransaction: 93, customers: 24 },
+            { hour: "20:00", actual: 1890, target: 1850, transactions: 20, avgTransaction: 95, customers: 28 },
+            { hour: "21:00", actual: 1720, target: 1680, transactions: 18, avgTransaction: 96, customers: 26 },
+            { hour: "22:00", actual: 1390, target: 1350, transactions: 14, avgTransaction: 99, customers: 21 }
+          ]
         },
         {
-          day: 'Wednesday',
-          date: 'Nov 6',
+          day: "Wednesday",
+          date: "Nov 6",
+          dailyTotal: 11200,
+          dailyTarget: 10800,
           hours: [
-            { hour: '12:00', actual: 3400, target: 3200, transactions: 50, avgTransaction: 68 },
-            { hour: '13:00', actual: 5200, target: 5000, transactions: 76, avgTransaction: 68 },
-            { hour: '14:00', actual: 4600, target: 4300, transactions: 67, avgTransaction: 69 },
-            { hour: '15:00', actual: 2800, target: 2600, transactions: 40, avgTransaction: 70 },
-            { hour: '16:00', actual: 3600, target: 3400, transactions: 51, avgTransaction: 71 },
-            { hour: '17:00', actual: 6200, target: 6000, transactions: 87, avgTransaction: 71 },
-            { hour: '18:00', actual: 9000, target: 8500, transactions: 126, avgTransaction: 71 },
-            { hour: '19:00', actual: 10400, target: 10000, transactions: 145, avgTransaction: 72 },
-            { hour: '20:00', actual: 10000, target: 9500, transactions: 138, avgTransaction: 72 },
-            { hour: '21:00', actual: 8200, target: 8000, transactions: 113, avgTransaction: 73 },
-            { hour: '22:00', actual: 6600, target: 6300, transactions: 90, avgTransaction: 73 }
-          ],
-          dailyTotal: 70000,
-          dailyTarget: 66800
+            { hour: "11:00", actual: 480, target: 450, transactions: 6, avgTransaction: 80, customers: 9 },
+            { hour: "12:00", actual: 720, target: 680, transactions: 9, avgTransaction: 80, customers: 13 },
+            { hour: "13:00", actual: 920, target: 880, transactions: 11, avgTransaction: 84, customers: 16 },
+            { hour: "14:00", actual: 760, target: 720, transactions: 9, avgTransaction: 84, customers: 14 },
+            { hour: "15:00", actual: 480, target: 450, transactions: 6, avgTransaction: 80, customers: 9 },
+            { hour: "16:00", actual: 420, target: 400, transactions: 5, avgTransaction: 84, customers: 8 },
+            { hour: "17:00", actual: 680, target: 650, transactions: 8, avgTransaction: 85, customers: 12 },
+            { hour: "18:00", actual: 960, target: 920, transactions: 11, avgTransaction: 87, customers: 16 },
+            { hour: "19:00", actual: 1380, target: 1320, transactions: 16, avgTransaction: 86, customers: 22 },
+            { hour: "20:00", actual: 1620, target: 1580, transactions: 19, avgTransaction: 85, customers: 26 },
+            { hour: "21:00", actual: 1480, target: 1440, transactions: 17, avgTransaction: 87, customers: 24 },
+            { hour: "22:00", actual: 1290, target: 1250, transactions: 15, avgTransaction: 86, customers: 20 }
+          ]
         },
         {
-          day: 'Thursday',
-          date: 'Nov 7',
+          day: "Thursday",
+          date: "Nov 7",
+          dailyTotal: 10800,
+          dailyTarget: 11500,
           hours: [
-            { hour: '12:00', actual: 3800, target: 3500, transactions: 54, avgTransaction: 70 },
-            { hour: '13:00', actual: 5800, target: 5500, transactions: 82, avgTransaction: 71 },
-            { hour: '14:00', actual: 5200, target: 4800, transactions: 73, avgTransaction: 71 },
-            { hour: '15:00', actual: 3200, target: 3000, transactions: 45, avgTransaction: 71 },
-            { hour: '16:00', actual: 4000, target: 3800, transactions: 56, avgTransaction: 71 },
-            { hour: '17:00', actual: 7000, target: 6500, transactions: 98, avgTransaction: 71 },
-            { hour: '18:00', actual: 10200, target: 9500, transactions: 143, avgTransaction: 71 },
-            { hour: '19:00', actual: 12000, target: 11500, transactions: 168, avgTransaction: 71 },
-            { hour: '20:00', actual: 11600, target: 11000, transactions: 163, avgTransaction: 71 },
-            { hour: '21:00', actual: 9600, target: 9000, transactions: 135, avgTransaction: 71 },
-            { hour: '22:00', actual: 7800, target: 7200, transactions: 110, avgTransaction: 71 }
-          ],
-          dailyTotal: 80200,
-          dailyTarget: 75300
+            { hour: "11:00", actual: 420, target: 480, transactions: 5, avgTransaction: 84, customers: 8 },
+            { hour: "12:00", actual: 680, target: 750, transactions: 8, avgTransaction: 85, customers: 12 },
+            { hour: "13:00", actual: 860, target: 950, transactions: 10, avgTransaction: 86, customers: 15 },
+            { hour: "14:00", actual: 720, target: 800, transactions: 8, avgTransaction: 90, customers: 13 },
+            { hour: "15:00", actual: 450, target: 500, transactions: 5, avgTransaction: 90, customers: 8 },
+            { hour: "16:00", actual: 380, target: 450, transactions: 4, avgTransaction: 95, customers: 7 },
+            { hour: "17:00", actual: 620, target: 720, transactions: 7, avgTransaction: 89, customers: 11 },
+            { hour: "18:00", actual: 880, target: 980, transactions: 10, avgTransaction: 88, customers: 15 },
+            { hour: "19:00", actual: 1180, target: 1380, transactions: 13, avgTransaction: 91, customers: 19 },
+            { hour: "20:00", actual: 1420, target: 1680, transactions: 16, avgTransaction: 89, customers: 23 },
+            { hour: "21:00", actual: 1280, target: 1520, transactions: 14, avgTransaction: 91, customers: 21 },
+            { hour: "22:00", actual: 1100, target: 1285, transactions: 12, avgTransaction: 92, customers: 18 }
+          ]
         },
         {
-          day: 'Friday',
-          date: 'Nov 8',
+          day: "Friday",
+          date: "Nov 8",
+          dailyTotal: 18200,
+          dailyTarget: 17500,
           hours: [
-            { hour: '12:00', actual: 4200, target: 4000, transactions: 58, avgTransaction: 72 },
-            { hour: '13:00', actual: 6400, target: 6000, transactions: 88, avgTransaction: 73 },
-            { hour: '14:00', actual: 5800, target: 5500, transactions: 79, avgTransaction: 73 },
-            { hour: '15:00', actual: 3800, target: 3500, transactions: 52, avgTransaction: 73 },
-            { hour: '16:00', actual: 4600, target: 4200, transactions: 63, avgTransaction: 73 },
-            { hour: '17:00', actual: 8200, target: 7500, transactions: 112, avgTransaction: 73 },
-            { hour: '18:00', actual: 12000, target: 11000, transactions: 164, avgTransaction: 73 },
-            { hour: '19:00', actual: 14400, target: 13500, transactions: 197, avgTransaction: 73 },
-            { hour: '20:00', actual: 14000, target: 13000, transactions: 192, avgTransaction: 73 },
-            { hour: '21:00', actual: 11800, target: 11000, transactions: 162, avgTransaction: 73 },
-            { hour: '22:00', actual: 9600, target: 9000, transactions: 132, avgTransaction: 73 }
-          ],
-          dailyTotal: 94800,
-          dailyTarget: 88200
+            { hour: "11:00", actual: 680, target: 650, transactions: 8, avgTransaction: 85, customers: 12 },
+            { hour: "12:00", actual: 920, target: 880, transactions: 11, avgTransaction: 84, customers: 16 },
+            { hour: "13:00", actual: 1180, target: 1120, transactions: 14, avgTransaction: 84, customers: 20 },
+            { hour: "14:00", actual: 980, target: 950, transactions: 12, avgTransaction: 82, customers: 17 },
+            { hour: "15:00", actual: 720, target: 680, transactions: 9, avgTransaction: 80, customers: 13 },
+            { hour: "16:00", actual: 620, target: 580, transactions: 8, avgTransaction: 78, customers: 11 },
+            { hour: "17:00", actual: 1020, target: 980, transactions: 13, avgTransaction: 78, customers: 18 },
+            { hour: "18:00", actual: 1480, target: 1420, transactions: 19, avgTransaction: 78, customers: 26 },
+            { hour: "19:00", actual: 2180, target: 2080, transactions: 28, avgTransaction: 78, customers: 38 },
+            { hour: "20:00", actual: 2680, target: 2580, transactions: 34, avgTransaction: 79, customers: 46 },
+            { hour: "21:00", actual: 2480, target: 2380, transactions: 31, avgTransaction: 80, customers: 42 },
+            { hour: "22:00", actual: 2230, target: 2170, transactions: 28, avgTransaction: 80, customers: 38 }
+          ]
         },
         {
-          day: 'Saturday',
-          date: 'Nov 9',
+          day: "Saturday",
+          date: "Nov 9",
+          dailyTotal: 21800,
+          dailyTarget: 20500,
           hours: [
-            { hour: '12:00', actual: 5000, target: 4500, transactions: 67, avgTransaction: 75 },
-            { hour: '13:00', actual: 7200, target: 6800, transactions: 96, avgTransaction: 75 },
-            { hour: '14:00', actual: 6800, target: 6200, transactions: 91, avgTransaction: 75 },
-            { hour: '15:00', actual: 4800, target: 4200, transactions: 64, avgTransaction: 75 },
-            { hour: '16:00', actual: 5600, target: 5000, transactions: 75, avgTransaction: 75 },
-            { hour: '17:00', actual: 9200, target: 8500, transactions: 123, avgTransaction: 75 },
-            { hour: '18:00', actual: 13200, target: 12000, transactions: 176, avgTransaction: 75 },
-            { hour: '19:00', actual: 15600, target: 14500, transactions: 208, avgTransaction: 75 },
-            { hour: '20:00', actual: 15200, target: 14000, transactions: 203, avgTransaction: 75 },
-            { hour: '21:00', actual: 12800, target: 12000, transactions: 171, avgTransaction: 75 },
-            { hour: '22:00', actual: 10400, target: 9500, transactions: 139, avgTransaction: 75 }
-          ],
-          dailyTotal: 105800,
-          dailyTarget: 97200
+            { hour: "11:00", actual: 920, target: 850, transactions: 11, avgTransaction: 84, customers: 16 },
+            { hour: "12:00", actual: 1280, target: 1200, transactions: 15, avgTransaction: 85, customers: 22 },
+            { hour: "13:00", actual: 1580, target: 1480, transactions: 19, avgTransaction: 83, customers: 27 },
+            { hour: "14:00", actual: 1380, target: 1280, transactions: 17, avgTransaction: 81, customers: 24 },
+            { hour: "15:00", actual: 980, target: 920, transactions: 12, avgTransaction: 82, customers: 17 },
+            { hour: "16:00", actual: 820, target: 780, transactions: 10, avgTransaction: 82, customers: 14 },
+            { hour: "17:00", actual: 1280, target: 1200, transactions: 16, avgTransaction: 80, customers: 22 },
+            { hour: "18:00", actual: 1880, target: 1780, transactions: 24, avgTransaction: 78, customers: 32 },
+            { hour: "19:00", actual: 2680, target: 2580, transactions: 34, avgTransaction: 79, customers: 46 },
+            { hour: "20:00", actual: 3180, target: 3080, transactions: 40, avgTransaction: 80, customers: 54 },
+            { hour: "21:00", actual: 2980, target: 2880, transactions: 37, avgTransaction: 81, customers: 50 },
+            { hour: "22:00", actual: 2830, target: 2740, transactions: 35, avgTransaction: 81, customers: 47 }
+          ]
         },
         {
-          day: 'Sunday',
-          date: 'Nov 10',
+          day: "Sunday",
+          date: "Nov 10",
+          dailyTotal: 14200,
+          dailyTarget: 13500,
           hours: [
-            { hour: '12:00', actual: 4000, target: 3800, transactions: 57, avgTransaction: 70 },
-            { hour: '13:00', actual: 5800, target: 5500, transactions: 83, avgTransaction: 70 },
-            { hour: '14:00', actual: 5200, target: 4800, transactions: 74, avgTransaction: 70 },
-            { hour: '15:00', actual: 3600, target: 3200, transactions: 51, avgTransaction: 71 },
-            { hour: '16:00', actual: 4200, target: 3800, transactions: 59, avgTransaction: 71 },
-            { hour: '17:00', actual: 6800, target: 6200, transactions: 96, avgTransaction: 71 },
-            { hour: '18:00', actual: 9200, target: 8500, transactions: 130, avgTransaction: 71 },
-            { hour: '19:00', actual: 10400, target: 9800, transactions: 147, avgTransaction: 71 },
-            { hour: '20:00', actual: 9800, target: 9200, transactions: 138, avgTransaction: 71 },
-            { hour: '21:00', actual: 7800, target: 7200, transactions: 110, avgTransaction: 71 },
-            { hour: '22:00', actual: 6200, target: 5800, transactions: 87, avgTransaction: 71 }
-          ],
-          dailyTotal: 73000,
-          dailyTarget: 67800
+            { hour: "11:00", actual: 780, target: 720, transactions: 9, avgTransaction: 87, customers: 14 },
+            { hour: "12:00", actual: 1080, target: 1020, transactions: 12, avgTransaction: 90, customers: 18 },
+            { hour: "13:00", actual: 1380, target: 1320, transactions: 15, avgTransaction: 92, customers: 23 },
+            { hour: "14:00", actual: 1180, target: 1120, transactions: 13, avgTransaction: 91, customers: 20 },
+            { hour: "15:00", actual: 880, target: 820, transactions: 10, avgTransaction: 88, customers: 15 },
+            { hour: "16:00", actual: 720, target: 680, transactions: 8, avgTransaction: 90, customers: 12 },
+            { hour: "17:00", actual: 980, target: 920, transactions: 11, avgTransaction: 89, customers: 16 },
+            { hour: "18:00", actual: 1380, target: 1320, transactions: 15, avgTransaction: 92, customers: 22 },
+            { hour: "19:00", actual: 1820, target: 1780, transactions: 20, avgTransaction: 91, customers: 29 },
+            { hour: "20:00", actual: 1980, target: 1920, transactions: 22, avgTransaction: 90, customers: 32 },
+            { hour: "21:00", actual: 1680, target: 1620, transactions: 19, avgTransaction: 88, customers: 27 },
+            { hour: "22:00", actual: 1330, target: 1280, transactions: 15, avgTransaction: 89, customers: 22 }
+          ]
         }
-      ],
-      weeklyTotal: 549000,
-      weeklyTarget: 515300,
-      performanceVsTarget: 6.5,
-      weeklyCustomers: 7642,
-      customerChange: -3,
-      avgCheckSize: 72,
-      checkSizeChange: 5
+      ]
     },
     {
       week: 46,
-      weekType: 'historical',
+      weekType: "historical",
+      weeklyTotal: 82300,
+      weeklyTarget: 78000,
+      weeklyCustomers: 1142,
+      avgCheckSize: 72,
+      checkSizeChange: 2.8,
+      performanceVsTarget: 5.5,
       weekData: [
         {
-          day: 'Monday',
-          date: 'Nov 11',
+          day: "Monday",
+          date: "Nov 11",
+          dailyTotal: 9200,
+          dailyTarget: 9200,
           hours: [
-            { hour: '12:00', actual: 3000, target: 2500, transactions: 47, avgTransaction: 64 },
-            { hour: '13:00', actual: 4400, target: 4000, transactions: 69, avgTransaction: 64 },
-            { hour: '14:00', actual: 4000, target: 3500, transactions: 63, avgTransaction: 64 },
-            { hour: '15:00', actual: 2400, target: 2000, transactions: 38, avgTransaction: 63 },
-            { hour: '16:00', actual: 3000, target: 2500, transactions: 48, avgTransaction: 63 },
-            { hour: '17:00', actual: 5400, target: 5000, transactions: 86, avgTransaction: 63 },
-            { hour: '18:00', actual: 8000, target: 7500, transactions: 127, avgTransaction: 63 },
-            { hour: '19:00', actual: 9400, target: 9000, transactions: 149, avgTransaction: 63 },
-            { hour: '20:00', actual: 9000, target: 8500, transactions: 143, avgTransaction: 63 },
-            { hour: '21:00', actual: 7400, target: 7000, transactions: 117, avgTransaction: 63 },
-            { hour: '22:00', actual: 6000, target: 5500, transactions: 95, avgTransaction: 63 }
-          ],
-          dailyTotal: 62000,
-          dailyTarget: 57000
+            { hour: "11:00", actual: 450, target: 450, transactions: 6, avgTransaction: 75, customers: 9 },
+            { hour: "12:00", actual: 720, target: 720, transactions: 9, avgTransaction: 80, customers: 13 },
+            { hour: "13:00", actual: 950, target: 950, transactions: 12, avgTransaction: 79, customers: 17 },
+            { hour: "14:00", actual: 780, target: 780, transactions: 10, avgTransaction: 78, customers: 14 },
+            { hour: "15:00", actual: 480, target: 480, transactions: 6, avgTransaction: 80, customers: 9 },
+            { hour: "16:00", actual: 420, target: 420, transactions: 5, avgTransaction: 84, customers: 8 },
+            { hour: "17:00", actual: 680, target: 680, transactions: 8, avgTransaction: 85, customers: 12 },
+            { hour: "18:00", actual: 920, target: 920, transactions: 11, avgTransaction: 84, customers: 16 },
+            { hour: "19:00", actual: 1280, target: 1280, transactions: 15, avgTransaction: 85, customers: 22 },
+            { hour: "20:00", actual: 1500, target: 1500, transactions: 18, avgTransaction: 83, customers: 25 },
+            { hour: "21:00", actual: 1380, target: 1380, transactions: 16, avgTransaction: 86, customers: 23 },
+            { hour: "22:00", actual: 890, target: 890, transactions: 10, avgTransaction: 89, customers: 15 }
+          ]
         },
         {
-          day: 'Tuesday',
-          date: 'Nov 12',
+          day: "Tuesday",
+          date: "Nov 12",
+          dailyTotal: 12800,
+          dailyTarget: 12000,
           hours: [
-            { hour: '12:00', actual: 3400, target: 3000, transactions: 52, avgTransaction: 65 },
-            { hour: '13:00', actual: 5000, target: 4500, transactions: 77, avgTransaction: 65 },
-            { hour: '14:00', actual: 4400, target: 4000, transactions: 68, avgTransaction: 65 },
-            { hour: '15:00', actual: 2800, target: 2500, transactions: 43, avgTransaction: 65 },
-            { hour: '16:00', actual: 3400, target: 3000, transactions: 52, avgTransaction: 65 },
-            { hour: '17:00', actual: 6000, target: 5500, transactions: 92, avgTransaction: 65 },
-            { hour: '18:00', actual: 8600, target: 8000, transactions: 132, avgTransaction: 65 },
-            { hour: '19:00', actual: 10000, target: 9500, transactions: 154, avgTransaction: 65 },
-            { hour: '20:00', actual: 9600, target: 9000, transactions: 148, avgTransaction: 65 },
-            { hour: '21:00', actual: 8000, target: 7500, transactions: 123, avgTransaction: 65 },
-            { hour: '22:00', actual: 6400, target: 6000, transactions: 98, avgTransaction: 65 }
-          ],
-          dailyTotal: 67600,
-          dailyTarget: 62500
+            { hour: "11:00", actual: 520, target: 480, transactions: 7, avgTransaction: 74, customers: 10 },
+            { hour: "12:00", actual: 800, target: 750, transactions: 10, avgTransaction: 80, customers: 14 },
+            { hour: "13:00", actual: 1020, target: 950, transactions: 12, avgTransaction: 85, customers: 17 },
+            { hour: "14:00", actual: 850, target: 800, transactions: 10, avgTransaction: 85, customers: 15 },
+            { hour: "15:00", actual: 540, target: 500, transactions: 6, avgTransaction: 90, customers: 9 },
+            { hour: "16:00", actual: 470, target: 430, transactions: 5, avgTransaction: 94, customers: 8 },
+            { hour: "17:00", actual: 750, target: 700, transactions: 8, avgTransaction: 94, customers: 12 },
+            { hour: "18:00", actual: 1080, target: 980, transactions: 11, avgTransaction: 98, customers: 16 },
+            { hour: "19:00", actual: 1680, target: 1520, transactions: 17, avgTransaction: 99, customers: 24 },
+            { hour: "20:00", actual: 1980, target: 1850, transactions: 20, avgTransaction: 99, customers: 28 },
+            { hour: "21:00", actual: 1820, target: 1680, transactions: 18, avgTransaction: 101, customers: 26 },
+            { hour: "22:00", actual: 1480, target: 1350, transactions: 14, avgTransaction: 106, customers: 21 }
+          ]
         },
         {
-          day: 'Wednesday',
-          date: 'Nov 13',
+          day: "Wednesday",
+          date: "Nov 13",
+          dailyTotal: 11600,
+          dailyTarget: 10800,
           hours: [
-            { hour: '12:00', actual: 3600, target: 3200, transactions: 54, avgTransaction: 67 },
-            { hour: '13:00', actual: 5400, target: 5000, transactions: 81, avgTransaction: 67 },
-            { hour: '14:00', actual: 4800, target: 4300, transactions: 72, avgTransaction: 67 },
-            { hour: '15:00', actual: 3000, target: 2600, transactions: 45, avgTransaction: 67 },
-            { hour: '16:00', actual: 3800, target: 3400, transactions: 57, avgTransaction: 67 },
-            { hour: '17:00', actual: 6400, target: 6000, transactions: 96, avgTransaction: 67 },
-            { hour: '18:00', actual: 9200, target: 8500, transactions: 137, avgTransaction: 67 },
-            { hour: '19:00', actual: 10600, target: 10000, transactions: 158, avgTransaction: 67 },
-            { hour: '20:00', actual: 10200, target: 9500, transactions: 152, avgTransaction: 67 },
-            { hour: '21:00', actual: 8400, target: 8000, transactions: 125, avgTransaction: 67 },
-            { hour: '22:00', actual: 6800, target: 6300, transactions: 101, avgTransaction: 67 }
-          ],
-          dailyTotal: 72200,
-          dailyTarget: 66800
+            { hour: "11:00", actual: 500, target: 450, transactions: 6, avgTransaction: 83, customers: 9 },
+            { hour: "12:00", actual: 750, target: 680, transactions: 9, avgTransaction: 83, customers: 13 },
+            { hour: "13:00", actual: 960, target: 880, transactions: 11, avgTransaction: 87, customers: 16 },
+            { hour: "14:00", actual: 790, target: 720, transactions: 9, avgTransaction: 88, customers: 14 },
+            { hour: "15:00", actual: 500, target: 450, transactions: 6, avgTransaction: 83, customers: 9 },
+            { hour: "16:00", actual: 440, target: 400, transactions: 5, avgTransaction: 88, customers: 8 },
+            { hour: "17:00", actual: 710, target: 650, transactions: 8, avgTransaction: 89, customers: 12 },
+            { hour: "18:00", actual: 1000, target: 920, transactions: 11, avgTransaction: 91, customers: 16 },
+            { hour: "19:00", actual: 1440, target: 1320, transactions: 16, avgTransaction: 90, customers: 22 },
+            { hour: "20:00", actual: 1690, target: 1580, transactions: 19, avgTransaction: 89, customers: 26 },
+            { hour: "21:00", actual: 1540, target: 1440, transactions: 17, avgTransaction: 91, customers: 24 },
+            { hour: "22:00", actual: 1340, target: 1250, transactions: 15, avgTransaction: 89, customers: 20 }
+          ]
         },
         {
-          day: 'Thursday',
-          date: 'Nov 14',
+          day: "Thursday",
+          date: "Nov 14",
+          dailyTotal: 11200,
+          dailyTarget: 11500,
           hours: [
-            { hour: '12:00', actual: 4000, target: 3500, transactions: 58, avgTransaction: 69 },
-            { hour: '13:00', actual: 6000, target: 5500, transactions: 87, avgTransaction: 69 },
-            { hour: '14:00', actual: 5400, target: 4800, transactions: 78, avgTransaction: 69 },
-            { hour: '15:00', actual: 3400, target: 3000, transactions: 49, avgTransaction: 69 },
-            { hour: '16:00', actual: 4200, target: 3800, transactions: 61, avgTransaction: 69 },
-            { hour: '17:00', actual: 7200, target: 6500, transactions: 104, avgTransaction: 69 },
-            { hour: '18:00', actual: 10400, target: 9500, transactions: 151, avgTransaction: 69 },
-            { hour: '19:00', actual: 12200, target: 11500, transactions: 177, avgTransaction: 69 },
-            { hour: '20:00', actual: 11800, target: 11000, transactions: 171, avgTransaction: 69 },
-            { hour: '21:00', actual: 9800, target: 9000, transactions: 142, avgTransaction: 69 },
-            { hour: '22:00', actual: 8000, target: 7200, transactions: 116, avgTransaction: 69 }
-          ],
-          dailyTotal: 82400,
-          dailyTarget: 75300
+            { hour: "11:00", actual: 440, target: 480, transactions: 5, avgTransaction: 88, customers: 8 },
+            { hour: "12:00", actual: 710, target: 750, transactions: 8, avgTransaction: 89, customers: 12 },
+            { hour: "13:00", actual: 900, target: 950, transactions: 10, avgTransaction: 90, customers: 15 },
+            { hour: "14:00", actual: 750, target: 800, transactions: 8, avgTransaction: 94, customers: 13 },
+            { hour: "15:00", actual: 470, target: 500, transactions: 5, avgTransaction: 94, customers: 8 },
+            { hour: "16:00", actual: 400, target: 450, transactions: 4, avgTransaction: 100, customers: 7 },
+            { hour: "17:00", actual: 650, target: 720, transactions: 7, avgTransaction: 93, customers: 11 },
+            { hour: "18:00", actual: 920, target: 980, transactions: 10, avgTransaction: 92, customers: 15 },
+            { hour: "19:00", actual: 1230, target: 1380, transactions: 13, avgTransaction: 95, customers: 19 },
+            { hour: "20:00", actual: 1480, target: 1680, transactions: 16, avgTransaction: 93, customers: 23 },
+            { hour: "21:00", actual: 1340, target: 1520, transactions: 14, avgTransaction: 96, customers: 21 },
+            { hour: "22:00", actual: 1150, target: 1285, transactions: 12, avgTransaction: 96, customers: 18 }
+          ]
         },
         {
-          day: 'Friday',
-          date: 'Nov 15',
+          day: "Friday",
+          date: "Nov 15",
+          dailyTotal: 18900,
+          dailyTarget: 17500,
           hours: [
-            { hour: '12:00', actual: 4400, target: 4000, transactions: 62, avgTransaction: 71 },
-            { hour: '13:00', actual: 6600, target: 6000, transactions: 93, avgTransaction: 71 },
-            { hour: '14:00', actual: 6000, target: 5500, transactions: 85, avgTransaction: 71 },
-            { hour: '15:00', actual: 4000, target: 3500, transactions: 56, avgTransaction: 71 },
-            { hour: '16:00', actual: 4800, target: 4200, transactions: 68, avgTransaction: 71 },
-            { hour: '17:00', actual: 8400, target: 7500, transactions: 118, avgTransaction: 71 },
-            { hour: '18:00', actual: 12200, target: 11000, transactions: 172, avgTransaction: 71 },
-            { hour: '19:00', actual: 14600, target: 13500, transactions: 206, avgTransaction: 71 },
-            { hour: '20:00', actual: 14200, target: 13000, transactions: 200, avgTransaction: 71 },
-            { hour: '21:00', actual: 12000, target: 11000, transactions: 169, avgTransaction: 71 },
-            { hour: '22:00', actual: 9800, target: 9000, transactions: 138, avgTransaction: 71 }
-          ],
-          dailyTotal: 97000,
-          dailyTarget: 88200
+            { hour: "11:00", actual: 710, target: 650, transactions: 8, avgTransaction: 89, customers: 12 },
+            { hour: "12:00", actual: 960, target: 880, transactions: 11, avgTransaction: 87, customers: 16 },
+            { hour: "13:00", actual: 1230, target: 1120, transactions: 14, avgTransaction: 88, customers: 20 },
+            { hour: "14:00", actual: 1020, target: 950, transactions: 12, avgTransaction: 85, customers: 17 },
+            { hour: "15:00", actual: 750, target: 680, transactions: 9, avgTransaction: 83, customers: 13 },
+            { hour: "16:00", actual: 650, target: 580, transactions: 8, avgTransaction: 81, customers: 11 },
+            { hour: "17:00", actual: 1060, target: 980, transactions: 13, avgTransaction: 82, customers: 18 },
+            { hour: "18:00", actual: 1540, target: 1420, transactions: 19, avgTransaction: 81, customers: 26 },
+            { hour: "19:00", actual: 2270, target: 2080, transactions: 28, avgTransaction: 81, customers: 38 },
+            { hour: "20:00", actual: 2790, target: 2580, transactions: 34, avgTransaction: 82, customers: 46 },
+            { hour: "21:00", actual: 2580, target: 2380, transactions: 31, avgTransaction: 83, customers: 42 },
+            { hour: "22:00", actual: 2330, target: 2170, transactions: 28, avgTransaction: 83, customers: 38 }
+          ]
         },
         {
-          day: 'Saturday',
-          date: 'Nov 16',
+          day: "Saturday",
+          date: "Nov 16",
+          dailyTotal: 22600,
+          dailyTarget: 20500,
           hours: [
-            { hour: '12:00', actual: 5200, target: 4500, transactions: 71, avgTransaction: 73 },
-            { hour: '13:00', actual: 7400, target: 6800, transactions: 101, avgTransaction: 73 },
-            { hour: '14:00', actual: 7000, target: 6200, transactions: 96, avgTransaction: 73 },
-            { hour: '15:00', actual: 5000, target: 4200, transactions: 68, avgTransaction: 73 },
-            { hour: '16:00', actual: 5800, target: 5000, transactions: 79, avgTransaction: 73 },
-            { hour: '17:00', actual: 9400, target: 8500, transactions: 129, avgTransaction: 73 },
-            { hour: '18:00', actual: 13400, target: 12000, transactions: 184, avgTransaction: 73 },
-            { hour: '19:00', actual: 15800, target: 14500, transactions: 216, avgTransaction: 73 },
-            { hour: '20:00', actual: 15400, target: 14000, transactions: 211, avgTransaction: 73 },
-            { hour: '21:00', actual: 13000, target: 12000, transactions: 178, avgTransaction: 73 },
-            { hour: '22:00', actual: 10600, target: 9500, transactions: 145, avgTransaction: 73 }
-          ],
-          dailyTotal: 108000,
-          dailyTarget: 97200
+            { hour: "11:00", actual: 960, target: 850, transactions: 11, avgTransaction: 87, customers: 16 },
+            { hour: "12:00", actual: 1330, target: 1200, transactions: 15, avgTransaction: 89, customers: 22 },
+            { hour: "13:00", actual: 1640, target: 1480, transactions: 19, avgTransaction: 86, customers: 27 },
+            { hour: "14:00", actual: 1430, target: 1280, transactions: 17, avgTransaction: 84, customers: 24 },
+            { hour: "15:00", actual: 1020, target: 920, transactions: 12, avgTransaction: 85, customers: 17 },
+            { hour: "16:00", actual: 850, target: 780, transactions: 10, avgTransaction: 85, customers: 14 },
+            { hour: "17:00", actual: 1330, target: 1200, transactions: 16, avgTransaction: 83, customers: 22 },
+            { hour: "18:00", actual: 1950, target: 1780, transactions: 24, avgTransaction: 81, customers: 32 },
+            { hour: "19:00", actual: 2780, target: 2580, transactions: 34, avgTransaction: 82, customers: 46 },
+            { hour: "20:00", actual: 3300, target: 3080, transactions: 40, avgTransaction: 83, customers: 54 },
+            { hour: "21:00", actual: 3090, target: 2880, transactions: 37, avgTransaction: 84, customers: 50 },
+            { hour: "22:00", actual: 2930, target: 2740, transactions: 35, avgTransaction: 84, customers: 47 }
+          ]
         },
         {
-          day: 'Sunday',
-          date: 'Nov 17',
+          day: "Sunday",
+          date: "Nov 17",
+          dailyTotal: 14700,
+          dailyTarget: 13500,
           hours: [
-            { hour: '12:00', actual: 4200, target: 3800, transactions: 60, avgTransaction: 70 },
-            { hour: '13:00', actual: 6000, target: 5500, transactions: 86, avgTransaction: 70 },
-            { hour: '14:00', actual: 5400, target: 4800, transactions: 77, avgTransaction: 70 },
-            { hour: '15:00', actual: 3800, target: 3200, transactions: 54, avgTransaction: 70 },
-            { hour: '16:00', actual: 4400, target: 3800, transactions: 63, avgTransaction: 70 },
-            { hour: '17:00', actual: 7000, target: 6200, transactions: 100, avgTransaction: 70 },
-            { hour: '18:00', actual: 9400, target: 8500, transactions: 134, avgTransaction: 70 },
-            { hour: '19:00', actual: 10600, target: 9800, transactions: 151, avgTransaction: 70 },
-            { hour: '20:00', actual: 10000, target: 9200, transactions: 143, avgTransaction: 70 },
-            { hour: '21:00', actual: 8000, target: 7200, transactions: 114, avgTransaction: 70 },
-            { hour: '22:00', actual: 6400, target: 5800, transactions: 91, avgTransaction: 70 }
-          ],
-          dailyTotal: 75200,
-          dailyTarget: 67800
+            { hour: "11:00", actual: 810, target: 720, transactions: 9, avgTransaction: 90, customers: 14 },
+            { hour: "12:00", actual: 1120, target: 1020, transactions: 12, avgTransaction: 93, customers: 18 },
+            { hour: "13:00", actual: 1430, target: 1320, transactions: 15, avgTransaction: 95, customers: 23 },
+            { hour: "14:00", actual: 1220, target: 1120, transactions: 13, avgTransaction: 94, customers: 20 },
+            { hour: "15:00", actual: 910, target: 820, transactions: 10, avgTransaction: 91, customers: 15 },
+            { hour: "16:00", actual: 750, target: 680, transactions: 8, avgTransaction: 94, customers: 12 },
+            { hour: "17:00", actual: 1020, target: 920, transactions: 11, avgTransaction: 93, customers: 16 },
+            { hour: "18:00", actual: 1430, target: 1320, transactions: 15, avgTransaction: 95, customers: 22 },
+            { hour: "19:00", actual: 1890, target: 1780, transactions: 20, avgTransaction: 95, customers: 29 },
+            { hour: "20:00", actual: 2050, target: 1920, transactions: 22, avgTransaction: 93, customers: 32 },
+            { hour: "21:00", actual: 1740, target: 1620, transactions: 19, avgTransaction: 92, customers: 27 },
+            { hour: "22:00", actual: 1380, target: 1280, transactions: 15, avgTransaction: 92, customers: 22 }
+          ]
         }
-      ],
-      weeklyTotal: 564400,
-      weeklyTarget: 515300,
-      performanceVsTarget: 9.5,
-      weeklyCustomers: 7834,
-      customerChange: 12,
-      avgCheckSize: 72,
-      checkSizeChange: -1
+      ]
     },
     {
       week: 47,
-      weekType: 'current',
+      weekType: "current",
+      weeklyTotal: 89500,
+      weeklyTarget: 82000,
+      weeklyCustomers: 1247,
+      avgCheckSize: 72,
+      checkSizeChange: 8.2,
+      performanceVsTarget: 9.1,
       weekData: [
         {
-          day: 'Monday',
-          date: 'Nov 18',
+          day: "Monday",
+          date: "Nov 18",
+          dailyTotal: 9800,
+          dailyTarget: 9200,
           hours: [
-            { hour: '12:00', actual: 3200, target: 2500, transactions: 49, avgTransaction: 65 },
-            { hour: '13:00', actual: 4600, target: 4000, transactions: 71, avgTransaction: 65 },
-            { hour: '14:00', actual: 4200, target: 3500, transactions: 65, avgTransaction: 65 },
-            { hour: '15:00', actual: 2600, target: 2000, transactions: 40, avgTransaction: 65 },
-            { hour: '16:00', actual: 3200, target: 2500, transactions: 49, avgTransaction: 65 },
-            { hour: '17:00', actual: 5600, target: 5000, transactions: 86, avgTransaction: 65 },
-            { hour: '18:00', actual: 8200, target: 7500, transactions: 126, avgTransaction: 65 },
-            { hour: '19:00', actual: 9600, target: 9000, transactions: 148, avgTransaction: 65 },
-            { hour: '20:00', actual: 9200, target: 8500, transactions: 142, avgTransaction: 65 },
-            { hour: '21:00', actual: 7600, target: 7000, transactions: 117, avgTransaction: 65 },
-            { hour: '22:00', actual: 6200, target: 5500, transactions: 95, avgTransaction: 65 }
-          ],
-          dailyTotal: 64000,
-          dailyTarget: 57000
+            { hour: "11:00", actual: 480, target: 450, transactions: 6, avgTransaction: 80, customers: 9 },
+            { hour: "12:00", actual: 770, target: 720, transactions: 9, avgTransaction: 86, customers: 13 },
+            { hour: "13:00", actual: 1020, target: 950, transactions: 12, avgTransaction: 85, customers: 17 },
+            { hour: "14:00", actual: 830, target: 780, transactions: 10, avgTransaction: 83, customers: 14 },
+            { hour: "15:00", actual: 510, target: 480, transactions: 6, avgTransaction: 85, customers: 9 },
+            { hour: "16:00", actual: 450, target: 420, transactions: 5, avgTransaction: 90, customers: 8 },
+            { hour: "17:00", actual: 720, target: 680, transactions: 8, avgTransaction: 90, customers: 12 },
+            { hour: "18:00", actual: 980, target: 920, transactions: 11, avgTransaction: 89, customers: 16 },
+            { hour: "19:00", actual: 1360, target: 1280, transactions: 15, avgTransaction: 91, customers: 22 },
+            { hour: "20:00", actual: 1590, target: 1500, transactions: 18, avgTransaction: 88, customers: 25 },
+            { hour: "21:00", actual: 1460, target: 1380, transactions: 16, avgTransaction: 91, customers: 23 },
+            { hour: "22:00", actual: 940, target: 890, transactions: 10, avgTransaction: 94, customers: 15 }
+          ]
         },
         {
-          day: 'Tuesday',
-          date: 'Nov 19',
+          day: "Tuesday",
+          date: "Nov 19",
+          dailyTotal: 13600,
+          dailyTarget: 12000,
           hours: [
-            { hour: '12:00', actual: 3600, target: 3000, transactions: 54, avgTransaction: 67 },
-            { hour: '13:00', actual: 5200, target: 4500, transactions: 78, avgTransaction: 67 },
-            { hour: '14:00', actual: 4600, target: 4000, transactions: 69, avgTransaction: 67 },
-            { hour: '15:00', actual: 3000, target: 2500, transactions: 45, avgTransaction: 67 },
-            { hour: '16:00', actual: 3600, target: 3000, transactions: 54, avgTransaction: 67 },
-            { hour: '17:00', actual: 6200, target: 5500, transactions: 93, avgTransaction: 67 },
-            { hour: '18:00', actual: 8800, target: 8000, transactions: 131, avgTransaction: 67 },
-            { hour: '19:00', actual: 10200, target: 9500, transactions: 152, avgTransaction: 67 },
-            { hour: '20:00', actual: 9800, target: 9000, transactions: 146, avgTransaction: 67 },
-            { hour: '21:00', actual: 8200, target: 7500, transactions: 122, avgTransaction: 67 },
-            { hour: '22:00', actual: 6600, target: 6000, transactions: 99, avgTransaction: 67 }
-          ],
-          dailyTotal: 69800,
-          dailyTarget: 62500
+            { hour: "11:00", actual: 560, target: 480, transactions: 7, avgTransaction: 80, customers: 10 },
+            { hour: "12:00", actual: 850, target: 750, transactions: 10, avgTransaction: 85, customers: 14 },
+            { hour: "13:00", actual: 1090, target: 950, transactions: 12, avgTransaction: 91, customers: 17 },
+            { hour: "14:00", actual: 900, target: 800, transactions: 10, avgTransaction: 90, customers: 15 },
+            { hour: "15:00", actual: 580, target: 500, transactions: 6, avgTransaction: 97, customers: 9 },
+            { hour: "16:00", actual: 500, target: 430, transactions: 5, avgTransaction: 100, customers: 8 },
+            { hour: "17:00", actual: 800, target: 700, transactions: 8, avgTransaction: 100, customers: 12 },
+            { hour: "18:00", actual: 1150, target: 980, transactions: 11, avgTransaction: 105, customers: 16 },
+            { hour: "19:00", actual: 1790, target: 1520, transactions: 17, avgTransaction: 105, customers: 24 },
+            { hour: "20:00, actual: 2110, target: 1850, transactions: 20, avgTransaction: 106, customers: 28 },
+            { hour: "21:00", actual: 1940, target: 1680, transactions: 18, avgTransaction: 108, customers: 26 },
+            { hour: "22:00", actual: 1580, target: 1350, transactions: 14, avgTransaction: 113, customers: 21 }
+          ]
         },
         {
-          day: 'Wednesday',
-          date: 'Nov 20',
+          day: "Wednesday",
+          date: "Nov 20",
+          dailyTotal: 12400,
+          dailyTarget: 10800,
           hours: [
-            { hour: '12:00', actual: 3800, target: 3200, transactions: 55, avgTransaction: 69 },
-            { hour: '13:00', actual: 5600, target: 5000, transactions: 81, avgTransaction: 69 },
-            { hour: '14:00', actual: 5000, target: 4300, transactions: 72, avgTransaction: 69 },
-            { hour: '15:00', actual: 3200, target: 2600, transactions: 46, avgTransaction: 69 },
-            { hour: '16:00', actual: 4000, target: 3400, transactions: 58, avgTransaction: 69 },
-            { hour: '17:00', actual: 6600, target: 6000, transactions: 96, avgTransaction: 69 },
-            { hour: '18:00', actual: 9400, target: 8500, transactions: 136, avgTransaction: 69 },
-            { hour: '19:00', actual: 10800, target: 10000, transactions: 157, avgTransaction: 69 },
-            { hour: '20:00', actual: 10400, target: 9500, transactions: 151, avgTransaction: 69 },
-            { hour: '21:00', actual: 8600, target: 8000, transactions: 125, avgTransaction: 69 },
-            { hour: '22:00', actual: 7000, target: 6300, transactions: 101, avgTransaction: 69 }
-          ],
-          dailyTotal: 74400,
-          dailyTarget: 66800
+            { hour: "11:00", actual: 530, target: 450, transactions: 6, avgTransaction: 88, customers: 9 },
+            { hour: "12:00", actual: 800, target: 680, transactions: 9, avgTransaction: 89, customers: 13 },
+            { hour: "13:00", actual: 1020, target: 880, transactions: 11, avgTransaction: 93, customers: 16 },
+            { hour: "14:00", actual: 840, target: 720, transactions: 9, avgTransaction: 93, customers: 14 },
+            { hour: "15:00", actual: 530, target: 450, transactions: 6, avgTransaction: 88, customers: 9 },
+            { hour: "16:00", actual: 470, target: 400, transactions: 5, avgTransaction: 94, customers: 8 },
+            { hour: "17:00", actual: 760, target: 650, transactions: 8, avgTransaction: 95, customers: 12 },
+            { hour: "18:00", actual: 1070, target: 920, transactions: 11, avgTransaction: 97, customers: 16 },
+            { hour: "19:00", actual: 1540, target: 1320, transactions: 16, avgTransaction: 96, customers: 22 },
+            { hour: "20:00", actual: 1800, target: 1580, transactions: 19, avgTransaction: 95, customers: 26 },
+            { hour: "21:00", actual: 1640, target: 1440, transactions: 17, avgTransaction: 96, customers: 24 },
+            { hour: "22:00", actual: 1430, target: 1250, transactions: 15, avgTransaction: 95, customers: 20 }
+          ]
         },
         {
-          day: 'Thursday',
-          date: 'Nov 21',
+          day: "Thursday",
+          date: "Nov 21",
+          dailyTotal: 11800,
+          dailyTarget: 11500,
           hours: [
-            { hour: '12:00', actual: 4200, target: 3500, transactions: 60, avgTransaction: 70 },
-            { hour: '13:00', actual: 6200, target: 5500, transactions: 89, avgTransaction: 70 },
-            { hour: '14:00', actual: 5600, target: 4800, transactions: 80, avgTransaction: 70 },
-            { hour: '15:00', actual: 3600, target: 3000, transactions: 51, avgTransaction: 70 },
-            { hour: '16:00', actual: 4400, target: 3800, transactions: 63, avgTransaction: 70 },
-            { hour: '17:00', actual: 7400, target: 6500, transactions: 106, avgTransaction: 70 },
-            { hour: '18:00', actual: 10600, target: 9500, transactions: 151, avgTransaction: 70 },
-            { hour: '19:00', actual: 12400, target: 11500, transactions: 177, avgTransaction: 70 },
-            { hour: '20:00', actual: 12000, target: 11000, transactions: 171, avgTransaction: 70 },
-            { hour: '21:00', actual: 10000, target: 9000, transactions: 143, avgTransaction: 70 },
-            { hour: '22:00', actual: 8200, target: 7200, transactions: 117, avgTransaction: 70 }
-          ],
-          dailyTotal: 84600,
-          dailyTarget: 75300
+            { hour: "11:00", actual: 460, target: 480, transactions: 5, avgTransaction: 92, customers: 8 },
+            { hour: "12:00", actual: 740, target: 750, transactions: 8, avgTransaction: 93, customers: 12 },
+            { hour: "13:00", actual: 940, target: 950, transactions: 10, avgTransaction: 94, customers: 15 },
+            { hour: "14:00", actual: 790, target: 800, transactions: 8, avgTransaction: 99, customers: 13 },
+            { hour: "15:00", actual: 490, target: 500, transactions: 5, avgTransaction: 98, customers: 8 },
+            { hour: "16:00", actual: 420, target: 450, transactions: 4, avgTransaction: 105, customers: 7 },
+            { hour: "17:00", actual: 680, target: 720, transactions: 7, avgTransaction: 97, customers: 11 },
+            { hour: "18:00", actual: 960, target: 980, transactions: 10, avgTransaction: 96, customers: 15 },
+            { hour: "19:00", actual: 1290, target: 1380, transactions: 13, avgTransaction: 99, customers: 19 },
+            { hour: "20:00", actual: 1550, target: 1680, transactions: 16, avgTransaction: 97, customers: 23 },
+            { hour: "21:00", actual: 1400, target: 1520, transactions: 14, avgTransaction: 100, customers: 21 },
+            { hour: "22:00", actual: 1200, target: 1285, transactions: 12, avgTransaction: 100, customers: 18 }
+          ]
         },
         {
-          day: 'Friday',
-          date: 'Nov 22',
+          day: "Friday",
+          date: "Nov 22",
+          dailyTotal: 19800,
+          dailyTarget: 17500,
           hours: [
-            { hour: '12:00', actual: 4600, target: 4000, transactions: 64, avgTransaction: 72 },
-            { hour: '13:00', actual: 6800, target: 6000, transactions: 94, avgTransaction: 72 },
-            { hour: '14:00', actual: 6200, target: 5500, transactions: 86, avgTransaction: 72 },
-            { hour: '15:00', actual: 4200, target: 3500, transactions: 58, avgTransaction: 72 },
-            { hour: '16:00', actual: 5000, target: 4200, transactions: 69, avgTransaction: 72 },
-            { hour: '17:00', actual: 8600, target: 7500, transactions: 119, avgTransaction: 72 },
-            { hour: '18:00', actual: 12400, target: 11000, transactions: 172, avgTransaction: 72 },
-            { hour: '19:00', actual: 14800, target: 13500, transactions: 206, avgTransaction: 72 },
-            { hour: '20:00', actual: 14400, target: 13000, transactions: 200, avgTransaction: 72 },
-            { hour: '21:00', actual: 12200, target: 11000, transactions: 169, avgTransaction: 72 },
-            { hour: '22:00', actual: 10000, target: 9000, transactions: 139, avgTransaction: 72 }
-          ],
-          dailyTotal: 99200,
-          dailyTarget: 88200
+            { hour: "11:00", actual: 740, target: 650, transactions: 8, avgTransaction: 93, customers: 12 },
+            { hour: "12:00", actual: 1000, target: 880, transactions: 11, avgTransaction: 91, customers: 16 },
+            { hour: "13:00", actual: 1280, target: 1120, transactions: 14, avgTransaction: 91, customers: 20 },
+            { hour: "14:00", actual: 1060, target: 950, transactions: 12, avgTransaction: 88, customers: 17 },
+            { hour: "15:00", actual: 780, target: 680, transactions: 9, avgTransaction: 87, customers: 13 },
+            { hour: "16:00", actual: 680, target: 580, transactions: 8, avgTransaction: 85, customers: 11 },
+            { hour: "17:00", actual: 1100, target: 980, transactions: 13, avgTransaction: 85, customers: 18 },
+            { hour: "18:00", actual: 1600, target: 1420, transactions: 19, avgTransaction: 84, customers: 26 },
+            { hour: "19:00", actual: 2360, target: 2080, transactions: 28, avgTransaction: 84, customers: 38 },
+            { hour: "20:00", actual: 2900, target: 2580, transactions: 34, avgTransaction: 85, customers: 46 },
+            { hour: "21:00", actual: 2680, target: 2380, transactions: 31, avgTransaction: 86, customers: 42 },
+            { hour: "22:00", actual: 2420, target: 2170, transactions: 28, avgTransaction: 86, customers: 38 }
+          ]
         },
         {
-          day: 'Saturday',
-          date: 'Nov 23',
+          day: "Saturday",
+          date: "Nov 23",
+          dailyTotal: 23400,
+          dailyTarget: 20500,
           hours: [
-            { hour: '12:00', actual: 5400, target: 4500, transactions: 72, avgTransaction: 75 },
-            { hour: '13:00', actual: 7600, target: 6800, transactions: 101, avgTransaction: 75 },
-            { hour: '14:00', actual: 7200, target: 6200, transactions: 96, avgTransaction: 75 },
-            { hour: '15:00', actual: 5200, target: 4200, transactions: 69, avgTransaction: 75 },
-            { hour: '16:00', actual: 6000, target: 5000, transactions: 80, avgTransaction: 75 },
-            { hour: '17:00', actual: 9600, target: 8500, transactions: 128, avgTransaction: 75 },
-            { hour: '18:00', actual: 13600, target: 12000, transactions: 181, avgTransaction: 75 },
-            { hour: '19:00', actual: 16000, target: 14500, transactions: 213, avgTransaction: 75 },
-            { hour: '20:00', actual: 15600, target: 14000, transactions: 208, avgTransaction: 75 },
-            { hour: '21:00', actual: 13200, target: 12000, transactions: 176, avgTransaction: 75 },
-            { hour: '22:00', actual: 10800, target: 9500, transactions: 144, avgTransaction: 75 }
-          ],
-          dailyTotal: 110200,
-          dailyTarget: 97200
+            { hour: "11:00", actual: 1000, target: 850, transactions: 11, avgTransaction: 91, customers: 16 },
+            { hour: "12:00", actual: 1380, target: 1200, transactions: 15, avgTransaction: 92, customers: 22 },
+            { hour: "13:00", actual: 1700, target: 1480, transactions: 19, avgTransaction: 89, customers: 27 },
+            { hour: "14:00", actual: 1480, target: 1280, transactions: 17, avgTransaction: 87, customers: 24 },
+            { hour: "15:00", actual: 1060, target: 920, transactions: 12, avgTransaction: 88, customers: 17 },
+            { hour: "16:00", actual: 880, target: 780, transactions: 10, avgTransaction: 88, customers: 14 },
+            { hour: "17:00", actual: 1380, target: 1200, transactions: 16, avgTransaction: 86, customers: 22 },
+            { hour: "18:00", actual: 2020, target: 1780, transactions: 24, avgTransaction: 84, customers: 32 },
+            { hour: "19:00", actual: 2880, target: 2580, transactions: 34, avgTransaction: 85, customers: 46 },
+            { hour: "20:00", actual: 3420, target: 3080, transactions: 40, avgTransaction: 86, customers: 54 },
+            { hour: "21:00", actual: 3200, target: 2880, transactions: 37, avgTransaction: 86, customers: 50 },
+            { hour: "22:00", actual: 3040, target: 2740, transactions: 35, avgTransaction: 87, customers: 47 }
+          ]
         },
         {
-          day: 'Sunday',
-          date: 'Nov 24',
+          day: "Sunday",
+          date: "Nov 24",
+          dailyTotal: 15200,
+          dailyTarget: 13500,
           hours: [
-            { hour: '12:00', actual: 4400, target: 3800, transactions: 61, avgTransaction: 72 },
-            { hour: '13:00', actual: 6200, target: 5500, transactions: 86, avgTransaction: 72 },
-            { hour: '14:00', actual: 5600, target: 4800, transactions: 78, avgTransaction: 72 },
-            { hour: '15:00', actual: 4000, target: 3200, transactions: 56, avgTransaction: 72 },
-            { hour: '16:00', actual: 4600, target: 3800, transactions: 64, avgTransaction: 72 },
-            { hour: '17:00', actual: 7200, target: 6200, transactions: 100, avgTransaction: 72 },
-            { hour: '18:00', actual: 9600, target: 8500, transactions: 133, avgTransaction: 72 },
-            { hour: '19:00', actual: 10800, target: 9800, transactions: 150, avgTransaction: 72 },
-            { hour: '20:00', actual: 10200, target: 9200, transactions: 142, avgTransaction: 72 },
-            { hour: '21:00', actual: 8200, target: 7200, transactions: 114, avgTransaction: 72 },
-            { hour: '22:00', actual: 6600, target: 5800, transactions: 92, avgTransaction: 72 }
-          ],
-          dailyTotal: 77400,
-          dailyTarget: 67800
+            { hour: "11:00", actual: 840, target: 720, transactions: 9, avgTransaction: 93, customers: 14 },
+            { hour: "12:00", actual: 1160, target: 1020, transactions: 12, avgTransaction: 97, customers: 18 },
+            { hour: "13:00", actual: 1480, target: 1320, transactions: 15, avgTransaction: 99, customers: 23 },
+            { hour: "14:00", actual: 1260, target: 1120, transactions: 13, avgTransaction: 97, customers: 20 },
+            { hour: "15:00", actual: 940, target: 820, transactions: 10, avgTransaction: 94, customers: 15 },
+            { hour: "16:00", actual: 780, target: 680, transactions: 8, avgTransaction: 98, customers: 12 },
+            { hour: "17:00", actual: 1060, target: 920, transactions: 11, avgTransaction: 96, customers: 16 },
+            { hour: "18:00", actual: 1480, target: 1320, transactions: 15, avgTransaction: 99, customers: 22 },
+            { hour: "19:00", actual: 1960, target: 1780, transactions: 20, avgTransaction: 98, customers: 29 },
+            { hour: "20:00", actual: 2120, target: 1920, transactions: 22, avgTransaction: 96, customers: 32 },
+            { hour: "21:00", actual: 1800, target: 1620, transactions: 19, avgTransaction: 95, customers: 27 },
+            { hour: "22:00", actual: 1430, target: 1280, transactions: 15, avgTransaction: 95, customers: 22 }
+          ]
         }
-      ],
-      weeklyTotal: 579600,
-      weeklyTarget: 515300,
-      performanceVsTarget: 12.5,
-      weeklyCustomers: 8051,
-      customerChange: 8,
-      avgCheckSize: 72,
-      checkSizeChange: 2
+      ]
     },
     {
       week: 48,
-      weekType: 'forecast',
+      weekType: "forecast",
+      weeklyTotal: 0,
+      weeklyTarget: 85000,
+      weeklyCustomers: 0,
+      avgCheckSize: 0,
+      checkSizeChange: 0,
+      performanceVsTarget: 0,
       weekData: [
         {
-          day: 'Monday',
-          date: 'Nov 25',
-          hours: [
-            { hour: '12:00', actual: 0, target: 3400, transactions: 52, avgTransaction: 65 },
-            { hour: '13:00', actual: 0, target: 4800, transactions: 74, avgTransaction: 65 },
-            { hour: '14:00', actual: 0, target: 4400, transactions: 68, avgTransaction: 65 },
-            { hour: '15:00', actual: 0, target: 2800, transactions: 43, avgTransaction: 65 },
-            { hour: '16:00', actual: 0, target: 3400, transactions: 52, avgTransaction: 65 },
-            { hour: '17:00', actual: 0, target: 5800, transactions: 89, avgTransaction: 65 },
-            { hour: '18:00', actual: 0, target: 8400, transactions: 129, avgTransaction: 65 },
-            { hour: '19:00', actual: 0, target: 9800, transactions: 151, avgTransaction: 65 },
-            { hour: '20:00', actual: 0, target: 9400, transactions: 145, avgTransaction: 65 },
-            { hour: '21:00', actual: 0, target: 7800, transactions: 120, avgTransaction: 65 },
-            { hour: '22:00', actual: 0, target: 6400, transactions: 98, avgTransaction: 65 }
-          ],
+          day: "Monday",
+          date: "Nov 25",
           dailyTotal: 0,
-          dailyTarget: 66200
+          dailyTarget: 9500,
+          hours: [
+            { hour: "11:00", actual: 0, target: 470, transactions: 0, avgTransaction: 0, customers: 6 },
+            { hour: "12:00", actual: 0, target: 750, transactions: 0, avgTransaction: 0, customers: 9 },
+            { hour: "13:00", actual: 0, target: 990, transactions: 0, avgTransaction: 0, customers: 12 },
+            { hour: "14:00", actual: 0, target: 810, transactions: 0, avgTransaction: 0, customers: 10 },
+            { hour: "15:00", actual: 0, target: 500, transactions: 0, avgTransaction: 0, customers: 6 },
+            { hour: "16:00", actual: 0, target: 440, transactions: 0, avgTransaction: 0, customers: 5 },
+            { hour: "17:00", actual: 0, target: 710, transactions: 0, avgTransaction: 0, customers: 8 },
+            { hour: "18:00", actual: 0, target: 960, transactions: 0, avgTransaction: 0, customers: 11 },
+            { hour: "19:00", actual: 0, target: 1330, transactions: 0, avgTransaction: 0, customers: 15 },
+            { hour: "20:00", actual: 0, target: 1560, transactions: 0, avgTransaction: 0, customers: 18 },
+            { hour: "21:00", actual: 0, target: 1430, transactions: 0, avgTransaction: 0, customers: 16 },
+            { hour: "22:00", actual: 0, target: 920, transactions: 0, avgTransaction: 0, customers: 10 }
+          ]
         },
         {
-          day: 'Tuesday',
-          date: 'Nov 26',
-          hours: [
-            { hour: '12:00', actual: 0, target: 3800, transactions: 57, avgTransaction: 67 },
-            { hour: '13:00', actual: 0, target: 5400, transactions: 81, avgTransaction: 67 },
-            { hour: '14:00', actual: 0, target: 4800, transactions: 72, avgTransaction: 67 },
-            { hour: '15:00', actual: 0, target: 3200, transactions: 48, avgTransaction: 67 },
-            { hour: '16:00', actual: 0, target: 3800, transactions: 57, avgTransaction: 67 },
-            { hour: '17:00', actual: 0, target: 6400, transactions: 96, avgTransaction: 67 },
-            { hour: '18:00', actual: 0, target: 9000, transactions: 134, avgTransaction: 67 },
-            { hour: '19:00', actual: 0, target: 10400, transactions: 155, avgTransaction: 67 },
-            { hour: '20:00', actual: 0, target: 10000, transactions: 149, avgTransaction: 67 },
-            { hour: '21:00', actual: 0, target: 8400, transactions: 125, avgTransaction: 67 },
-            { hour: '22:00', actual: 0, target: 6800, transactions: 101, avgTransaction: 67 }
-          ],
+          day: "Tuesday",
+          date: "Nov 26",
           dailyTotal: 0,
-          dailyTarget: 72000
+          dailyTarget: 13200,
+          hours: [
+            { hour: "11:00", actual: 0, target: 550, transactions: 0, avgTransaction: 0, customers: 7 },
+            { hour: "12:00", actual: 0, target: 830, transactions: 0, avgTransaction: 0, customers: 10 },
+            { hour: "13:00", actual: 0, target: 1070, transactions: 0, avgTransaction: 0, customers: 12 },
+            { hour: "14:00", actual: 0, target: 880, transactions: 0, avgTransaction: 0, customers: 10 },
+            { hour: "15:00", actual: 0, target: 570, transactions: 0, avgTransaction: 0, customers: 6 },
+            { hour: "16:00", actual: 0, target: 490, transactions: 0, avgTransaction: 0, customers: 5 },
+            { hour: "17:00", actual: 0, target: 780, transactions: 0, avgTransaction: 0, customers: 8 },
+            { hour: "18:00", actual: 0, target: 1120, transactions: 0, avgTransaction: 0, customers: 11 },
+            { hour: "19:00", actual: 0, target: 1750, transactions: 0, avgTransaction: 0, customers: 17 },
+            { hour: "20:00", actual: 0, target: 2060, transactions: 0, avgTransaction: 0, customers: 20 },
+            { hour: "21:00", actual: 0, target: 1890, transactions: 0, avgTransaction: 0, customers: 18 },
+            { hour: "22:00", actual: 0, target: 1540, transactions: 0, avgTransaction: 0, customers: 14 }
+          ]
         },
         {
-          day: 'Wednesday',
-          date: 'Nov 27',
-          hours: [
-            { hour: '12:00', actual: 0, target: 4000, transactions: 58, avgTransaction: 69 },
-            { hour: '13:00', actual: 0, target: 5800, transactions: 84, avgTransaction: 69 },
-            { hour: '14:00', actual: 0, target: 5200, transactions: 75, avgTransaction: 69 },
-            { hour: '15:00', actual: 0, target: 3400, transactions: 49, avgTransaction: 69 },
-            { hour: '16:00', actual: 0, target: 4200, transactions: 61, avgTransaction: 69 },
-            { hour: '17:00', actual: 0, target: 6800, transactions: 99, avgTransaction: 69 },
-            { hour: '18:00', actual: 0, target: 9600, transactions: 139, avgTransaction: 69 },
-            { hour: '19:00', actual: 0, target: 11000, transactions: 159, avgTransaction: 69 },
-            { hour: '20:00', actual: 0, target: 10600, transactions: 154, avgTransaction: 69 },
-            { hour: '21:00', actual: 0, target: 8800, transactions: 128, avgTransaction: 69 },
-            { hour: '22:00', actual: 0, target: 7200, transactions: 104, avgTransaction: 69 }
-          ],
+          day: "Wednesday",
+          date: "Nov 27",
           dailyTotal: 0,
-          dailyTarget: 76600
+          dailyTarget: 12100,
+          hours: [
+            { hour: "11:00", actual: 0, target: 520, transactions: 0, avgTransaction: 0, customers: 6 },
+            { hour: "12:00", actual: 0, target: 780, transactions: 0, avgTransaction: 0, customers: 9 },
+            { hour: "13:00", actual: 0, target: 1000, transactions: 0, avgTransaction: 0, customers: 11 },
+            { hour: "14:00", actual: 0, target: 820, transactions: 0, avgTransaction: 0, customers: 9 },
+            { hour: "15:00", actual: 0, target: 520, transactions: 0, avgTransaction: 0, customers: 6 },
+            { hour: "16:00", actual: 0, target: 460, transactions: 0, avgTransaction: 0, customers: 5 },
+            { hour: "17:00", actual: 0, target: 740, transactions: 0, avgTransaction: 0, customers: 8 },
+            { hour: "18:00", actual: 0, target: 1040, transactions: 0, avgTransaction: 0, customers: 11 },
+            { hour: "19:00", actual: 0, target: 1500, transactions: 0, avgTransaction: 0, customers: 16 },
+            { hour: "20:00", actual: 0, target: 1760, transactions: 0, avgTransaction: 0, customers: 19 },
+            { hour: "21:00", actual: 0, target: 1600, transactions: 0, avgTransaction: 0, customers: 17 },
+            { hour: "22:00", actual: 0, target: 1400, transactions: 0, avgTransaction: 0, customers: 15 }
+          ]
         },
         {
-          day: 'Thursday',
-          date: 'Nov 28',
-          hours: [
-            { hour: '12:00', actual: 0, target: 4400, transactions: 63, avgTransaction: 70 },
-            { hour: '13:00', actual: 0, target: 6400, transactions: 91, avgTransaction: 70 },
-            { hour: '14:00', actual: 0, target: 5800, transactions: 83, avgTransaction: 70 },
-            { hour: '15:00', actual: 0, target: 3800, transactions: 54, avgTransaction: 70 },
-            { hour: '16:00', actual: 0, target: 4600, transactions: 66, avgTransaction: 70 },
-            { hour: '17:00', actual: 0, target: 7600, transactions: 109, avgTransaction: 70 },
-            { hour: '18:00', actual: 0, target: 10800, transactions: 154, avgTransaction: 70 },
-            { hour: '19:00', actual: 0, target: 12600, transactions: 180, avgTransaction: 70 },
-            { hour: '20:00', actual: 0, target: 12200, transactions: 174, avgTransaction: 70 },
-            { hour: '21:00', actual: 0, target: 10200, transactions: 146, avgTransaction: 70 },
-            { hour: '22:00', actual: 0, target: 8400, transactions: 120, avgTransaction: 70 }
-          ],
+          day: "Thursday",
+          date: "Nov 28",
           dailyTotal: 0,
-          dailyTarget: 86800
+          dailyTarget: 11900,
+          hours: [
+            { hour: "11:00", actual: 0, target: 480, transactions: 0, avgTransaction: 0, customers: 5 },
+            { hour: "12:00", actual: 0, target: 770, transactions: 0, avgTransaction: 0, customers: 8 },
+            { hour: "13:00", actual: 0, target: 980, transactions: 0, avgTransaction: 0, customers: 10 },
+            { hour: "14:00", actual: 0, target: 820, transactions: 0, avgTransaction: 0, customers: 8 },
+            { hour: "15:00", actual: 0, target: 510, transactions: 0, avgTransaction: 0, customers: 5 },
+            { hour: "16:00", actual: 0, target: 440, transactions: 0, avgTransaction: 0, customers: 4 },
+            { hour: "17:00", actual: 0, target: 710, transactions: 0, avgTransaction: 0, customers: 7 },
+            { hour: "18:00", actual: 0, target: 1000, transactions: 0, avgTransaction: 0, customers: 10 },
+            { hour: "19:00", actual: 0, target: 1340, transactions: 0, avgTransaction: 0, customers: 13 },
+            { hour: "20:00", actual: 0, target: 1610, transactions: 0, avgTransaction: 0, customers: 16 },
+            { hour: "21:00", actual: 0, target: 1450, transactions: 0, avgTransaction: 0, customers: 14 },
+            { hour: "22:00", actual: 0, target: 1250, transactions: 0, avgTransaction: 0, customers: 12 }
+          ]
         },
         {
-          day: 'Friday',
-          date: 'Nov 29',
-          hours: [
-            { hour: '12:00', actual: 0, target: 4800, transactions: 67, avgTransaction: 72 },
-            { hour: '13:00', actual: 0, target: 7000, transactions: 97, avgTransaction: 72 },
-            { hour: '14:00', actual: 0, target: 6400, transactions: 89, avgTransaction: 72 },
-            { hour: '15:00', actual: 0, target: 4400, transactions: 61, avgTransaction: 72 },
-            { hour: '16:00', actual: 0, target: 5200, transactions: 72, avgTransaction: 72 },
-            { hour: '17:00', actual: 0, target: 8800, transactions: 122, avgTransaction: 72 },
-            { hour: '18:00', actual: 0, target: 12600, transactions: 175, avgTransaction: 72 },
-            { hour: '19:00', actual: 0, target: 15000, transactions: 208, avgTransaction: 72 },
-            { hour: '20:00', actual: 0, target: 14600, transactions: 203, avgTransaction: 72 },
-            { hour: '21:00', actual: 0, target: 12400, transactions: 172, avgTransaction: 72 },
-            { hour: '22:00', actual: 0, target: 10200, transactions: 142, avgTransaction: 72 }
-          ],
+          day: "Friday",
+          date: "Nov 29",
           dailyTotal: 0,
-          dailyTarget: 101400
+          dailyTarget: 20500,
+          hours: [
+            { hour: "11:00", actual: 0, target: 770, transactions: 0, avgTransaction: 0, customers: 8 },
+            { hour: "12:00", actual: 0, target: 1040, transactions: 0, avgTransaction: 0, customers: 11 },
+            { hour: "13:00", actual: 0, target: 1330, transactions: 0, avgTransaction: 0, customers: 14 },
+            { hour: "14:00", actual: 0, target: 1100, transactions: 0, avgTransaction: 0, customers: 12 },
+            { hour: "15:00", actual: 0, target: 810, transactions: 0, avgTransaction: 0, customers: 9 },
+            { hour: "16:00", actual: 0, target: 710, transactions: 0, avgTransaction: 0, customers: 8 },
+            { hour: "17:00", actual: 0, target: 1140, transactions: 0, avgTransaction: 0, customers: 13 },
+            { hour: "18:00", actual: 0, target: 1660, transactions: 0, avgTransaction: 0, customers: 19 },
+            { hour: "19:00", actual: 0, target: 2450, transactions: 0, avgTransaction: 0, customers: 28 },
+            { hour: "20:00", actual: 0, target: 3010, transactions: 0, avgTransaction: 0, customers: 34 },
+            { hour: "21:00", actual: 0, target: 2780, transactions: 0, avgTransaction: 0, customers: 31 },
+            { hour: "22:00", actual: 0, target: 2510, transactions: 0, avgTransaction: 0, customers: 28 }
+          ]
         },
         {
-          day: 'Saturday',
-          date: 'Nov 30',
-          hours: [
-            { hour: '12:00', actual: 0, target: 5600, transactions: 75, avgTransaction: 75 },
-            { hour: '13:00', actual: 0, target: 7800, transactions: 104, avgTransaction: 75 },
-            { hour: '14:00', actual: 0, target: 7400, transactions: 99, avgTransaction: 75 },
-            { hour: '15:00', actual: 0, target: 5400, transactions: 72, avgTransaction: 75 },
-            { hour: '16:00', actual: 0, target: 6200, transactions: 83, avgTransaction: 75 },
-            { hour: '17:00', actual: 0, target: 9800, transactions: 131, avgTransaction: 75 },
-            { hour: '18:00', actual: 0, target: 13800, transactions: 184, avgTransaction: 75 },
-            { hour: '19:00', actual: 0, target: 16200, transactions: 216, avgTransaction: 75 },
-            { hour: '20:00', actual: 0, target: 15800, transactions: 211, avgTransaction: 75 },
-            { hour: '21:00', actual: 0, target: 13400, transactions: 179, avgTransaction: 75 },
-            { hour: '22:00', actual: 0, target: 11000, transactions: 147, avgTransaction: 75 }
-          ],
+          day: "Saturday",
+          date: "Nov 30",
           dailyTotal: 0,
-          dailyTarget: 112400
+          dailyTarget: 24300,
+          hours: [
+            { hour: "11:00", actual: 0, target: 1040, transactions: 0, avgTransaction: 0, customers: 11 },
+            { hour: "12:00", actual: 0, target: 1430, transactions: 0, avgTransaction: 0, customers: 15 },
+            { hour: "13:00", actual: 0, target: 1760, transactions: 0, avgTransaction: 0, customers: 19 },
+            { hour: "14:00", actual: 0, target: 1540, transactions: 0, avgTransaction: 0, customers: 17 },
+            { hour: "15:00", actual: 0, target: 1100, transactions: 0, avgTransaction: 0, customers: 12 },
+            { hour: "16:00", actual: 0, target: 910, transactions: 0, avgTransaction: 0, customers: 10 },
+            { hour: "17:00", actual: 0, target: 1430, transactions: 0, avgTransaction: 0, customers: 16 },
+            { hour: "18:00", actual: 0, target: 2100, transactions: 0, avgTransaction: 0, customers: 24 },
+            { hour: "19:00", actual: 0, target: 2990, transactions: 0, avgTransaction: 0, customers: 34 },
+            { hour: "20:00", actual: 0, target: 3550, transactions: 0, avgTransaction: 0, customers: 40 },
+            { hour: "21:00", actual: 0, target: 3320, transactions: 0, avgTransaction: 0, customers: 37 },
+            { hour: "22:00", actual: 0, target: 3160, transactions: 0, avgTransaction: 0, customers: 35 }
+          ]
         },
         {
-          day: 'Sunday',
-          date: 'Dec 1',
-          hours: [
-            { hour: '12:00', actual: 0, target: 4600, transactions: 64, avgTransaction: 72 },
-            { hour: '13:00', actual: 0, target: 6400, transactions: 89, avgTransaction: 72 },
-            { hour: '14:00', actual: 0, target: 5800, transactions: 81, avgTransaction: 72 },
-            { hour: '15:00', actual: 0, target: 4200, transactions: 58, avgTransaction: 72 },
-            { hour: '16:00', actual: 0, target: 4800, transactions: 67, avgTransaction: 72 },
-            { hour: '17:00', actual: 0, target: 7400, transactions: 103, avgTransaction: 72 },
-            { hour: '18:00', actual: 0, target: 9800, transactions: 136, avgTransaction: 72 },
-            { hour: '19:00', actual: 0, target: 11000, transactions: 153, avgTransaction: 72 },
-            { hour: '20:00', actual: 0, target: 10400, transactions: 144, avgTransaction: 72 },
-            { hour: '21:00', actual: 0, target: 8400, transactions: 117, avgTransaction: 72 },
-            { hour: '22:00', actual: 0, target: 6800, transactions: 94, avgTransaction: 72 }
-          ],
+          day: "Sunday",
+          date: "Dec 1",
           dailyTotal: 0,
-          dailyTarget: 79600
+          dailyTarget: 15700,
+          hours: [
+            { hour: "11:00", actual: 0, target: 870, transactions: 0, avgTransaction: 0, customers: 9 },
+            { hour: "12:00", actual: 0, target: 1200, transactions: 0, avgTransaction: 0, customers: 12 },
+            { hour: "13:00", actual: 0, target: 1530, transactions: 0, avgTransaction: 0, customers: 15 },
+            { hour: "14:00", actual: 0, target: 1310, transactions: 0, avgTransaction: 0, customers: 13 },
+            { hour: "15:00", actual: 0, target: 970, transactions: 0, avgTransaction: 0, customers: 10 },
+            { hour: "16:00", actual: 0, target: 810, transactions: 0, avgTransaction: 0, customers: 8 },
+            { hour: "17:00", actual: 0, target: 1100, transactions: 0, avgTransaction: 0, customers: 11 },
+            { hour: "18:00", actual: 0, target: 1530, transactions: 0, avgTransaction: 0, customers: 15 },
+            { hour: "19:00", actual: 0, target: 2030, transactions: 0, avgTransaction: 0, customers: 20 },
+            { hour: "20:00", actual: 0, target: 2200, transactions: 0, avgTransaction: 0, customers: 22 },
+            { hour: "21:00", actual: 0, target: 1870, transactions: 0, avgTransaction: 0, customers: 19 },
+            { hour: "22:00", actual: 0, target: 1480, transactions: 0, avgTransaction: 0, customers: 15 }
+          ]
         }
-      ],
-      weeklyTotal: 0,
-      weeklyTarget: 595000,
-      performanceVsTarget: 0,
-      weeklyCustomers: 8264,
-      customerChange: 4,
-      avgCheckSize: 72,
-      checkSizeChange: 0
+      ]
     }
   ],
-  leadingIndicators: {
-    guestMomentum: {
-      checkinsThisWeek: 2847,
-      checkinsLastWeek: 2234,
-      checkinsGrowth: 27,
-      trendForecast: "Strong upward momentum driven by festive season and London venue popularity"
-    },
-    bookingHealth: {
-      forwardBookings: {
-        thisWeek: 1456,
-        nextWeek: 1823,
-        weekAfter: 2134
-      },
-      conversionRate: 78,
-      cancellationRate: 8,
-      noShowRate: 4
-    },
-    socialPulse: {
-      weeklyMentions: 847,
-      sentimentScore: 8.7,
-      engagementRate: 12.4,
-      reviewVelocity: 23
-    }
-  },
   sixWeekView: {
     historical: [
       {
         week: 42,
-        checkins: 2156,
-        bookings: 1456,
-        revenue: 523000,
         weather: "rainy",
-        events: ["Halloween Masquerade Ball", "Corporate booking: Tech startup (80 guests)"]
+        checkins: 1089,
+        bookings: 892,
+        revenue: 78500,
+        events: ["Halloween prep"]
       },
       {
         week: 43,
-        checkins: 2834,
-        bookings: 1823,
-        revenue: 549000,
         weather: "cold",
-        events: ["Halloween Weekend Spectacular", "Private party: Birthday celebration (120 guests)", "Bonfire Night themed evening"]
+        checkins: 1142,
+        bookings: 934,
+        revenue: 82300,
+        events: ["Halloween weekend"]
       },
       {
         week: 44,
-        checkins: 2634,
-        bookings: 1678,
-        revenue: 564000,
-        weather: "cloudy",
-        events: ["Corporate Christmas party booking", "Weekend wedding reception (150 guests)", "Live acoustic sessions"]
+        weather: "sunny",
+        checkins: 1247,
+        bookings: 1034,
+        revenue: 89500,
+        events: ["Bonfire Night"]
       }
     ],
     forecast: [
       {
         week: 48,
-        expectedCheckins: 3456,
-        predictedBookings: 2234,
-        forecastRevenue: 612000,
         weather: "cold",
-        events: ["Christmas Market Launch Party", "Corporate booking: Law firm (200 guests)", "Festive menu launch event"]
+        expectedCheckins: 1290,
+        predictedBookings: 1080,
+        forecastRevenue: 92000,
+        events: ["Black Friday promo"]
       },
       {
         week: 49,
-        expectedCheckins: 3789,
-        predictedBookings: 2456,
-        forecastRevenue: 645000,
-        weather: "cold",
-        events: ["Private Christmas party (180 guests)", "Corporate booking: Marketing agency", "Weekend Christmas entertainment special"]
+        weather: "rainy",
+        expectedCheckins: 1350,
+        predictedBookings: 1120,
+        forecastRevenue: 95500,
+        events: ["Christmas market launch"]
       },
       {
         week: 50,
-        expectedCheckins: 4123,
-        predictedBookings: 2678,
-        forecastRevenue: 698000,
         weather: "cold",
-        events: ["Pre-Christmas Weekend Rush", "Office party: Financial services (250 guests)", "New Year's Eve preparation events"]
+        expectedCheckins: 1420,
+        predictedBookings: 1180,
+        forecastRevenue: 98000,
+        events: ["Christmas parties begin"]
       }
     ]
   }
@@ -868,112 +803,125 @@ export const individualPubData: IndividualPubData = {
 
 export const recommendations: Recommendation[] = [
   {
-    category: 'operational',
-    priority: 'important',
-    title: 'Introduce Albert\'s Schloss Merchandise Corner',
-    insight: 'Birmingham location saw 31% merchandise revenue increase after creating dedicated corner display. Beer steins (£18 avg) and Lederhosen accessories (£45 avg) were top performers.',
-    action: 'Create prominent merchandise display near bar featuring beer steins, traditional hats, and Lederhosen accessories with Albert\'s Schloss branding',
-    impact: '+£1,850 weekly merchandise revenue',
-    timeframe: '2-week trial period',
-    loyaltyData: 'Merchandise buyers show 28% higher return visit rate and 15% higher average spend per visit'
+    id: "rec-001",
+    category: "direct-venue",
+    priority: "opportunity",
+    title: "Expand outdoor seating for Thursday Baby Grand Slam",
+    insight: "Weather forecast shows 18°C sunny conditions Thursday. Manchester location saw 34% revenue increase when outdoor seating was added during piano nights.",
+    action: "Set up 4 additional outdoor tables with heaters for Thursday evening. Promote 'Piano Under the Stars' experience.",
+    impact: "£680 additional revenue (based on Manchester data)",
+    timeframe: "This week",
+    weatherFactor: "Sunny 18°C Thursday - perfect for outdoor dining",
+    loyaltyData: "67% of piano night regulars prefer outdoor seating when available"
   },
   {
-    category: 'promotional',
-    priority: 'opportunity',
-    title: 'Launch "Kunst Kabaret Costume Contest" on Tuesdays',
-    insight: 'Tuesday Kunst Kabaret nights show lowest attendance. Manchester location increased Tuesday revenue by 34% with interactive costume competitions.',
-    action: 'Introduce weekly costume contest during Kunst Kabaret with prizes for best traditional German outfit and most creative performance art costume',
-    impact: '+£1,680 weekly Tuesday revenue increase',
-    timeframe: 'This week implementation',
-    loyaltyData: 'Contest participants spend 42% more on drinks and stay 65 minutes longer on average'
+    id: "rec-002", 
+    category: "promotional",
+    priority: "important",
+    title: "Launch 'Stein Personalization' service during Saturday Pleasure Palace",
+    insight: "Birmingham location generated £340 additional revenue per Saturday with custom stein engraving. Saturday nights have highest customer dwell time (2.3 hours avg).",
+    action: "Partner with local engraver to offer on-site stein personalization. Price at £15 per stein with 30-minute turnaround.",
+    impact: "£340-450 additional weekly revenue",
+    timeframe: "Next weekend",
+    loyaltyData: "Saturday regulars spend 23% more on merchandise vs other nights"
   },
   {
-    category: 'direct-venue',
-    priority: 'urgent',
-    title: 'Enhance Friday Fröhlich with Interactive Sing-Along Technology',
-    insight: 'Friday nights at capacity but average spend per guest 8% below Saturday. Liverpool location added digital song request system and saw 19% spend increase.',
-    action: 'Install tablet-based song request system for Friday Fröhlich allowing guests to request traditional German songs and dedications',
-    impact: '+£2,340 weekly Friday revenue increase',
-    timeframe: 'Complete by end of week',
-    loyaltyData: 'Interactive entertainment increases group size by average 1.3 people and extends stay by 45 minutes'
+    id: "rec-003",
+    category: "operational", 
+    priority: "urgent",
+    title: "Add second piano duo for Thursday nights",
+    insight: "Thursday piano nights consistently underperform vs Friday/Saturday by 18%. Customer feedback mentions 'thin sound' compared to weekend shows.",
+    action: "Book additional piano player to create fuller duo sound. Test for 3 weeks to measure impact on dwell time and spend.",
+    impact: "£200-300 additional Thursday revenue",
+    timeframe: "Next Thursday",
+    complianceRisk: "Ensure additional musician has proper licensing and insurance"
+  },
+  {
+    id: "rec-004",
+    category: "direct-venue",
+    priority: "opportunity", 
+    title: "Introduce 'Promenader Costume Rental' for Sunday Service",
+    insight: "Sunday attendance down 12% vs last month. Liverpool location saw 28% increase in Sunday bookings after introducing authentic German costume rentals.",
+    action: "Source 20 authentic German costumes (lederhosen, dirndls) for rental at £8 per person. Market as 'Authentic Sunday Service Experience'.",
+    impact: "£180-240 additional Sunday revenue + 15% booking increase",
+    timeframe: "Next Sunday",
+    loyaltyData: "Sunday Service attendees are 45% more likely to book private events when engaged with authentic experiences"
   }
 ];
 
 export const implementedRecommendations: ImplementedRecommendation[] = [
   {
-    id: '1',
-    originalRecommendation: {
-      title: 'Introduce Weekend Brunch Service',
-      insight: 'Saturday/Sunday 11am-2pm slot showing zero revenue. Competitor analysis shows brunch market opportunity.',
-      action: 'Launch weekend brunch menu with bottomless prosecco option',
-      impact: '+£3,200 weekly revenue',
-      timeframe: '4-week trial'
-    },
-    implementedDate: '2024-10-15',
-    weekImplemented: 42,
-    actionTaken: 'Launched full weekend brunch service with bottomless prosecco, live acoustic music, and Instagram-worthy presentation',
-    expectedImpact: '+£3,200 weekly revenue increase',
-    actualImpact: '+£4,100 weekly revenue increase',
-    impactAchieved: true,
-    impactPercentage: 128,
-    notes: 'Exceeded expectations due to strong social media buzz and word-of-mouth. Bottomless prosecco proved extremely popular with 25-35 demographic.',
-    category: 'direct-venue'
-  },
-  {
-    id: '2',
-    originalRecommendation: {
-      title: 'Optimize Monday Opening Hours',
-      insight: 'Monday 12-3pm showing consistently low footfall and revenue below break-even point.',
-      action: 'Trial delayed Monday opening from 12pm to 4pm to reduce operational costs',
-      impact: '+£450 weekly cost savings',
-      timeframe: '6-week trial'
-    },
-    implementedDate: '2024-10-22',
-    weekImplemented: 43,
-    actionTaken: 'Changed Monday opening from 12pm to 4pm, redeployed staff to other high-demand periods',
-    expectedImpact: '+£450 weekly cost savings',
-    actualImpact: '-£280 weekly revenue loss',
-    impactAchieved: false,
-    impactPercentage: -62,
-    notes: 'Lost some regular lunch customers who moved to competitors. However, staff efficiency improved on other days. Reverted to 12pm opening but with reduced lunch menu.',
-    category: 'operational'
-  },
-  {
-    id: '3',
-    originalRecommendation: {
-      title: 'Launch Cocktail Masterclass Events',
-      insight: 'Tuesday/Wednesday evenings underperforming. Events market research shows high demand for experiential dining.',
-      action: 'Host weekly cocktail masterclasses on Tuesday evenings with head bartender',
-      impact: '+£1,800 weekly revenue',
-      timeframe: '8-week program'
-    },
-    implementedDate: '2024-11-01',
+    id: "impl-001",
+    originalRecommendation: recommendations[0],
     weekImplemented: 44,
-    actionTaken: 'Launched "Mixology Masterclass" every Tuesday 7-9pm, limited to 16 guests, £45 per person including 3 cocktails and canapés',
-    expectedImpact: '+£1,800 weekly revenue',
-    actualImpact: '+£2,340 weekly revenue',
+    implementedDate: "2024-11-01",
+    actionTaken: "Added 6 outdoor tables with heaters for Thursday piano nights, promoted as 'Piano Under the Stars'",
+    expectedImpact: "£680 additional revenue",
+    actualImpact: "£720 additional revenue (+5.9%)",
+    impactPercentage: 106,
     impactAchieved: true,
-    impactPercentage: 130,
-    notes: 'Consistently sold out with waiting list. Strong corporate team-building bookings. Participants often stay for dinner afterwards, driving additional revenue.',
-    category: 'direct-venue'
+    category: "direct-venue",
+    notes: "Exceeded expectations due to perfect weather. 3 tables remained occupied past normal closing time. Customer feedback extremely positive - 'magical atmosphere'. Recommend making permanent fixture for good weather days."
   },
   {
-    id: '4',
-    originalRecommendation: {
-      title: 'Implement Dynamic Pricing for Peak Hours',
-      insight: 'Friday/Saturday 7-9pm consistently at capacity while earlier slots underbooked.',
-      action: 'Introduce 10% premium pricing for peak Friday/Saturday evening slots',
-      impact: '+£2,100 weekly revenue',
-      timeframe: '4-week trial'
-    },
-    implementedDate: '2024-11-08',
-    weekImplemented: 45,
-    actionTaken: 'Applied 10% surcharge to bookings between 7-9pm Friday/Saturday, communicated as "Peak Dining Experience" with complimentary welcome cocktail',
-    expectedImpact: '+£2,100 weekly revenue',
-    actualImpact: '+£890 weekly revenue',
-    impactPercentage: 42,
+    id: "impl-002",
+    originalRecommendation: recommendations[1],
+    weekImplemented: 43,
+    implementedDate: "2024-10-26",
+    actionTaken: "Launched stein personalization service with local engraver during Saturday Pleasure Palace",
+    expectedImpact: "£340-450 additional weekly revenue",
+    actualImpact: "£280 additional revenue",
+    impactPercentage: 82,
     impactAchieved: false,
-    notes: 'Some customer resistance to pricing. Booking conversion rate dropped 15% for peak slots. Welcome cocktail helped soften impact but eroded margins. Considering alternative approach.',
-    category: 'promotional'
+    category: "promotional",
+    notes: "Lower than expected due to 45-minute turnaround time vs promised 30 minutes. Customers didn't want to wait. Need faster engraving equipment or pre-engraved options. Service popular but execution needs improvement."
+  },
+  {
+    id: "impl-003",
+    originalRecommendation: recommendations[2],
+    weekImplemented: 45,
+    implementedDate: "2024-11-07",
+    actionTaken: "Added second piano player to create fuller duo sound for Thursday Baby Grand Slam",
+    expectedImpact: "£200-300 additional Thursday revenue",
+    actualImpact: "£380 additional revenue (+27%)",
+    impactPercentage: 127,
+    impactAchieved: true,
+    category: "operational",
+    notes: "Massive success! Customer dwell time increased by 35 minutes on average. Several customers mentioned 'much richer sound'. Bookings for Thursday nights up 22% since implementation. Definitely keeping permanent."
+  },
+  {
+    id: "impl-004",
+    originalRecommendation: recommendations[3],
+    weekImplemented: 42,
+    implementedDate: "2024-10-20",
+    actionTaken: "Introduced costume rental service with 15 authentic German outfits for Sunday Service",
+    expectedImpact: "£180-240 additional Sunday revenue + 15% booking increase",
+    actualImpact: "£160 additional revenue + 8% booking increase",
+    impactPercentage: 89,
+    impactAchieved: false,
+    category: "direct-venue",
+    notes: "Moderate success but below target. Costume sizes were limited - need more variety. Popular with families but adults hesitant. Consider offering just accessories (hats, suspenders) as lower-commitment option. Kids loved it though!"
+  },
+  {
+    id: "impl-005",
+    originalRecommendation: {
+      id: "rec-005",
+      category: "promotional",
+      priority: "opportunity",
+      title: "Launch 'Industry Monday' discount for hospitality workers",
+      insight: "Monday nights consistently lowest revenue. 34% of local workforce in hospitality industry.",
+      action: "Offer 25% discount to hospitality workers with valid ID on Mondays",
+      impact: "£200-300 additional Monday revenue",
+      timeframe: "This week"
+    },
+    weekImplemented: 41,
+    implementedDate: "2024-10-14",
+    actionTaken: "Launched 25% hospitality worker discount for Monday nights with valid industry ID",
+    expectedImpact: "£200-300 additional Monday revenue",
+    actualImpact: "£420 additional revenue (+47%)",
+    impactPercentage: 140,
+    impactAchieved: true,
+    category: "promotional",
+    notes: "Incredible success! Word spread quickly through hospitality community. Monday nights now consistently busy. Many hospitality workers bringing friends who pay full price. Created strong community feeling. Expanding to include retail workers."
   }
 ];
