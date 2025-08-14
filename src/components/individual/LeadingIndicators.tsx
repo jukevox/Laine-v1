@@ -91,12 +91,14 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
         const randomBand = bands[Math.floor(Math.random() * bands.length)];
         const revenueMultiplier = weekType === 'forecast' ? 0.9 + Math.random() * 0.2 : 0.8 + Math.random() * 0.4;
         const baseRevenue = randomBand.cost * (2.5 + Math.random() * 1.5);
+        const targetRevenue = randomBand.cost * 2.8; // Target is 2.8x the cost
         
         return {
           day: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][dayIndex],
           category,
           band: randomBand,
           revenueImpact: Math.round(baseRevenue * revenueMultiplier),
+          targetRevenue: Math.round(targetRevenue),
           weekType
         };
       });
@@ -342,7 +344,7 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
                 key={index}
                 className={`rounded-lg p-3 text-xs border-2 transition-all duration-200 ${getCategoryColor(dayData.category)} ${
                   selectedWeek.weekType === 'current' ? 'ring-2 ring-indigo-500' : ''
-                } ${selectedWeek.weekType === 'forecast' ? 'opacity-80' : ''}`}
+                }`}
               >
                 <div className="space-y-2">
                   <div className="font-medium text-gray-800 dark:text-gray-200">
@@ -362,7 +364,15 @@ export default function LeadingIndicators({ data, alerts = [] }: LeadingIndicato
                       ? 'text-blue-600 dark:text-blue-400' 
                       : 'text-green-600 dark:text-green-400'
                   }`}>
-                    {selectedWeek.weekType === 'forecast' ? 'Est. ' : ''}+£{dayData.revenueImpact}
+                    {selectedWeek.weekType === 'forecast' ? (
+                      <span className="text-blue-600 dark:text-blue-400 opacity-50">
+                        Est. +£{dayData.revenueImpact}
+                      </span>
+                    ) : (
+                      <span className={dayData.revenueImpact >= dayData.band.cost * 2.8 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}>
+                        +£{dayData.revenueImpact}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
