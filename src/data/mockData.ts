@@ -814,53 +814,53 @@ export const individualPubData: IndividualPubData = {
     historical: [
       {
         week: 42,
-        checkins: 1834,
-        bookings: 1245,
-        revenue: 485000,
-        weather: "rainy",
-        events: ["Halloween prep"]
-      },
-      {
-        week: 43,
         checkins: 2156,
         bookings: 1456,
         revenue: 523000,
+        weather: "rainy",
+        events: ["Halloween Masquerade Ball", "Corporate booking: Tech startup (80 guests)"]
+      },
+      {
+        week: 43,
+        checkins: 2834,
+        bookings: 1823,
+        revenue: 549000,
         weather: "cold",
-        events: ["Halloween weekend", "Live jazz nights"]
+        events: ["Halloween Weekend Spectacular", "Private party: Birthday celebration (120 guests)", "Bonfire Night themed evening"]
       },
       {
         week: 44,
-        checkins: 2089,
-        bookings: 1389,
-        revenue: 512000,
+        checkins: 2634,
+        bookings: 1678,
+        revenue: 564000,
         weather: "cloudy",
-        events: ["Bonfire Night", "Acoustic sessions"]
+        events: ["Corporate Christmas party booking", "Weekend wedding reception (150 guests)", "Live acoustic sessions"]
       }
     ],
     forecast: [
       {
         week: 48,
-        expectedCheckins: 3200,
-        predictedBookings: 2100,
-        forecastRevenue: 595000,
+        expectedCheckins: 3456,
+        predictedBookings: 2234,
+        forecastRevenue: 612000,
         weather: "cold",
-        events: ["Christmas market launch", "Festive menu", "Live music weekends"]
+        events: ["Christmas Market Launch Party", "Corporate booking: Law firm (200 guests)", "Festive menu launch event"]
       },
       {
         week: 49,
-        expectedCheckins: 3450,
-        predictedBookings: 2300,
-        forecastRevenue: 625000,
+        expectedCheckins: 3789,
+        predictedBookings: 2456,
+        forecastRevenue: 645000,
         weather: "cold",
-        events: ["Christmas parties", "Corporate bookings", "Weekend entertainment"]
+        events: ["Private Christmas party (180 guests)", "Corporate booking: Marketing agency", "Weekend Christmas entertainment special"]
       },
       {
         week: 50,
-        expectedCheckins: 3800,
-        predictedBookings: 2500,
-        forecastRevenue: 685000,
+        expectedCheckins: 4123,
+        predictedBookings: 2678,
+        forecastRevenue: 698000,
         weather: "cold",
-        events: ["Pre-Christmas rush", "Office parties", "Special events"]
+        events: ["Pre-Christmas Weekend Rush", "Office party: Financial services (250 guests)", "New Year's Eve preparation events"]
       }
     ]
   }
