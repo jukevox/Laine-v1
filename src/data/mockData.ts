@@ -728,17 +728,6 @@ export const recommendations: Recommendation[] = [
     complianceRisk: "Ensure additional staff have proper certifications and training"
   },
   {
-    id: "rec-004",
-    category: "direct-venue",
-    priority: "opportunity", 
-    title: "Introduce 'Promenader Costume Rental' for Sunday Service",
-    insight: "Sunday attendance down 12% vs last month. Liverpool location saw 28% increase in Sunday bookings after introducing authentic German costume rentals.",
-    action: "Source 20 authentic German costumes (lederhosen, dirndls) for rental at £8 per person. Market as 'Authentic Sunday Service Experience'.",
-    impact: "£180-240 additional Sunday revenue + 15% booking increase",
-    timeframe: "Next Sunday",
-    loyaltyData: "Sunday Service attendees are 45% more likely to book private events when engaged with authentic experiences"
-  },
-  {
     id: "rec-005",
     category: "promotional",
     priority: "important",
@@ -821,28 +810,6 @@ export const implementedRecommendations: ImplementedRecommendation[] = [
     impactAchieved: true,
     category: "operational",
     notes: "Massive success! Customer dwell time increased by 35 minutes on average. Several customers mentioned 'much richer sound'. Bookings for Thursday nights up 22% since implementation. Definitely keeping permanent."
-  },
-  {
-    id: "impl-004",
-    originalRecommendation: {
-      id: "rec-004-old",
-      category: "direct-venue",
-      priority: "opportunity",
-      title: "Introduce costume rental service for Sunday Service",
-      insight: "Sunday attendance down 12% vs last month",
-      action: "Source authentic German costumes for rental",
-      impact: "£180-240 additional Sunday revenue",
-      timeframe: "Next Sunday"
-    },
-    weekImplemented: 42,
-    implementedDate: "2024-10-20",
-    actionTaken: "Introduced costume rental service with 15 authentic German outfits for Sunday Service",
-    expectedImpact: "£180-240 additional Sunday revenue + 15% booking increase",
-    actualImpact: "£160 additional revenue + 8% booking increase",
-    impactPercentage: 89,
-    impactAchieved: false,
-    category: "direct-venue",
-    notes: "Moderate success but below target. Costume sizes were limited - need more variety. Popular with families but adults hesitant. Consider offering just accessories (hats, suspenders) as lower-commitment option. Kids loved it though!"
   },
   {
     id: "impl-005",
